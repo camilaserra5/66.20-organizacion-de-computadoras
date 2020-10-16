@@ -44,10 +44,10 @@ int main(int argc, char** argv) {
 				printf("\t-h,\t--help\t\tPrint this information.\n");
 				printf("\t-i,\t--input\t\tLocation of the input file.\n");
 				printf("\t-o,\t--output\tLocation of the output file.\n");
-				printf("\t-a,\t--action\tProgram action: encode (default) or decode.\n");
+				printf("\t-d,\t--decode\tDecode a base64-encoded file (default is encode).\n");
 				printf("Examples:\n");
-				printf("\ttp0 -a encode -i ~/input -o ~/output\n");
-				printf("\ttp0 -a decode\n");
+				printf("\ttp0 -i ~/input -o ~/output\n");
+				printf("\ttp0 --decode\n");
    			      	should_process = FALSE;
 	      		}
 	      		break;
@@ -57,14 +57,14 @@ int main(int argc, char** argv) {
 	      			should_process = FALSE;
 	      		}
 	      		break;
-	      	case 'a':
+	      	case 'd':
 	      		{
-	      			// TODO: Set Encode option
+	      			// TODO: Set decode option
 	      		}
 	      		break;
 	      	default:
 	      		{
-	      			// TODO: Show Error Message
+	      			// TODO: Show Error Message - no deberia ser encode aca?
 	      			should_process = FALSE;
 	      		}
 	      		break;
