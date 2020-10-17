@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <getopt.h>
 #include <stdio.h>
-#include "Constants.h"
+#include "constants.h"
 
 int main(int argc, char** argv) {
 	struct option arg_long[] = {
