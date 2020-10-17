@@ -1,10 +1,12 @@
-#ifndef COMMAND_H
-#define COMMAND_H
+#ifndef __COMMAND_H__
+#define __COMMAND_H__
 
 #include "file.h"
 
 #define ENCODE 1
 #define DECODE 0
+#define INVALID_ARGUMENT -1
+#define NO_ARGUMENTS -2
 
 typedef struct {
     File input_file;
@@ -12,6 +14,7 @@ typedef struct {
     const char *input_path;
     const char *output_path;
     char encode_option;
+    char error_condition;
 } CommandOptions;
 
 void command_create(CommandOptions *opt);
@@ -26,9 +29,15 @@ void set_encode(CommandOptions *opt);
 
 void set_decode(CommandOptions *opt);
 
-void help();
+void set_error(CommandOptions *opt, char error_condition);
 
-void version();
+int has_errors(CommandOptions *opt);
+
+void show_error(CommandOptions *opt);
+
+void show_help();
+
+void show_version();
 
 char process(CommandOptions *opt);
 

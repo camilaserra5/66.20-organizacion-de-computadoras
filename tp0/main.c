@@ -1,81 +1,98 @@
 #include <stddef.h>
 #include <getopt.h>
-#include <stdio.h>
 #include "constants.h"
+#include "command.h"
 
 int main(int argc, char** argv) {
 	struct option arg_long[] = {
 		{ "input", required_argument, NULL, 'i' },
 		{ "output", required_argument, NULL, 'o' },
-		{ "action", required_argument, NULL, 'a' },
+		{ "decode", required_argument, NULL, 'd' },
 		{ "help", required_argument, NULL, 'h' },
 		{ "version", required_argument, NULL, 'V' },
 	};
 
-	char arg_opt_str[] = "i:o:a:hV";
+	char arg_opt_str[] = "i:o:d:hV";
 	int arg_opt;
 	int arg_opt_idx = 0;
-	char should_process = TRUE;
+
+	
+	CommandOptions cmd_options;
+	// Default Values: encode, stdin as input, stdout as output, stderr as error output
+	command_create(&cmd_options); 
 	
 	if(argc == 1) 
 	{
-		// TODO: Show Error Message
+		// Set Error Condition = NO_ARGUMENTS
+		set_error(&cmd_options, NO_ARGUMENTS);
+	}
+	else
+	{	
+		char should_process = TRUE;
+		while ( (arg_opt = getopt_long(argc, argv, arg_opt_str, arg_long, &arg_opt_idx) ) != -1
+			&&
+			should_process ) {
+		      
+		      switch( arg_opt ) {
+		      	case 'i':
+		      		{
+		      			// Set Input File
+		      			set_input_file(&cmd_options, optarg);
+		      		}
+		      		break;
+		      	case 'o':
+		      		{
+		      			// Set Output File
+		      			set_output_file(&cmd_options, optarg);
+		      		}
+		      		break;
+		      	case 'h':
+		      		{
+		      			// Show Options
+					show_help();
+	   			      	should_process = FALSE;
+		      		}
+		      		break;
+		      	case 'V':
+		      		{
+		      			// Show Version
+					show_version();
+		      			should_process = FALSE;
+		      		}
+		      		break;
+		      	case 'd':
+		      		{
+		      			// Set Decode option
+		      			set_decode(&cmd_options);
+		      		}
+		      		break;
+		      	default:
+		      		{
+		      			// Set Error Condition = INVALID_ARGUMENT
+		      			// [Gonzalo: We analize only valid arguments values here: i, o, h, V, d]
+		      			set_error(&cmd_options, INVALID_ARGUMENT);
+		      		}
+		      		break;
+		      }
+		}
+		
+		// Help or Version arguments, no processing
+		if (!should_process) return 0;
 	}
 	
-	while ( (arg_opt = getopt_long(argc, argv, arg_opt_str, arg_long, &arg_opt_idx) ) != -1
-		&&
-		should_process ) {
-	      
-	      switch( arg_opt ) {
-	      	case 'i':
-	      		{
-	      			// TODO: Set Input
-	      		}
-	      		break;
-	      	case 'o':
-	      		{
-	      			// TODO: Set Output
-	      		}
-	      		break;
-	      	case 'h':
-	      		{
-				printf("Options:\n");
-				printf("\t-V,\t--version\tPrint version and quit.\n");
-				printf("\t-h,\t--help\t\tPrint this information.\n");
-				printf("\t-i,\t--input\t\tLocation of the input file.\n");
-				printf("\t-o,\t--output\tLocation of the output file.\n");
-				printf("\t-d,\t--decode\tDecode a base64-encoded file (default is encode).\n");
-				printf("Examples:\n");
-				printf("\ttp0 -i ~/input -o ~/output\n");
-				printf("\ttp0 --decode\n");
-   			      	should_process = FALSE;
-	      		}
-	      		break;
-	      	case 'V':
-	      		{
-	      			printf("Version: 1.0\n");
-	      			should_process = FALSE;
-	      		}
-	      		break;
-	      	case 'd':
-	      		{
-	      			// TODO: Set decode option
-	      		}
-	      		break;
-	      	default:
-	      		{
-	      			// TODO: Show Error Message - no deberia ser encode aca?
-	      			should_process = FALSE;
-	      		}
-	      		break;
-	      }
+	
+	// Processs Encode/Decode if no errors found, otherwise show error message
+	if( !has_errors(&cmd_options) )
+	{
+		process(&cmd_options);
+	}
+	else
+	{
+		show_error(&cmd_options);
+		return 1;
 	}
 	
-	if (!should_process) return 0;
 	
-	// TODO: Processs Encode/Decode of input
-	
-	
-	return 1;
+	return 0;
 		
 }
