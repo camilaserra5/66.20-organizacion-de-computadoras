@@ -4,7 +4,9 @@
 
 ### Integrantes:
   Camila Serra
+  
   Cynthia Marlene Gamarra Silva
+  
   Gonzalo Almendro
   
 ### Información:
