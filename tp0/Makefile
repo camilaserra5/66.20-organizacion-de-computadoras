@@ -1,13 +1,16 @@
 CC = gcc
 CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99
 
-OBJECTS = command.o 
+OBJECTS = command.o encode.o
 EXEC = tp0
 
 all: $(EXEC)
 
 command.o: command.c command.h
 	$(CC) $(CFLAGS) -c command.c -o command.o
+	
+encode.o: encode.c encode.h
+	$(CC) $(CFLAGS) -c encode.c -o encode.o	
 
 $(EXEC): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) main.c -o $(EXEC) -lm
