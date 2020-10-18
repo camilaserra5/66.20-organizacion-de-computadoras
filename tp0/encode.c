@@ -58,3 +58,55 @@ void Encode(const unsigned char* buffer, unsigned int length, unsigned char* out
         		}
     	}
 }
+
+/**
+ * Returns the representation of the char in the table.
+ * pre: character is valid (belongs to table)
+ * is the character '='.
+ * post: returns the representation (int) of the character
+ * in the encoding table.
+ *
+ */
+unsigned char DecodeChar(char character){
+	unsigned char i;
+	for(i = 0;i<encoding_table_size;i++){
+		if(encoding_table[i] == character){
+			return i;
+		}
+	}
+    if (character == '=')
+        return 0;
+    return DECODE_ERROR;
+}
+
+/**
+ * Returns a buffer with size 3 with the 4 character base64 decode.
+ * Pre: the input buffer contains 4 characters. The output buffer has at least 3 characters
+ * Post: returns a buffer with size 3 ASCII characters. returns 0 if error 1 if ok
+ */
+unsigned char Decode(unsigned char *buf_input, unsigned char *buf_output) {
+    unsigned char chars[4];
+    unsigned int i;
+    for (i = 0; i < 4; ++i) {
+        chars[i] = DecodeChar(buf_input[i]);
+        if (chars[i] == DECODE_ERROR)
+            return 0;
+    }
+
+    unsigned char char1_aux = chars[0] << 2;
+	//Take the last 2 bits of char2
+    unsigned char char2_aux = chars[1] >> 4;
+	char1_aux = char1_aux | char2_aux;
+    buf_output[0] = char1_aux;
+
+	//Take the last 4b of char2 and the first 4b of char3
+    char1_aux = chars[1] << 4;
+    char2_aux = chars[2] >> 2;
+	char2_aux = char1_aux | char2_aux;
+    buf_output[1] = char2_aux;
+
+	//Take the last 2b of char3 + the bits of char4
+    char1_aux = chars[2] << 6;
+    buf_output[2] = char1_aux | chars[3];
+    return 1;
+}
