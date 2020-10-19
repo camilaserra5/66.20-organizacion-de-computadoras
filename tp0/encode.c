@@ -74,8 +74,9 @@ unsigned char DecodeChar(char character) {
             return i;
         }
     }
-    if (character == '=')
+    if (character == '=') {
         return 0;
+    }
     return DECODE_ERROR;
 }
 

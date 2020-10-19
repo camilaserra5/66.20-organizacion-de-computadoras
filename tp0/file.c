@@ -8,7 +8,6 @@ void create_file(File *file) {
     file->eof = 0;
 }
 
-
 char open_file_read(File *file, const char *route) {
     if (route == NULL) {
         file->file = stdin;
@@ -17,11 +16,9 @@ char open_file_read(File *file, const char *route) {
         if (file->file == NULL) {
             int err = errno;
             fprintf(stderr, "Error al abrir archivo: %s\n", strerror(err));
-
             return ERROR;
         }
     }
-
     return OK;
 }
 
@@ -34,11 +31,9 @@ char open_file_write(File *file, const char *route) {
         if (file->file == NULL) {
             int err = errno;
             fprintf(stderr, "Error al abrir archivo: %s\n", strerror(err));
-
             return ERROR;
         }
     }
-
     return OK;
 }
 
@@ -50,10 +45,8 @@ int close_file(File *file) {
     if (result == EOF) {
         int err = errno;
         fprintf(stderr, "Error al cerrar archivo: %s\n", strerror(err));
-
         return ERROR;
     }
-
     return OK;
 }
 

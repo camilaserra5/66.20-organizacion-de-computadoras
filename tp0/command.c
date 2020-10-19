@@ -12,7 +12,6 @@ void command_create(CommandOptions *opt) {
     opt->output_path = 0;
 }
 
-
 void set_input_file(CommandOptions *opt, const char *input) {
     opt->input_path = input;
 }
@@ -34,41 +33,31 @@ void set_error(CommandOptions *opt, char error_condition) {
 }
 
 int has_errors(CommandOptions *opt) {
-    if (opt->error_condition != OK)
+    if (opt->error_condition != OK) {
         return ERROR;
-    else
-        return OK;
+    }
+    return OK;
 }
 
 void show_error(CommandOptions *opt) {
+    char *error_message = NULL;
+    bool should_show_help = false;
     if (opt->error_condition == INVALID_ARGUMENT) {
-        fprintf(stderr, "Argumentos Invalidos!\n\n");
-        fprintf(stderr, "Options:\n");
-        fprintf(stderr, "\t-V,\t--version\tPrint version and quit.\n");
-        fprintf(stderr, "\t-h,\t--help\t\tPrint this information.\n");
-        fprintf(stderr, "\t-i,\t--input\t\tLocation of the input file.\n");
-        fprintf(stderr, "\t-o,\t--output\tLocation of the output file.\n");
-        fprintf(stderr, "\t-d,\t--decode\tDecode a base64-encoded file (default is encode).\n");
-        fprintf(stderr, "Examples:\n");
-        fprintf(stderr, "\ttp0 -i ~/input -o ~/output\n");
-        fprintf(stderr, "\ttp0 --decode\n");
+        error_message = "Argumentos Invalidos!\n\n";
+        should_show_help = true;
     } else if (opt->error_condition == NO_ARGUMENTS) {
-        fprintf(stderr, "No se recibieron Argumentos!\n\n");
-        fprintf(stderr, "Options:\n");
-        fprintf(stderr, "\t-V,\t--version\tPrint version and quit.\n");
-        fprintf(stderr, "\t-h,\t--help\t\tPrint this information.\n");
-        fprintf(stderr, "\t-i,\t--input\t\tLocation of the input file.\n");
-        fprintf(stderr, "\t-o,\t--output\tLocation of the output file.\n");
-        fprintf(stderr, "\t-d,\t--decode\tDecode a base64-encoded file (default is encode).\n");
-        fprintf(stderr, "Examples:\n");
-        fprintf(stderr, "\ttp0 -i ~/input -o ~/output\n");
-        fprintf(stderr, "\ttp0 --decode\n");
+        error_message = "No se recibieron Argumentos!\n\n";
+        should_show_help = true;
     } else if (opt->error_condition == INVALID_FILE_LENGTH) {
-        fprintf(stderr, "Longitud de Archivo de Entrada Invalido!\n\n");
+        error_message = "Longitud de Archivo de Entrada Invalido!\n\n";
     } else if (opt->error_condition == INVALID_CHARS) {
-        fprintf(stderr, "Caracteres invalidos en Archivo Codificado!\n\n");
+        error_message = "Caracteres invalidos en Archivo Codificado!\n\n";
     }
 
+    fprintf(stderr, error_message);
+    if (should_show_help) {
+        show_help();
+    }
 }
 
 void show_help() {
@@ -89,7 +78,6 @@ void show_version() {
 
 char process(CommandOptions *opt) {
     char result = open_file_read(&opt->input_file, opt->input_path);
-
     if (!result) {
         result = open_file_write(&opt->output_file, opt->output_path);
     }
@@ -136,8 +124,7 @@ char _do_encode_decode(CommandOptions *opt) {
                     show_error(opt);
                 } else {
                     ++count;
-                    if (count == 18) // 19 * 4 =  76 bytes
-                    {
+                    if (count == 18) { // 19 * 4 =  76 bytes
                         unsigned char aux;
                         file_read(&opt->input_file, &aux, 1);
                         count = 0;
@@ -153,7 +140,6 @@ char _do_encode_decode(CommandOptions *opt) {
                         }
 
                         file_write(&opt->output_file, buf_decoded, 3 - aux);
-
                     } else {
                         set_error(opt, INVALID_CHARS);
                         show_error(opt);

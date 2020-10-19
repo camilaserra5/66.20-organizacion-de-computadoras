@@ -16,11 +16,9 @@ int main(int argc, char **argv) {
     int arg_opt;
     int arg_opt_idx = 0;
 
-
     CommandOptions cmd_options;
     // Default Values: encode, stdin as input, stdout as output, stderr as error output
     command_create(&cmd_options);
-
 
     char should_process = TRUE;
     while ((arg_opt = getopt_long(argc, argv, arg_opt_str, arg_long, &arg_opt_idx)) != -1
@@ -65,18 +63,15 @@ int main(int argc, char **argv) {
     }
 
     // Help or Version arguments, no processing
-    if (!should_process) return 0;
-
+    if (!should_process) {
+        return 0;
+    }
 
     // Processs Encode/Decode if no errors found, otherwise show error message
-    if (!has_errors(&cmd_options)) {
-        process(&cmd_options);
-    } else {
+    if (has_errors(&cmd_options)) {
         show_error(&cmd_options);
         return 1;
     }
 
-
-    return 0;
-
+    return process(&cmd_options);
 }
