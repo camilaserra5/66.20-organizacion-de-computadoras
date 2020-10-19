@@ -16,9 +16,9 @@
 // ERROR CODES
 #define INVALID_ARGUMENT -1
 #define NO_ARGUMENTS -2
-#define EMPTY_INPUT = -3
-#define INVALID_FILE_LENGTH = -4;
-#define INVALID_CHARS = -5;
+#define EMPTY_INPUT -3
+#define INVALID_FILE_LENGTH -4
+#define INVALID_CHARS -5
 
 
 #endif

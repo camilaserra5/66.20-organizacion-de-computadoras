@@ -1,5 +1,5 @@
-#ifndef TP0_ENCODE_H
-#define TP0_ENCODE_H
+#ifndef __ENCODE_H__
+#define __ENCODE_H__
 
 /**
  * Recibe 3 caracteres en buffer y los convierte en 4 caracteres codificados en output.
@@ -8,5 +8,11 @@
  */
 void Encode(const unsigned char* buffer, unsigned int length, unsigned char* output);
 
+/**
+ * Devuelve un buffer de 3 caracteres recibiendo los 4 caracteres codificados en input.
+ * Pre:
+ * Post:
+ */
+unsigned char Decode(unsigned char *buf_input, unsigned char *buf_output);
 
-#endif //TP0_ENCODE_H
+#endif // __ENCODE_H__

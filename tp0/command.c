@@ -7,7 +7,7 @@ void command_create(CommandOptions *opt)
 {
 	create_file(&opt->input_file);
 	create_file(&opt->output_file);
-	opt->error_condition = 0;
+	opt->error_condition = OK;
 	opt->encode_option = ENCODE;
 	opt->input_path = 0;
 	opt->output_path = 0;
@@ -41,17 +41,17 @@ void set_error(CommandOptions *opt, char error_condition)
 
 int has_errors(CommandOptions *opt)
 {
-	if( opt->error_condition != 0 ) 
-		return 1;
+	if( opt->error_condition != OK ) 
+		return ERROR;
 	else
-		return 0;
+		return OK;
 }
 
 void show_error(CommandOptions *opt)
 {
 	if( opt->error_condition == INVALID_ARGUMENT )
 	{
-		fprintf(stderr, "Invalid Arguments!\n\n");
+		fprintf(stderr, "Argumentos Invalidos!\n\n");
 		fprintf(stderr, "Options:\n");
 		fprintf(stderr, "\t-V,\t--version\tPrint version and quit.\n");
 		fprintf(stderr, "\t-h,\t--help\t\tPrint this information.\n");
@@ -64,7 +64,7 @@ void show_error(CommandOptions *opt)
 	}
 	else if( opt->error_condition == NO_ARGUMENTS )
 	{
-		fprintf(stderr, "No Arguments!\n\n");
+		fprintf(stderr, "No se recibieron Argumentos!\n\n");
 		fprintf(stderr, "Options:\n");
 		fprintf(stderr, "\t-V,\t--version\tPrint version and quit.\n");
 		fprintf(stderr, "\t-h,\t--help\t\tPrint this information.\n");
@@ -75,10 +75,15 @@ void show_error(CommandOptions *opt)
 		fprintf(stderr, "\ttp0 -i ~/input -o ~/output\n");
 		fprintf(stderr, "\ttp0 --decode\n");		
 	}
-	else
+	else if( opt->error_condition == INVALID_FILE_LENGTH )
 	{
-		
+		fprintf(stderr, "Longitud de Archivo de Entrada Invalido!\n\n");
 	}	
+	else if( opt->error_condition == INVALID_CHARS )
+	{
+		fprintf(stderr, "Caracteres invalidos en Archivo Codificado!\n\n");
+	}
+	
 }
 
 void show_help()
@@ -149,8 +154,56 @@ char _do_encode_decode(CommandOptions *opt)
 
 	if (opt->encode_option == DECODE )
 	{
-		// TODO: DECODE
+		while(!file_eof(&opt->input_file) && !has_errors(opt))
+		{
+			unsigned int read = file_read(&opt->input_file, buf_encoded, 4);
+			if (read > 0)
+			{
+				if(read != 4) 
+				{
+					set_error(opt, INVALID_FILE_LENGTH);
+					show_error(opt);
+				}
+				else
+				{
+					++count;
+					if (count == 18) // 19 * 4 =  76 bytes
+					{
+						unsigned char aux;
+						file_read(&opt->input_file, &aux, 1);
+						count = 0;
+					}
+					
+					if( Decode(buf_encoded, buf_decoded) )
+					{
+						char aux = 0;
+						if ( buf_encoded[2] == '=' )
+						{
+							++aux;
+						}
+						if ( buf_encoded[3] == '=' )
+						{
+							++aux;
+						}	
+						
+						file_write(&opt->output_file, buf_decoded, 3 - aux);
+																		
+					}	
+					else
+					{
+						set_error(opt, INVALID_CHARS);
+						show_error(opt);
+						unsigned int i;
+						for (i = 0; i < 4; ++i)
+						{
+							fprintf(stderr, "%c", buf_encoded[i]);
+						}
+					}
+				}
+				
+			}
+		}
 	}
 	
-	return 0;
+	return opt->error_condition;
 }
