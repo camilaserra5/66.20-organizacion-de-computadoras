@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99
 
-OBJECTS = command.o encode.o
+OBJECTS = command.o encode.o file.o
 EXEC = tp0
 
 all: $(EXEC)
@@ -10,7 +10,10 @@ command.o: command.c command.h
 	$(CC) $(CFLAGS) -c command.c -o command.o
 	
 encode.o: encode.c encode.h
-	$(CC) $(CFLAGS) -c encode.c -o encode.o	
+	$(CC) $(CFLAGS) -c encode.c -o encode.o
+	
+file.o: file.c file.h
+	$(CC) $(CFLAGS) -c file.c -o file.o		
 
 $(EXEC): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) main.c -o $(EXEC) -lm
@@ -21,4 +24,4 @@ run: $(EXEC)
 	
 	
 clean:
-	rm -f *.0 $(EXEC)
+	rm -f *.o $(EXEC)

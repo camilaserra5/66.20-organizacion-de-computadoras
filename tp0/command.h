@@ -2,11 +2,7 @@
 #define __COMMAND_H__
 
 #include "file.h"
-
-#define ENCODE 1
-#define DECODE 0
-#define INVALID_ARGUMENT -1
-#define NO_ARGUMENTS -2
+#include "constants.h"
 
 typedef struct {
     File input_file;
@@ -18,8 +14,6 @@ typedef struct {
 } CommandOptions;
 
 void command_create(CommandOptions *opt);
-
-void command_delete(CommandOptions *opt);
 
 void set_input_file(CommandOptions *opt, const char *input);
 
@@ -40,5 +34,7 @@ void show_help();
 void show_version();
 
 char process(CommandOptions *opt);
+
+char _do_encode_decode(CommandOptions *opt);
 
 #endif
