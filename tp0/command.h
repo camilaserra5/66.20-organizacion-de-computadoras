@@ -11,30 +11,30 @@ typedef struct {
     const char *output_path;
     char encode_option;
     char error_condition;
-} CommandOptions;
+} command_options_st;
 
-void command_create(CommandOptions *opt);
+void command_create(command_options_st *opt);
 
-void set_input_file(CommandOptions *opt, const char *input);
+void set_input_file(command_options_st *opt, const char *input);
 
-void set_output_file(CommandOptions *opt, const char *output);
+void set_output_file(command_options_st *opt, const char *output);
 
-void set_encode(CommandOptions *opt);
+void set_encode(command_options_st *opt);
 
-void set_decode(CommandOptions *opt);
+void set_decode(command_options_st *opt);
 
-void set_error(CommandOptions *opt, char error_condition);
+void set_error(command_options_st *opt, char error_condition);
 
-int has_errors(CommandOptions *opt);
+int has_errors(command_options_st *opt);
 
-void show_error(CommandOptions *opt);
+void show_error(command_options_st *opt);
 
 void show_help();
 
 void show_version();
 
-char process(CommandOptions *opt);
+char process(command_options_st *opt);
 
-char _do_encode_decode(CommandOptions *opt);
+char _do_encode_decode(command_options_st *opt);
 
 #endif

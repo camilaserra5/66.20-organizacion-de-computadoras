@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
     int arg_opt;
     int arg_opt_idx = 0;
 
-    CommandOptions cmd_options;
+    command_options_st cmd_options;
     // Default Values: encode, stdin as input, stdout as output, stderr as error output
     command_create(&cmd_options);
 

@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "command.h"
 #include "encode.h"
 
-void command_create(CommandOptions *opt) {
+void command_create(command_options_st *opt) {
     create_file(&opt->input_file);
     create_file(&opt->output_file);
     opt->error_condition = OK;
@@ -12,34 +13,34 @@ void command_create(CommandOptions *opt) {
     opt->output_path = 0;
 }
 
-void set_input_file(CommandOptions *opt, const char *input) {
+void set_input_file(command_options_st *opt, const char *input) {
     opt->input_path = input;
 }
 
-void set_output_file(CommandOptions *opt, const char *output) {
+void set_output_file(command_options_st *opt, const char *output) {
     opt->output_path = output;
 }
 
-void set_encode(CommandOptions *opt) {
+void set_encode(command_options_st *opt) {
     opt->encode_option = ENCODE;
 }
 
-void set_decode(CommandOptions *opt) {
+void set_decode(command_options_st *opt) {
     opt->encode_option = DECODE;
 }
 
-void set_error(CommandOptions *opt, char error_condition) {
+void set_error(command_options_st *opt, char error_condition) {
     opt->error_condition = error_condition;
 }
 
-int has_errors(CommandOptions *opt) {
+int has_errors(command_options_st *opt) {
     if (opt->error_condition != OK) {
         return ERROR;
     }
     return OK;
 }
 
-void show_error(CommandOptions *opt) {
+void show_error(command_options_st *opt) {
     char *error_message = NULL;
     bool should_show_help = false;
     if (opt->error_condition == INVALID_ARGUMENT) {
@@ -54,7 +55,7 @@ void show_error(CommandOptions *opt) {
         error_message = "Caracteres invalidos en Archivo Codificado!\n\n";
     }
 
-    fprintf(stderr, error_message);
+    fprintf(stderr, "%s", error_message);
     if (should_show_help) {
         show_help();
     }
@@ -76,7 +77,7 @@ void show_version() {
     printf("Version: 1.0\n");
 }
 
-char process(CommandOptions *opt) {
+char process(command_options_st *opt) {
     char result = open_file_read(&opt->input_file, opt->input_path);
     if (!result) {
         result = open_file_write(&opt->output_file, opt->output_path);
@@ -93,7 +94,7 @@ char process(CommandOptions *opt) {
     return result;
 }
 
-char _do_encode_decode(CommandOptions *opt) {
+char _do_encode_decode(command_options_st *opt) {
     unsigned char buf_decoded[3];
     unsigned char buf_encoded[4];
     unsigned char count = 0;
