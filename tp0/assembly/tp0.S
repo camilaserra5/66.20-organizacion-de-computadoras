@@ -6,7 +6,7 @@ Disassembly of section .init:
 
 00000b28 <_init>:
  b28:	3c1c0002 	lui	gp,0x2
- b2c:	279c9d48 	addiu	gp,gp,-25272
+ b2c:	279c9d58 	addiu	gp,gp,-25256
  b30:	0399e021 	addu	gp,gp,t9
  b34:	27bdffe0 	addiu	sp,sp,-32
  b38:	afbc0010 	sw	gp,16(sp)
@@ -28,7 +28,7 @@ Disassembly of section .text:
      b74:	04110001 	bal	b7c <__start+0xc>
      b78:	00000000 	nop
      b7c:	3c1c0002 	lui	gp,0x2
-     b80:	279c9cf4 	addiu	gp,gp,-25356
+     b80:	279c9d04 	addiu	gp,gp,-25340
      b84:	039fe021 	addu	gp,gp,ra
      b88:	0000f825 	move	ra,zero
      b8c:	8f848018 	lw	a0,-32744(gp)
@@ -53,11 +53,11 @@ Disassembly of section .text:
 
 00000bd0 <deregister_tm_clones>:
      bd0:	3c1c0002 	lui	gp,0x2
-     bd4:	279c9ca0 	addiu	gp,gp,-25440
+     bd4:	279c9cb0 	addiu	gp,gp,-25424
      bd8:	0399e021 	addu	gp,gp,t9
      bdc:	8f848028 	lw	a0,-32728(gp)
      be0:	8f828024 	lw	v0,-32732(gp)
-     be4:	24842874 	addiu	a0,a0,10356
+     be4:	24842884 	addiu	a0,a0,10372
      be8:	24420003 	addiu	v0,v0,3
      bec:	00441023 	subu	v0,v0,a0
      bf0:	2c420007 	sltiu	v0,v0,7
@@ -72,11 +72,11 @@ Disassembly of section .text:
 
 00000c14 <register_tm_clones>:
      c14:	3c1c0002 	lui	gp,0x2
-     c18:	279c9c5c 	addiu	gp,gp,-25508
+     c18:	279c9c6c 	addiu	gp,gp,-25492
      c1c:	0399e021 	addu	gp,gp,t9
      c20:	8f848028 	lw	a0,-32728(gp)
      c24:	8f858024 	lw	a1,-32732(gp)
-     c28:	24842874 	addiu	a0,a0,10356
+     c28:	24842884 	addiu	a0,a0,10372
      c2c:	00a42823 	subu	a1,a1,a0
      c30:	00052883 	sra	a1,a1,0x2
      c34:	000517c2 	srl	v0,a1,0x1f
@@ -93,14 +93,14 @@ Disassembly of section .text:
 
 00000c60 <__do_global_dtors_aux>:
      c60:	3c1c0002 	lui	gp,0x2
-     c64:	279c9c10 	addiu	gp,gp,-25584
+     c64:	279c9c20 	addiu	gp,gp,-25568
      c68:	0399e021 	addu	gp,gp,t9
      c6c:	27bdffe0 	addiu	sp,sp,-32
      c70:	afb00018 	sw	s0,24(sp)
      c74:	8f908028 	lw	s0,-32728(gp)
      c78:	afbc0010 	sw	gp,16(sp)
      c7c:	afbf001c 	sw	ra,28(sp)
-     c80:	92022980 	lbu	v0,10624(s0)
+     c80:	92022990 	lbu	v0,10640(s0)
      c84:	1440000d 	bnez	v0,cbc <__do_global_dtors_aux+0x5c>
      c88:	8f8280fc 	lw	v0,-32516(gp)
      c8c:	10400005 	beqz	v0,ca4 <__do_global_dtors_aux+0x44>
@@ -114,7 +114,7 @@ Disassembly of section .text:
      cac:	0411ffc8 	bal	bd0 <deregister_tm_clones>
      cb0:	00000000 	nop
      cb4:	24020001 	li	v0,1
-     cb8:	a2022980 	sb	v0,10624(s0)
+     cb8:	a2022990 	sb	v0,10640(s0)
      cbc:	8fbf001c 	lw	ra,28(sp)
      cc0:	8fb00018 	lw	s0,24(sp)
      cc4:	03e00008 	jr	ra
@@ -122,11 +122,11 @@ Disassembly of section .text:
 
 00000ccc <frame_dummy>:
      ccc:	3c1c0002 	lui	gp,0x2
-     cd0:	279c9ba4 	addiu	gp,gp,-25692
+     cd0:	279c9bb4 	addiu	gp,gp,-25676
      cd4:	0399e021 	addu	gp,gp,t9
      cd8:	8f828028 	lw	v0,-32728(gp)
      cdc:	27bdffe0 	addiu	sp,sp,-32
-     ce0:	244427bc 	addiu	a0,v0,10172
+     ce0:	244427cc 	addiu	a0,v0,10188
      ce4:	afbc0010 	sw	gp,16(sp)
      ce8:	afbf001c 	sw	ra,28(sp)
      cec:	8c820000 	lw	v0,0(a0)
@@ -153,7 +153,7 @@ Disassembly of section .text:
 
 void command_create(command_options_st *opt) {
      d30:	3c1c0002 	lui	gp,0x2
-     d34:	279c9b40 	addiu	gp,gp,-25792
+     d34:	279c9b50 	addiu	gp,gp,-25776
      d38:	0399e021 	addu	gp,gp,t9
      d3c:	27bdffe0 	addiu	sp,sp,-32
      d40:	afbf001c 	sw	ra,28(sp)
@@ -166,7 +166,7 @@ void command_create(command_options_st *opt) {
      d58:	00402025 	move	a0,v0
      d5c:	8f828034 	lw	v0,-32716(gp)
      d60:	0040c825 	move	t9,v0
-     d64:	04110376 	bal	1b40 <create_file>
+     d64:	0411037a 	bal	1b50 <create_file>
      d68:	00000000 	nop
      d6c:	8fdc0010 	lw	gp,16(s8)
     create_file(&opt->output_file);
@@ -175,7 +175,7 @@ void command_create(command_options_st *opt) {
      d78:	00402025 	move	a0,v0
      d7c:	8f828034 	lw	v0,-32716(gp)
      d80:	0040c825 	move	t9,v0
-     d84:	0411036e 	bal	1b40 <create_file>
+     d84:	04110372 	bal	1b50 <create_file>
      d88:	00000000 	nop
      d8c:	8fdc0010 	lw	gp,16(s8)
     opt->error_condition = OK;
@@ -328,7 +328,7 @@ int has_errors(command_options_st *opt) {
 
 void show_error(command_options_st *opt) {
      f24:	3c1c0002 	lui	gp,0x2
-     f28:	279c994c 	addiu	gp,gp,-26292
+     f28:	279c995c 	addiu	gp,gp,-26276
      f2c:	0399e021 	addu	gp,gp,t9
      f30:	27bdffd8 	addiu	sp,sp,-40
      f34:	afbf0024 	sw	ra,36(sp)
@@ -348,7 +348,7 @@ void show_error(command_options_st *opt) {
      f60:	00000000 	nop
         error_message = "Argumentos Invalidos!\n\n";
      f64:	8f828030 	lw	v0,-32720(gp)
-     f68:	244224e0 	addiu	v0,v0,9440
+     f68:	244224f0 	addiu	v0,v0,9456
      f6c:	afc20018 	sw	v0,24(s8)
         should_show_help = true;
      f70:	24020001 	li	v0,1
@@ -363,7 +363,7 @@ void show_error(command_options_st *opt) {
      f90:	00000000 	nop
         error_message = "No se recibieron Argumentos!\n\n";
      f94:	8f828030 	lw	v0,-32720(gp)
-     f98:	244224f8 	addiu	v0,v0,9464
+     f98:	24422508 	addiu	v0,v0,9480
      f9c:	afc20018 	sw	v0,24(s8)
         should_show_help = true;
      fa0:	24020001 	li	v0,1
@@ -378,7 +378,7 @@ void show_error(command_options_st *opt) {
      fc0:	00000000 	nop
         error_message = "Longitud de Archivo de Entrada Invalido!\n\n";
      fc4:	8f828030 	lw	v0,-32720(gp)
-     fc8:	24422518 	addiu	v0,v0,9496
+     fc8:	24422528 	addiu	v0,v0,9512
      fcc:	afc20018 	sw	v0,24(s8)
      fd0:	10000009 	b	ff8 <show_error+0xd4>
      fd4:	00000000 	nop
@@ -390,7 +390,7 @@ void show_error(command_options_st *opt) {
      fe8:	00000000 	nop
         error_message = "Caracteres invalidos en Archivo Codificado!\n\n";
      fec:	8f828030 	lw	v0,-32720(gp)
-     ff0:	24422544 	addiu	v0,v0,9540
+     ff0:	24422554 	addiu	v0,v0,9556
      ff4:	afc20018 	sw	v0,24(s8)
     }
 
@@ -428,7 +428,7 @@ void show_error(command_options_st *opt) {
 
 void show_help() {
     1058:	3c1c0002 	lui	gp,0x2
-    105c:	279c9818 	addiu	gp,gp,-26600
+    105c:	279c9828 	addiu	gp,gp,-26584
     1060:	0399e021 	addu	gp,gp,t9
     1064:	27bdffe0 	addiu	sp,sp,-32
     1068:	afbf001c 	sw	ra,28(sp)
@@ -437,7 +437,7 @@ void show_help() {
     1074:	afbc0010 	sw	gp,16(sp)
     printf("Options:\n");
     1078:	8f828030 	lw	v0,-32720(gp)
-    107c:	24442574 	addiu	a0,v0,9588
+    107c:	24442584 	addiu	a0,v0,9604
     1080:	8f8280e0 	lw	v0,-32544(gp)
     1084:	0040c825 	move	t9,v0
     1088:	0320f809 	jalr	t9
@@ -445,7 +445,7 @@ void show_help() {
     1090:	8fdc0010 	lw	gp,16(s8)
     printf("\t-V,\t--version\tPrint version and quit.\n");
     1094:	8f828030 	lw	v0,-32720(gp)
-    1098:	24442580 	addiu	a0,v0,9600
+    1098:	24442590 	addiu	a0,v0,9616
     109c:	8f8280e0 	lw	v0,-32544(gp)
     10a0:	0040c825 	move	t9,v0
     10a4:	0320f809 	jalr	t9
@@ -453,7 +453,7 @@ void show_help() {
     10ac:	8fdc0010 	lw	gp,16(s8)
     printf("\t-h,\t--help\t\tPrint this information.\n");
     10b0:	8f828030 	lw	v0,-32720(gp)
-    10b4:	244425a8 	addiu	a0,v0,9640
+    10b4:	244425b8 	addiu	a0,v0,9656
     10b8:	8f8280e0 	lw	v0,-32544(gp)
     10bc:	0040c825 	move	t9,v0
     10c0:	0320f809 	jalr	t9
@@ -461,7 +461,7 @@ void show_help() {
     10c8:	8fdc0010 	lw	gp,16(s8)
     printf("\t-i,\t--input\t\tLocation of the input file.\n");
     10cc:	8f828030 	lw	v0,-32720(gp)
-    10d0:	244425d0 	addiu	a0,v0,9680
+    10d0:	244425e0 	addiu	a0,v0,9696
     10d4:	8f8280e0 	lw	v0,-32544(gp)
     10d8:	0040c825 	move	t9,v0
     10dc:	0320f809 	jalr	t9
@@ -469,7 +469,7 @@ void show_help() {
     10e4:	8fdc0010 	lw	gp,16(s8)
     printf("\t-o,\t--output\tLocation of the output file.\n");
     10e8:	8f828030 	lw	v0,-32720(gp)
-    10ec:	244425fc 	addiu	a0,v0,9724
+    10ec:	2444260c 	addiu	a0,v0,9740
     10f0:	8f8280e0 	lw	v0,-32544(gp)
     10f4:	0040c825 	move	t9,v0
     10f8:	0320f809 	jalr	t9
@@ -477,7 +477,7 @@ void show_help() {
     1100:	8fdc0010 	lw	gp,16(s8)
     printf("\t-d,\t--decode\tDecode a base64-encoded file (default is encode).\n");
     1104:	8f828030 	lw	v0,-32720(gp)
-    1108:	24442628 	addiu	a0,v0,9768
+    1108:	24442638 	addiu	a0,v0,9784
     110c:	8f8280e0 	lw	v0,-32544(gp)
     1110:	0040c825 	move	t9,v0
     1114:	0320f809 	jalr	t9
@@ -485,7 +485,7 @@ void show_help() {
     111c:	8fdc0010 	lw	gp,16(s8)
     printf("Examples:\n");
     1120:	8f828030 	lw	v0,-32720(gp)
-    1124:	24442668 	addiu	a0,v0,9832
+    1124:	24442678 	addiu	a0,v0,9848
     1128:	8f8280e0 	lw	v0,-32544(gp)
     112c:	0040c825 	move	t9,v0
     1130:	0320f809 	jalr	t9
@@ -493,7 +493,7 @@ void show_help() {
     1138:	8fdc0010 	lw	gp,16(s8)
     printf("\ttp0 -i ~/input -o ~/output\n");
     113c:	8f828030 	lw	v0,-32720(gp)
-    1140:	24442674 	addiu	a0,v0,9844
+    1140:	24442684 	addiu	a0,v0,9860
     1144:	8f8280e0 	lw	v0,-32544(gp)
     1148:	0040c825 	move	t9,v0
     114c:	0320f809 	jalr	t9
@@ -501,7 +501,7 @@ void show_help() {
     1154:	8fdc0010 	lw	gp,16(s8)
     printf("\ttp0 --decode\n");
     1158:	8f828030 	lw	v0,-32720(gp)
-    115c:	24442690 	addiu	a0,v0,9872
+    115c:	244426a0 	addiu	a0,v0,9888
     1160:	8f8280e0 	lw	v0,-32544(gp)
     1164:	0040c825 	move	t9,v0
     1168:	0320f809 	jalr	t9
@@ -520,7 +520,7 @@ void show_help() {
 
 void show_version() {
     1190:	3c1c0002 	lui	gp,0x2
-    1194:	279c96e0 	addiu	gp,gp,-26912
+    1194:	279c96f0 	addiu	gp,gp,-26896
     1198:	0399e021 	addu	gp,gp,t9
     119c:	27bdffe0 	addiu	sp,sp,-32
     11a0:	afbf001c 	sw	ra,28(sp)
@@ -529,7 +529,7 @@ void show_version() {
     11ac:	afbc0010 	sw	gp,16(sp)
     printf("Version: 1.0\n");
     11b0:	8f828030 	lw	v0,-32720(gp)
-    11b4:	244426a0 	addiu	a0,v0,9888
+    11b4:	244426b0 	addiu	a0,v0,9904
     11b8:	8f8280e0 	lw	v0,-32544(gp)
     11bc:	0040c825 	move	t9,v0
     11c0:	0320f809 	jalr	t9
@@ -548,7 +548,7 @@ void show_version() {
 
 char process(command_options_st *opt) {
     11e8:	3c1c0002 	lui	gp,0x2
-    11ec:	279c9688 	addiu	gp,gp,-27000
+    11ec:	279c9698 	addiu	gp,gp,-26984
     11f0:	0399e021 	addu	gp,gp,t9
     11f4:	27bdffd8 	addiu	sp,sp,-40
     11f8:	afbf0024 	sw	ra,36(sp)
@@ -556,7 +556,7 @@ char process(command_options_st *opt) {
     1200:	03a0f025 	move	s8,sp
     1204:	afbc0010 	sw	gp,16(sp)
     1208:	afc40028 	sw	a0,40(s8)
-    char result = open_file_read(&opt->input_file, opt->input_path);
+    if (open_file_read(&opt->input_file, opt->input_path) == ERROR) {
     120c:	8fc30028 	lw	v1,40(s8)
     1210:	8fc20028 	lw	v0,40(s8)
     1214:	8c420010 	lw	v0,16(v0)
@@ -564,1550 +564,1552 @@ char process(command_options_st *opt) {
     121c:	00602025 	move	a0,v1
     1220:	8f82803c 	lw	v0,-32708(gp)
     1224:	0040c825 	move	t9,v0
-    1228:	04110253 	bal	1b78 <open_file_read>
+    1228:	04110257 	bal	1b88 <open_file_read>
     122c:	00000000 	nop
     1230:	8fdc0010 	lw	gp,16(s8)
-    1234:	a3c20018 	sb	v0,24(s8)
-    if (!result) {
-    1238:	83c20018 	lb	v0,24(s8)
-    123c:	1440000d 	bnez	v0,1274 <process+0x8c>
+    1234:	00401825 	move	v1,v0
+    1238:	24020001 	li	v0,1
+    123c:	14620004 	bne	v1,v0,1250 <process+0x68>
     1240:	00000000 	nop
-        result = open_file_write(&opt->output_file, opt->output_path);
-    1244:	8fc20028 	lw	v0,40(s8)
-    1248:	24430008 	addiu	v1,v0,8
-    124c:	8fc20028 	lw	v0,40(s8)
-    1250:	8c420014 	lw	v0,20(v0)
-    1254:	00402825 	move	a1,v0
-    1258:	00602025 	move	a0,v1
-    125c:	8f828040 	lw	v0,-32704(gp)
-    1260:	0040c825 	move	t9,v0
-    1264:	0411028a 	bal	1c90 <open_file_write>
-    1268:	00000000 	nop
-    126c:	8fdc0010 	lw	gp,16(s8)
-    1270:	a3c20018 	sb	v0,24(s8)
+        return ERROR;
+    1244:	24020001 	li	v0,1
+    1248:	10000031 	b	1310 <process+0x128>
+    124c:	00000000 	nop
     }
-
-    if (!result) {
-    1274:	83c20018 	lb	v0,24(s8)
-    1278:	14400019 	bnez	v0,12e0 <process+0xf8>
-    127c:	00000000 	nop
-        result = _do_encode_decode(opt);
-    1280:	8fc40028 	lw	a0,40(s8)
-    1284:	8f828044 	lw	v0,-32700(gp)
-    1288:	0040c825 	move	t9,v0
-    128c:	04110022 	bal	1318 <_do_encode_decode>
-    1290:	00000000 	nop
-    1294:	8fdc0010 	lw	gp,16(s8)
-    1298:	a3c20018 	sb	v0,24(s8)
+    if (open_file_write(&opt->output_file, opt->output_path) == ERROR) {
+    1250:	8fc20028 	lw	v0,40(s8)
+    1254:	24430008 	addiu	v1,v0,8
+    1258:	8fc20028 	lw	v0,40(s8)
+    125c:	8c420014 	lw	v0,20(v0)
+    1260:	00402825 	move	a1,v0
+    1264:	00602025 	move	a0,v1
+    1268:	8f828040 	lw	v0,-32704(gp)
+    126c:	0040c825 	move	t9,v0
+    1270:	0411028b 	bal	1ca0 <open_file_write>
+    1274:	00000000 	nop
+    1278:	8fdc0010 	lw	gp,16(s8)
+    127c:	00401825 	move	v1,v0
+    1280:	24020001 	li	v0,1
+    1284:	1462000b 	bne	v1,v0,12b4 <process+0xcc>
+    1288:	00000000 	nop
         close_file(&opt->input_file);
-    129c:	8fc20028 	lw	v0,40(s8)
-    12a0:	00402025 	move	a0,v0
-    12a4:	8f828048 	lw	v0,-32696(gp)
-    12a8:	0040c825 	move	t9,v0
-    12ac:	041102be 	bal	1da8 <close_file>
+    128c:	8fc20028 	lw	v0,40(s8)
+    1290:	00402025 	move	a0,v0
+    1294:	8f828044 	lw	v0,-32700(gp)
+    1298:	0040c825 	move	t9,v0
+    129c:	041102c6 	bal	1db8 <close_file>
+    12a0:	00000000 	nop
+    12a4:	8fdc0010 	lw	gp,16(s8)
+        return ERROR;
+    12a8:	24020001 	li	v0,1
+    12ac:	10000018 	b	1310 <process+0x128>
     12b0:	00000000 	nop
-    12b4:	8fdc0010 	lw	gp,16(s8)
-        close_file(&opt->output_file);
-    12b8:	8fc20028 	lw	v0,40(s8)
-    12bc:	24420008 	addiu	v0,v0,8
-    12c0:	00402025 	move	a0,v0
-    12c4:	8f828048 	lw	v0,-32696(gp)
-    12c8:	0040c825 	move	t9,v0
-    12cc:	041102b6 	bal	1da8 <close_file>
-    12d0:	00000000 	nop
-    12d4:	8fdc0010 	lw	gp,16(s8)
-    12d8:	10000008 	b	12fc <process+0x114>
-    12dc:	00000000 	nop
-    } else {
-        close_file(&opt->input_file);
-    12e0:	8fc20028 	lw	v0,40(s8)
-    12e4:	00402025 	move	a0,v0
-    12e8:	8f828048 	lw	v0,-32696(gp)
-    12ec:	0040c825 	move	t9,v0
-    12f0:	041102ad 	bal	1da8 <close_file>
-    12f4:	00000000 	nop
-    12f8:	8fdc0010 	lw	gp,16(s8)
     }
 
+    char result = _do_encode_decode(opt);
+    12b4:	8fc40028 	lw	a0,40(s8)
+    12b8:	8f828048 	lw	v0,-32696(gp)
+    12bc:	0040c825 	move	t9,v0
+    12c0:	04110019 	bal	1328 <_do_encode_decode>
+    12c4:	00000000 	nop
+    12c8:	8fdc0010 	lw	gp,16(s8)
+    12cc:	a3c20018 	sb	v0,24(s8)
+    close_file(&opt->input_file);
+    12d0:	8fc20028 	lw	v0,40(s8)
+    12d4:	00402025 	move	a0,v0
+    12d8:	8f828044 	lw	v0,-32700(gp)
+    12dc:	0040c825 	move	t9,v0
+    12e0:	041102b5 	bal	1db8 <close_file>
+    12e4:	00000000 	nop
+    12e8:	8fdc0010 	lw	gp,16(s8)
+    close_file(&opt->output_file);
+    12ec:	8fc20028 	lw	v0,40(s8)
+    12f0:	24420008 	addiu	v0,v0,8
+    12f4:	00402025 	move	a0,v0
+    12f8:	8f828044 	lw	v0,-32700(gp)
+    12fc:	0040c825 	move	t9,v0
+    1300:	041102ad 	bal	1db8 <close_file>
+    1304:	00000000 	nop
+    1308:	8fdc0010 	lw	gp,16(s8)
     return result;
-    12fc:	83c20018 	lb	v0,24(s8)
+    130c:	83c20018 	lb	v0,24(s8)
 }
-    1300:	03c0e825 	move	sp,s8
-    1304:	8fbf0024 	lw	ra,36(sp)
-    1308:	8fbe0020 	lw	s8,32(sp)
-    130c:	27bd0028 	addiu	sp,sp,40
-    1310:	03e00008 	jr	ra
-    1314:	00000000 	nop
+    1310:	03c0e825 	move	sp,s8
+    1314:	8fbf0024 	lw	ra,36(sp)
+    1318:	8fbe0020 	lw	s8,32(sp)
+    131c:	27bd0028 	addiu	sp,sp,40
+    1320:	03e00008 	jr	ra
+    1324:	00000000 	nop
 
-00001318 <_do_encode_decode>:
+00001328 <_do_encode_decode>:
 
 char _do_encode_decode(command_options_st *opt) {
-    1318:	3c1c0002 	lui	gp,0x2
-    131c:	279c9558 	addiu	gp,gp,-27304
-    1320:	0399e021 	addu	gp,gp,t9
-    1324:	27bdffc0 	addiu	sp,sp,-64
-    1328:	afbf003c 	sw	ra,60(sp)
-    132c:	afbe0038 	sw	s8,56(sp)
-    1330:	03a0f025 	move	s8,sp
-    1334:	afbc0010 	sw	gp,16(sp)
-    1338:	afc40040 	sw	a0,64(s8)
+    1328:	3c1c0002 	lui	gp,0x2
+    132c:	279c9558 	addiu	gp,gp,-27304
+    1330:	0399e021 	addu	gp,gp,t9
+    1334:	27bdffc0 	addiu	sp,sp,-64
+    1338:	afbf003c 	sw	ra,60(sp)
+    133c:	afbe0038 	sw	s8,56(sp)
+    1340:	03a0f025 	move	s8,sp
+    1344:	afbc0010 	sw	gp,16(sp)
+    1348:	afc40040 	sw	a0,64(s8)
     unsigned char buf_decoded[3];
     unsigned char buf_encoded[4];
     unsigned char count = 0;
-    133c:	a3c00018 	sb	zero,24(s8)
+    134c:	a3c00018 	sb	zero,24(s8)
 
     if (opt->encode_option == ENCODE) {
-    1340:	8fc20040 	lw	v0,64(s8)
-    1344:	80430018 	lb	v1,24(v0)
-    1348:	24020001 	li	v0,1
-    134c:	1462004b 	bne	v1,v0,147c <_do_encode_decode+0x164>
-    1350:	00000000 	nop
+    1350:	8fc20040 	lw	v0,64(s8)
+    1354:	80430018 	lb	v1,24(v0)
+    1358:	24020001 	li	v0,1
+    135c:	1462004b 	bne	v1,v0,148c <_do_encode_decode+0x164>
+    1360:	00000000 	nop
         while (!file_eof(&opt->input_file)) {
-    1354:	10000040 	b	1458 <_do_encode_decode+0x140>
-    1358:	00000000 	nop
+    1364:	10000040 	b	1468 <_do_encode_decode+0x140>
+    1368:	00000000 	nop
             memset(buf_decoded, 0, 3);
-    135c:	27c20028 	addiu	v0,s8,40
-    1360:	24060003 	li	a2,3
-    1364:	00002825 	move	a1,zero
-    1368:	00402025 	move	a0,v0
-    136c:	8f8280c0 	lw	v0,-32576(gp)
-    1370:	0040c825 	move	t9,v0
-    1374:	0320f809 	jalr	t9
-    1378:	00000000 	nop
-    137c:	8fdc0010 	lw	gp,16(s8)
+    136c:	27c20028 	addiu	v0,s8,40
+    1370:	24060003 	li	a2,3
+    1374:	00002825 	move	a1,zero
+    1378:	00402025 	move	a0,v0
+    137c:	8f8280c0 	lw	v0,-32576(gp)
+    1380:	0040c825 	move	t9,v0
+    1384:	0320f809 	jalr	t9
+    1388:	00000000 	nop
+    138c:	8fdc0010 	lw	gp,16(s8)
             unsigned int read = file_read(&opt->input_file, buf_decoded, 3);
-    1380:	8fc20040 	lw	v0,64(s8)
-    1384:	27c30028 	addiu	v1,s8,40
-    1388:	24060003 	li	a2,3
-    138c:	00602825 	move	a1,v1
-    1390:	00402025 	move	a0,v0
-    1394:	8f82804c 	lw	v0,-32692(gp)
-    1398:	0040c825 	move	t9,v0
-    139c:	041102cb 	bal	1ecc <file_read>
-    13a0:	00000000 	nop
-    13a4:	8fdc0010 	lw	gp,16(s8)
-    13a8:	afc20020 	sw	v0,32(s8)
+    1390:	8fc20040 	lw	v0,64(s8)
+    1394:	27c30028 	addiu	v1,s8,40
+    1398:	24060003 	li	a2,3
+    139c:	00602825 	move	a1,v1
+    13a0:	00402025 	move	a0,v0
+    13a4:	8f82804c 	lw	v0,-32692(gp)
+    13a8:	0040c825 	move	t9,v0
+    13ac:	041102cb 	bal	1edc <file_read>
+    13b0:	00000000 	nop
+    13b4:	8fdc0010 	lw	gp,16(s8)
+    13b8:	afc20020 	sw	v0,32(s8)
             if (read > 0) {
-    13ac:	8fc20020 	lw	v0,32(s8)
-    13b0:	10400029 	beqz	v0,1458 <_do_encode_decode+0x140>
-    13b4:	00000000 	nop
+    13bc:	8fc20020 	lw	v0,32(s8)
+    13c0:	10400029 	beqz	v0,1468 <_do_encode_decode+0x140>
+    13c4:	00000000 	nop
                 Encode(buf_decoded, read, buf_encoded);
-    13b8:	27c3002c 	addiu	v1,s8,44
-    13bc:	27c20028 	addiu	v0,s8,40
-    13c0:	00603025 	move	a2,v1
-    13c4:	8fc50020 	lw	a1,32(s8)
-    13c8:	00402025 	move	a0,v0
-    13cc:	8f828050 	lw	v0,-32688(gp)
-    13d0:	0040c825 	move	t9,v0
-    13d4:	041100ce 	bal	1710 <Encode>
-    13d8:	00000000 	nop
-    13dc:	8fdc0010 	lw	gp,16(s8)
+    13c8:	27c3002c 	addiu	v1,s8,44
+    13cc:	27c20028 	addiu	v0,s8,40
+    13d0:	00603025 	move	a2,v1
+    13d4:	8fc50020 	lw	a1,32(s8)
+    13d8:	00402025 	move	a0,v0
+    13dc:	8f828050 	lw	v0,-32688(gp)
+    13e0:	0040c825 	move	t9,v0
+    13e4:	041100ce 	bal	1720 <Encode>
+    13e8:	00000000 	nop
+    13ec:	8fdc0010 	lw	gp,16(s8)
                 file_write(&opt->output_file, buf_encoded, 4);
-    13e0:	8fc20040 	lw	v0,64(s8)
-    13e4:	24420008 	addiu	v0,v0,8
-    13e8:	27c3002c 	addiu	v1,s8,44
-    13ec:	24060004 	li	a2,4
-    13f0:	00602825 	move	a1,v1
-    13f4:	00402025 	move	a0,v0
-    13f8:	8f828054 	lw	v0,-32684(gp)
-    13fc:	0040c825 	move	t9,v0
-    1400:	041102e6 	bal	1f9c <file_write>
-    1404:	00000000 	nop
-    1408:	8fdc0010 	lw	gp,16(s8)
+    13f0:	8fc20040 	lw	v0,64(s8)
+    13f4:	24420008 	addiu	v0,v0,8
+    13f8:	27c3002c 	addiu	v1,s8,44
+    13fc:	24060004 	li	a2,4
+    1400:	00602825 	move	a1,v1
+    1404:	00402025 	move	a0,v0
+    1408:	8f828054 	lw	v0,-32684(gp)
+    140c:	0040c825 	move	t9,v0
+    1410:	041102e6 	bal	1fac <file_write>
+    1414:	00000000 	nop
+    1418:	8fdc0010 	lw	gp,16(s8)
                 ++count;
-    140c:	93c20018 	lbu	v0,24(s8)
-    1410:	24420001 	addiu	v0,v0,1
-    1414:	a3c20018 	sb	v0,24(s8)
+    141c:	93c20018 	lbu	v0,24(s8)
+    1420:	24420001 	addiu	v0,v0,1
+    1424:	a3c20018 	sb	v0,24(s8)
                 if (count == 18) // 19 * 4 =  76 bytes
-    1418:	93c30018 	lbu	v1,24(s8)
-    141c:	24020012 	li	v0,18
-    1420:	1462000d 	bne	v1,v0,1458 <_do_encode_decode+0x140>
-    1424:	00000000 	nop
+    1428:	93c30018 	lbu	v1,24(s8)
+    142c:	24020012 	li	v0,18
+    1430:	1462000d 	bne	v1,v0,1468 <_do_encode_decode+0x140>
+    1434:	00000000 	nop
                 {
                     file_write(&opt->output_file, (unsigned char *) "\n", 1);
-    1428:	8fc20040 	lw	v0,64(s8)
-    142c:	24430008 	addiu	v1,v0,8
-    1430:	24060001 	li	a2,1
-    1434:	8f828030 	lw	v0,-32720(gp)
-    1438:	244526b0 	addiu	a1,v0,9904
-    143c:	00602025 	move	a0,v1
-    1440:	8f828054 	lw	v0,-32684(gp)
-    1444:	0040c825 	move	t9,v0
-    1448:	041102d4 	bal	1f9c <file_write>
-    144c:	00000000 	nop
-    1450:	8fdc0010 	lw	gp,16(s8)
+    1438:	8fc20040 	lw	v0,64(s8)
+    143c:	24430008 	addiu	v1,v0,8
+    1440:	24060001 	li	a2,1
+    1444:	8f828030 	lw	v0,-32720(gp)
+    1448:	244526c0 	addiu	a1,v0,9920
+    144c:	00602025 	move	a0,v1
+    1450:	8f828054 	lw	v0,-32684(gp)
+    1454:	0040c825 	move	t9,v0
+    1458:	041102d4 	bal	1fac <file_write>
+    145c:	00000000 	nop
+    1460:	8fdc0010 	lw	gp,16(s8)
                     count = 0;
-    1454:	a3c00018 	sb	zero,24(s8)
+    1464:	a3c00018 	sb	zero,24(s8)
         while (!file_eof(&opt->input_file)) {
-    1458:	8fc20040 	lw	v0,64(s8)
-    145c:	00402025 	move	a0,v0
-    1460:	8f828058 	lw	v0,-32680(gp)
-    1464:	0040c825 	move	t9,v0
-    1468:	041102e9 	bal	2010 <file_eof>
-    146c:	00000000 	nop
-    1470:	8fdc0010 	lw	gp,16(s8)
-    1474:	1040ffb9 	beqz	v0,135c <_do_encode_decode+0x44>
-    1478:	00000000 	nop
+    1468:	8fc20040 	lw	v0,64(s8)
+    146c:	00402025 	move	a0,v0
+    1470:	8f828058 	lw	v0,-32680(gp)
+    1474:	0040c825 	move	t9,v0
+    1478:	041102e9 	bal	2020 <file_eof>
+    147c:	00000000 	nop
+    1480:	8fdc0010 	lw	gp,16(s8)
+    1484:	1040ffb9 	beqz	v0,136c <_do_encode_decode+0x44>
+    1488:	00000000 	nop
                 }
             }
         }
     }
 
     if (opt->encode_option == DECODE) {
-    147c:	8fc20040 	lw	v0,64(s8)
-    1480:	80420018 	lb	v0,24(v0)
-    1484:	14400097 	bnez	v0,16e4 <_do_encode_decode+0x3cc>
-    1488:	00000000 	nop
+    148c:	8fc20040 	lw	v0,64(s8)
+    1490:	80420018 	lb	v0,24(v0)
+    1494:	14400097 	bnez	v0,16f4 <_do_encode_decode+0x3cc>
+    1498:	00000000 	nop
         while (!file_eof(&opt->input_file) && !has_errors(opt)) {
-    148c:	10000084 	b	16a0 <_do_encode_decode+0x388>
-    1490:	00000000 	nop
+    149c:	10000084 	b	16b0 <_do_encode_decode+0x388>
+    14a0:	00000000 	nop
             unsigned int read = file_read(&opt->input_file, buf_encoded, 4);
-    1494:	8fc20040 	lw	v0,64(s8)
-    1498:	27c3002c 	addiu	v1,s8,44
-    149c:	24060004 	li	a2,4
-    14a0:	00602825 	move	a1,v1
-    14a4:	00402025 	move	a0,v0
-    14a8:	8f82804c 	lw	v0,-32692(gp)
-    14ac:	0040c825 	move	t9,v0
-    14b0:	04110286 	bal	1ecc <file_read>
-    14b4:	00000000 	nop
-    14b8:	8fdc0010 	lw	gp,16(s8)
-    14bc:	afc20024 	sw	v0,36(s8)
+    14a4:	8fc20040 	lw	v0,64(s8)
+    14a8:	27c3002c 	addiu	v1,s8,44
+    14ac:	24060004 	li	a2,4
+    14b0:	00602825 	move	a1,v1
+    14b4:	00402025 	move	a0,v0
+    14b8:	8f82804c 	lw	v0,-32692(gp)
+    14bc:	0040c825 	move	t9,v0
+    14c0:	04110286 	bal	1edc <file_read>
+    14c4:	00000000 	nop
+    14c8:	8fdc0010 	lw	gp,16(s8)
+    14cc:	afc20024 	sw	v0,36(s8)
             if (read > 0) {
-    14c0:	8fc20024 	lw	v0,36(s8)
-    14c4:	10400076 	beqz	v0,16a0 <_do_encode_decode+0x388>
-    14c8:	00000000 	nop
-                if (read != 4) {
-    14cc:	8fc30024 	lw	v1,36(s8)
-    14d0:	24020004 	li	v0,4
-    14d4:	10620010 	beq	v1,v0,1518 <_do_encode_decode+0x200>
+    14d0:	8fc20024 	lw	v0,36(s8)
+    14d4:	10400076 	beqz	v0,16b0 <_do_encode_decode+0x388>
     14d8:	00000000 	nop
+                if (read != 4) {
+    14dc:	8fc30024 	lw	v1,36(s8)
+    14e0:	24020004 	li	v0,4
+    14e4:	10620010 	beq	v1,v0,1528 <_do_encode_decode+0x200>
+    14e8:	00000000 	nop
                     set_error(opt, INVALID_FILE_LENGTH);
-    14dc:	2405fffc 	li	a1,-4
-    14e0:	8fc40040 	lw	a0,64(s8)
-    14e4:	8f82805c 	lw	v0,-32676(gp)
-    14e8:	0040c825 	move	t9,v0
-    14ec:	0411fe6d 	bal	ea4 <set_error>
-    14f0:	00000000 	nop
-    14f4:	8fdc0010 	lw	gp,16(s8)
+    14ec:	2405fffc 	li	a1,-4
+    14f0:	8fc40040 	lw	a0,64(s8)
+    14f4:	8f82805c 	lw	v0,-32676(gp)
+    14f8:	0040c825 	move	t9,v0
+    14fc:	0411fe69 	bal	ea4 <set_error>
+    1500:	00000000 	nop
+    1504:	8fdc0010 	lw	gp,16(s8)
                     show_error(opt);
-    14f8:	8fc40040 	lw	a0,64(s8)
-    14fc:	8f828060 	lw	v0,-32672(gp)
-    1500:	0040c825 	move	t9,v0
-    1504:	0411fe87 	bal	f24 <show_error>
-    1508:	00000000 	nop
-    150c:	8fdc0010 	lw	gp,16(s8)
-    1510:	10000063 	b	16a0 <_do_encode_decode+0x388>
-    1514:	00000000 	nop
+    1508:	8fc40040 	lw	a0,64(s8)
+    150c:	8f828060 	lw	v0,-32672(gp)
+    1510:	0040c825 	move	t9,v0
+    1514:	0411fe83 	bal	f24 <show_error>
+    1518:	00000000 	nop
+    151c:	8fdc0010 	lw	gp,16(s8)
+    1520:	10000063 	b	16b0 <_do_encode_decode+0x388>
+    1524:	00000000 	nop
                 } else {
                     ++count;
-    1518:	93c20018 	lbu	v0,24(s8)
-    151c:	24420001 	addiu	v0,v0,1
-    1520:	a3c20018 	sb	v0,24(s8)
+    1528:	93c20018 	lbu	v0,24(s8)
+    152c:	24420001 	addiu	v0,v0,1
+    1530:	a3c20018 	sb	v0,24(s8)
                     if (count == 18) { // 19 * 4 =  76 bytes
-    1524:	93c30018 	lbu	v1,24(s8)
-    1528:	24020012 	li	v0,18
-    152c:	1462000c 	bne	v1,v0,1560 <_do_encode_decode+0x248>
-    1530:	00000000 	nop
+    1534:	93c30018 	lbu	v1,24(s8)
+    1538:	24020012 	li	v0,18
+    153c:	1462000c 	bne	v1,v0,1570 <_do_encode_decode+0x248>
+    1540:	00000000 	nop
                         unsigned char aux;
                         file_read(&opt->input_file, &aux, 1);
-    1534:	8fc20040 	lw	v0,64(s8)
-    1538:	27c30030 	addiu	v1,s8,48
-    153c:	24060001 	li	a2,1
-    1540:	00602825 	move	a1,v1
-    1544:	00402025 	move	a0,v0
-    1548:	8f82804c 	lw	v0,-32692(gp)
-    154c:	0040c825 	move	t9,v0
-    1550:	0411025e 	bal	1ecc <file_read>
-    1554:	00000000 	nop
-    1558:	8fdc0010 	lw	gp,16(s8)
+    1544:	8fc20040 	lw	v0,64(s8)
+    1548:	27c30030 	addiu	v1,s8,48
+    154c:	24060001 	li	a2,1
+    1550:	00602825 	move	a1,v1
+    1554:	00402025 	move	a0,v0
+    1558:	8f82804c 	lw	v0,-32692(gp)
+    155c:	0040c825 	move	t9,v0
+    1560:	0411025e 	bal	1edc <file_read>
+    1564:	00000000 	nop
+    1568:	8fdc0010 	lw	gp,16(s8)
                         count = 0;
-    155c:	a3c00018 	sb	zero,24(s8)
+    156c:	a3c00018 	sb	zero,24(s8)
                     }
 
                     if (Decode(buf_encoded, buf_decoded)) {
-    1560:	27c30028 	addiu	v1,s8,40
-    1564:	27c2002c 	addiu	v0,s8,44
-    1568:	00602825 	move	a1,v1
-    156c:	00402025 	move	a0,v0
-    1570:	8f828064 	lw	v0,-32668(gp)
-    1574:	0040c825 	move	t9,v0
-    1578:	04110114 	bal	19cc <Decode>
-    157c:	00000000 	nop
-    1580:	8fdc0010 	lw	gp,16(s8)
-    1584:	10400022 	beqz	v0,1610 <_do_encode_decode+0x2f8>
-    1588:	00000000 	nop
+    1570:	27c30028 	addiu	v1,s8,40
+    1574:	27c2002c 	addiu	v0,s8,44
+    1578:	00602825 	move	a1,v1
+    157c:	00402025 	move	a0,v0
+    1580:	8f828064 	lw	v0,-32668(gp)
+    1584:	0040c825 	move	t9,v0
+    1588:	04110114 	bal	19dc <Decode>
+    158c:	00000000 	nop
+    1590:	8fdc0010 	lw	gp,16(s8)
+    1594:	10400022 	beqz	v0,1620 <_do_encode_decode+0x2f8>
+    1598:	00000000 	nop
                         char aux = 0;
-    158c:	a3c00019 	sb	zero,25(s8)
+    159c:	a3c00019 	sb	zero,25(s8)
                         if (buf_encoded[2] == '=') {
-    1590:	93c3002e 	lbu	v1,46(s8)
-    1594:	2402003d 	li	v0,61
-    1598:	14620005 	bne	v1,v0,15b0 <_do_encode_decode+0x298>
-    159c:	00000000 	nop
+    15a0:	93c3002e 	lbu	v1,46(s8)
+    15a4:	2402003d 	li	v0,61
+    15a8:	14620005 	bne	v1,v0,15c0 <_do_encode_decode+0x298>
+    15ac:	00000000 	nop
                             ++aux;
-    15a0:	93c20019 	lbu	v0,25(s8)
-    15a4:	24420001 	addiu	v0,v0,1
-    15a8:	304200ff 	andi	v0,v0,0xff
-    15ac:	a3c20019 	sb	v0,25(s8)
+    15b0:	93c20019 	lbu	v0,25(s8)
+    15b4:	24420001 	addiu	v0,v0,1
+    15b8:	304200ff 	andi	v0,v0,0xff
+    15bc:	a3c20019 	sb	v0,25(s8)
                         }
                         if (buf_encoded[3] == '=') {
-    15b0:	93c3002f 	lbu	v1,47(s8)
-    15b4:	2402003d 	li	v0,61
-    15b8:	14620005 	bne	v1,v0,15d0 <_do_encode_decode+0x2b8>
-    15bc:	00000000 	nop
+    15c0:	93c3002f 	lbu	v1,47(s8)
+    15c4:	2402003d 	li	v0,61
+    15c8:	14620005 	bne	v1,v0,15e0 <_do_encode_decode+0x2b8>
+    15cc:	00000000 	nop
                             ++aux;
-    15c0:	93c20019 	lbu	v0,25(s8)
-    15c4:	24420001 	addiu	v0,v0,1
-    15c8:	304200ff 	andi	v0,v0,0xff
-    15cc:	a3c20019 	sb	v0,25(s8)
+    15d0:	93c20019 	lbu	v0,25(s8)
+    15d4:	24420001 	addiu	v0,v0,1
+    15d8:	304200ff 	andi	v0,v0,0xff
+    15dc:	a3c20019 	sb	v0,25(s8)
                         }
 
                         file_write(&opt->output_file, buf_decoded, 3 - aux);
-    15d0:	8fc20040 	lw	v0,64(s8)
-    15d4:	24440008 	addiu	a0,v0,8
-    15d8:	83c20019 	lb	v0,25(s8)
-    15dc:	24030003 	li	v1,3
-    15e0:	00621023 	subu	v0,v1,v0
-    15e4:	00401825 	move	v1,v0
-    15e8:	27c20028 	addiu	v0,s8,40
-    15ec:	00603025 	move	a2,v1
-    15f0:	00402825 	move	a1,v0
-    15f4:	8f828054 	lw	v0,-32684(gp)
-    15f8:	0040c825 	move	t9,v0
-    15fc:	04110267 	bal	1f9c <file_write>
-    1600:	00000000 	nop
-    1604:	8fdc0010 	lw	gp,16(s8)
-    1608:	10000025 	b	16a0 <_do_encode_decode+0x388>
-    160c:	00000000 	nop
+    15e0:	8fc20040 	lw	v0,64(s8)
+    15e4:	24440008 	addiu	a0,v0,8
+    15e8:	83c20019 	lb	v0,25(s8)
+    15ec:	24030003 	li	v1,3
+    15f0:	00621023 	subu	v0,v1,v0
+    15f4:	00401825 	move	v1,v0
+    15f8:	27c20028 	addiu	v0,s8,40
+    15fc:	00603025 	move	a2,v1
+    1600:	00402825 	move	a1,v0
+    1604:	8f828054 	lw	v0,-32684(gp)
+    1608:	0040c825 	move	t9,v0
+    160c:	04110267 	bal	1fac <file_write>
+    1610:	00000000 	nop
+    1614:	8fdc0010 	lw	gp,16(s8)
+    1618:	10000025 	b	16b0 <_do_encode_decode+0x388>
+    161c:	00000000 	nop
                     } else {
                         set_error(opt, INVALID_CHARS);
-    1610:	2405fffb 	li	a1,-5
-    1614:	8fc40040 	lw	a0,64(s8)
-    1618:	8f82805c 	lw	v0,-32676(gp)
-    161c:	0040c825 	move	t9,v0
-    1620:	0411fe20 	bal	ea4 <set_error>
-    1624:	00000000 	nop
-    1628:	8fdc0010 	lw	gp,16(s8)
+    1620:	2405fffb 	li	a1,-5
+    1624:	8fc40040 	lw	a0,64(s8)
+    1628:	8f82805c 	lw	v0,-32676(gp)
+    162c:	0040c825 	move	t9,v0
+    1630:	0411fe1c 	bal	ea4 <set_error>
+    1634:	00000000 	nop
+    1638:	8fdc0010 	lw	gp,16(s8)
                         show_error(opt);
-    162c:	8fc40040 	lw	a0,64(s8)
-    1630:	8f828060 	lw	v0,-32672(gp)
-    1634:	0040c825 	move	t9,v0
-    1638:	0411fe3a 	bal	f24 <show_error>
-    163c:	00000000 	nop
-    1640:	8fdc0010 	lw	gp,16(s8)
+    163c:	8fc40040 	lw	a0,64(s8)
+    1640:	8f828060 	lw	v0,-32672(gp)
+    1644:	0040c825 	move	t9,v0
+    1648:	0411fe36 	bal	f24 <show_error>
+    164c:	00000000 	nop
+    1650:	8fdc0010 	lw	gp,16(s8)
                         unsigned int i;
                         for (i = 0; i < 4; ++i) {
-    1644:	afc0001c 	sw	zero,28(s8)
-    1648:	10000011 	b	1690 <_do_encode_decode+0x378>
-    164c:	00000000 	nop
+    1654:	afc0001c 	sw	zero,28(s8)
+    1658:	10000011 	b	16a0 <_do_encode_decode+0x378>
+    165c:	00000000 	nop
                             fprintf(stderr, "%c", buf_encoded[i]);
-    1650:	8f8280f0 	lw	v0,-32528(gp)
-    1654:	8c440000 	lw	a0,0(v0)
-    1658:	8fc2001c 	lw	v0,28(s8)
-    165c:	27c30018 	addiu	v1,s8,24
-    1660:	00621021 	addu	v0,v1,v0
-    1664:	90420014 	lbu	v0,20(v0)
-    1668:	00802825 	move	a1,a0
-    166c:	00402025 	move	a0,v0
-    1670:	8f8280b4 	lw	v0,-32588(gp)
-    1674:	0040c825 	move	t9,v0
-    1678:	0320f809 	jalr	t9
-    167c:	00000000 	nop
-    1680:	8fdc0010 	lw	gp,16(s8)
+    1660:	8f8280f0 	lw	v0,-32528(gp)
+    1664:	8c440000 	lw	a0,0(v0)
+    1668:	8fc2001c 	lw	v0,28(s8)
+    166c:	27c30018 	addiu	v1,s8,24
+    1670:	00621021 	addu	v0,v1,v0
+    1674:	90420014 	lbu	v0,20(v0)
+    1678:	00802825 	move	a1,a0
+    167c:	00402025 	move	a0,v0
+    1680:	8f8280b4 	lw	v0,-32588(gp)
+    1684:	0040c825 	move	t9,v0
+    1688:	0320f809 	jalr	t9
+    168c:	00000000 	nop
+    1690:	8fdc0010 	lw	gp,16(s8)
                         for (i = 0; i < 4; ++i) {
-    1684:	8fc2001c 	lw	v0,28(s8)
-    1688:	24420001 	addiu	v0,v0,1
-    168c:	afc2001c 	sw	v0,28(s8)
-    1690:	8fc2001c 	lw	v0,28(s8)
-    1694:	2c420004 	sltiu	v0,v0,4
-    1698:	1440ffed 	bnez	v0,1650 <_do_encode_decode+0x338>
-    169c:	00000000 	nop
+    1694:	8fc2001c 	lw	v0,28(s8)
+    1698:	24420001 	addiu	v0,v0,1
+    169c:	afc2001c 	sw	v0,28(s8)
+    16a0:	8fc2001c 	lw	v0,28(s8)
+    16a4:	2c420004 	sltiu	v0,v0,4
+    16a8:	1440ffed 	bnez	v0,1660 <_do_encode_decode+0x338>
+    16ac:	00000000 	nop
         while (!file_eof(&opt->input_file) && !has_errors(opt)) {
-    16a0:	8fc20040 	lw	v0,64(s8)
-    16a4:	00402025 	move	a0,v0
-    16a8:	8f828058 	lw	v0,-32680(gp)
-    16ac:	0040c825 	move	t9,v0
-    16b0:	04110257 	bal	2010 <file_eof>
-    16b4:	00000000 	nop
-    16b8:	8fdc0010 	lw	gp,16(s8)
-    16bc:	14400009 	bnez	v0,16e4 <_do_encode_decode+0x3cc>
-    16c0:	00000000 	nop
-    16c4:	8fc40040 	lw	a0,64(s8)
-    16c8:	8f828068 	lw	v0,-32664(gp)
-    16cc:	0040c825 	move	t9,v0
-    16d0:	0411fe03 	bal	ee0 <has_errors>
-    16d4:	00000000 	nop
-    16d8:	8fdc0010 	lw	gp,16(s8)
-    16dc:	1040ff6d 	beqz	v0,1494 <_do_encode_decode+0x17c>
-    16e0:	00000000 	nop
+    16b0:	8fc20040 	lw	v0,64(s8)
+    16b4:	00402025 	move	a0,v0
+    16b8:	8f828058 	lw	v0,-32680(gp)
+    16bc:	0040c825 	move	t9,v0
+    16c0:	04110257 	bal	2020 <file_eof>
+    16c4:	00000000 	nop
+    16c8:	8fdc0010 	lw	gp,16(s8)
+    16cc:	14400009 	bnez	v0,16f4 <_do_encode_decode+0x3cc>
+    16d0:	00000000 	nop
+    16d4:	8fc40040 	lw	a0,64(s8)
+    16d8:	8f828068 	lw	v0,-32664(gp)
+    16dc:	0040c825 	move	t9,v0
+    16e0:	0411fdff 	bal	ee0 <has_errors>
+    16e4:	00000000 	nop
+    16e8:	8fdc0010 	lw	gp,16(s8)
+    16ec:	1040ff6d 	beqz	v0,14a4 <_do_encode_decode+0x17c>
+    16f0:	00000000 	nop
 
             }
         }
     }
 
     return opt->error_condition;
-    16e4:	8fc20040 	lw	v0,64(s8)
-    16e8:	80420019 	lb	v0,25(v0)
+    16f4:	8fc20040 	lw	v0,64(s8)
+    16f8:	80420019 	lb	v0,25(v0)
 }
-    16ec:	03c0e825 	move	sp,s8
-    16f0:	8fbf003c 	lw	ra,60(sp)
-    16f4:	8fbe0038 	lw	s8,56(sp)
-    16f8:	27bd0040 	addiu	sp,sp,64
-    16fc:	03e00008 	jr	ra
-    1700:	00000000 	nop
+    16fc:	03c0e825 	move	sp,s8
+    1700:	8fbf003c 	lw	ra,60(sp)
+    1704:	8fbe0038 	lw	s8,56(sp)
+    1708:	27bd0040 	addiu	sp,sp,64
+    170c:	03e00008 	jr	ra
+    1710:	00000000 	nop
 	...
 
-00001710 <Encode>:
+00001720 <Encode>:
                                          '4', '5', '6', '7', '8', '9', '+', '/'};
 
 static int encoding_table_size = 64;
 
 
 void Encode(const unsigned char *buffer, unsigned int length, unsigned char *output) {
-    1710:	3c1c0002 	lui	gp,0x2
-    1714:	279c9160 	addiu	gp,gp,-28320
-    1718:	0399e021 	addu	gp,gp,t9
-    171c:	27bdffe0 	addiu	sp,sp,-32
-    1720:	afbe001c 	sw	s8,28(sp)
-    1724:	03a0f025 	move	s8,sp
-    1728:	afbc0000 	sw	gp,0(sp)
-    172c:	afc40020 	sw	a0,32(s8)
-    1730:	afc50024 	sw	a1,36(s8)
-    1734:	afc60028 	sw	a2,40(s8)
+    1720:	3c1c0002 	lui	gp,0x2
+    1724:	279c9160 	addiu	gp,gp,-28320
+    1728:	0399e021 	addu	gp,gp,t9
+    172c:	27bdffe0 	addiu	sp,sp,-32
+    1730:	afbe001c 	sw	s8,28(sp)
+    1734:	03a0f025 	move	s8,sp
+    1738:	afbc0000 	sw	gp,0(sp)
+    173c:	afc40020 	sw	a0,32(s8)
+    1740:	afc50024 	sw	a1,36(s8)
+    1744:	afc60028 	sw	a2,40(s8)
     unsigned char b1 = buffer[0];
-    1738:	8fc20020 	lw	v0,32(s8)
-    173c:	90420000 	lbu	v0,0(v0)
-    1740:	a3c20008 	sb	v0,8(s8)
+    1748:	8fc20020 	lw	v0,32(s8)
+    174c:	90420000 	lbu	v0,0(v0)
+    1750:	a3c20008 	sb	v0,8(s8)
     unsigned char b2 = buffer[1];
-    1744:	8fc20020 	lw	v0,32(s8)
-    1748:	90420001 	lbu	v0,1(v0)
-    174c:	a3c20009 	sb	v0,9(s8)
+    1754:	8fc20020 	lw	v0,32(s8)
+    1758:	90420001 	lbu	v0,1(v0)
+    175c:	a3c20009 	sb	v0,9(s8)
     unsigned char b3 = buffer[2];
-    1750:	8fc20020 	lw	v0,32(s8)
-    1754:	90420002 	lbu	v0,2(v0)
-    1758:	a3c2000a 	sb	v0,10(s8)
+    1760:	8fc20020 	lw	v0,32(s8)
+    1764:	90420002 	lbu	v0,2(v0)
+    1768:	a3c2000a 	sb	v0,10(s8)
     //I retrieve the first 6 bits and operate..
     unsigned char b1aux = b1 >> 2;
-    175c:	93c20008 	lbu	v0,8(s8)
-    1760:	00021082 	srl	v0,v0,0x2
-    1764:	a3c2000b 	sb	v0,11(s8)
+    176c:	93c20008 	lbu	v0,8(s8)
+    1770:	00021082 	srl	v0,v0,0x2
+    1774:	a3c2000b 	sb	v0,11(s8)
     //Recovered the first 6 bits, I look into the encoding in the table.
     output[0] = encoding_table[(int) b1aux];
-    1768:	93c3000b 	lbu	v1,11(s8)
-    176c:	8f828028 	lw	v0,-32728(gp)
-    1770:	244227d0 	addiu	v0,v0,10192
-    1774:	00621021 	addu	v0,v1,v0
-    1778:	90430000 	lbu	v1,0(v0)
-    177c:	8fc20028 	lw	v0,40(s8)
-    1780:	a0430000 	sb	v1,0(v0)
+    1778:	93c3000b 	lbu	v1,11(s8)
+    177c:	8f828028 	lw	v0,-32728(gp)
+    1780:	244227e0 	addiu	v0,v0,10208
+    1784:	00621021 	addu	v0,v1,v0
+    1788:	90430000 	lbu	v1,0(v0)
+    178c:	8fc20028 	lw	v0,40(s8)
+    1790:	a0430000 	sb	v1,0(v0)
     //I retrieve the next 6 bits.
     unsigned char b2aux = b1 << 6;
-    1784:	93c20008 	lbu	v0,8(s8)
-    1788:	00021180 	sll	v0,v0,0x6
-    178c:	a3c2000c 	sb	v0,12(s8)
+    1794:	93c20008 	lbu	v0,8(s8)
+    1798:	00021180 	sll	v0,v0,0x6
+    179c:	a3c2000c 	sb	v0,12(s8)
     b2aux = b2aux >> 2;
-    1790:	93c2000c 	lbu	v0,12(s8)
-    1794:	00021082 	srl	v0,v0,0x2
-    1798:	a3c2000c 	sb	v0,12(s8)
+    17a0:	93c2000c 	lbu	v0,12(s8)
+    17a4:	00021082 	srl	v0,v0,0x2
+    17a8:	a3c2000c 	sb	v0,12(s8)
     b2aux = b2aux | (b2 >> 4);
-    179c:	93c20009 	lbu	v0,9(s8)
-    17a0:	00021102 	srl	v0,v0,0x4
-    17a4:	304300ff 	andi	v1,v0,0xff
-    17a8:	93c2000c 	lbu	v0,12(s8)
-    17ac:	00621025 	or	v0,v1,v0
-    17b0:	a3c2000c 	sb	v0,12(s8)
+    17ac:	93c20009 	lbu	v0,9(s8)
+    17b0:	00021102 	srl	v0,v0,0x4
+    17b4:	304300ff 	andi	v1,v0,0xff
+    17b8:	93c2000c 	lbu	v0,12(s8)
+    17bc:	00621025 	or	v0,v1,v0
+    17c0:	a3c2000c 	sb	v0,12(s8)
     //I take look into the encoding table
     output[1] = encoding_table[(int) b2aux];
-    17b4:	8fc20028 	lw	v0,40(s8)
-    17b8:	24420001 	addiu	v0,v0,1
-    17bc:	93c4000c 	lbu	a0,12(s8)
-    17c0:	8f838028 	lw	v1,-32728(gp)
-    17c4:	246327d0 	addiu	v1,v1,10192
-    17c8:	00831821 	addu	v1,a0,v1
-    17cc:	90630000 	lbu	v1,0(v1)
-    17d0:	a0430000 	sb	v1,0(v0)
-    output[2] = BASE64_END;
-    17d4:	8fc20028 	lw	v0,40(s8)
-    17d8:	24420002 	addiu	v0,v0,2
-    17dc:	2403003d 	li	v1,61
+    17c4:	8fc20028 	lw	v0,40(s8)
+    17c8:	24420001 	addiu	v0,v0,1
+    17cc:	93c4000c 	lbu	a0,12(s8)
+    17d0:	8f838028 	lw	v1,-32728(gp)
+    17d4:	246327e0 	addiu	v1,v1,10208
+    17d8:	00831821 	addu	v1,a0,v1
+    17dc:	90630000 	lbu	v1,0(v1)
     17e0:	a0430000 	sb	v1,0(v0)
-    output[3] = BASE64_END;
+    output[2] = BASE64_END;
     17e4:	8fc20028 	lw	v0,40(s8)
-    17e8:	24420003 	addiu	v0,v0,3
+    17e8:	24420002 	addiu	v0,v0,2
     17ec:	2403003d 	li	v1,61
     17f0:	a0430000 	sb	v1,0(v0)
+    output[3] = BASE64_END;
+    17f4:	8fc20028 	lw	v0,40(s8)
+    17f8:	24420003 	addiu	v0,v0,3
+    17fc:	2403003d 	li	v1,61
+    1800:	a0430000 	sb	v1,0(v0)
     if (length == 3) {
-    17f4:	8fc30024 	lw	v1,36(s8)
-    17f8:	24020003 	li	v0,3
-    17fc:	14620026 	bne	v1,v0,1898 <Encode+0x188>
-    1800:	00000000 	nop
+    1804:	8fc30024 	lw	v1,36(s8)
+    1808:	24020003 	li	v0,3
+    180c:	14620026 	bne	v1,v0,18a8 <Encode+0x188>
+    1810:	00000000 	nop
         /*
      * If I have 3 characters in the buffer I operate
      * with the last 2 characters.
      */
         unsigned char b3aux = b3 >> 6;
-    1804:	93c2000a 	lbu	v0,10(s8)
-    1808:	00021182 	srl	v0,v0,0x6
-    180c:	a3c2000d 	sb	v0,13(s8)
+    1814:	93c2000a 	lbu	v0,10(s8)
+    1818:	00021182 	srl	v0,v0,0x6
+    181c:	a3c2000d 	sb	v0,13(s8)
         unsigned char b3aux2 = b2 << 4;
-    1810:	93c20009 	lbu	v0,9(s8)
-    1814:	00021100 	sll	v0,v0,0x4
-    1818:	a3c2000e 	sb	v0,14(s8)
+    1820:	93c20009 	lbu	v0,9(s8)
+    1824:	00021100 	sll	v0,v0,0x4
+    1828:	a3c2000e 	sb	v0,14(s8)
         b3aux2 = b3aux2 >> 2;
-    181c:	93c2000e 	lbu	v0,14(s8)
-    1820:	00021082 	srl	v0,v0,0x2
-    1824:	a3c2000e 	sb	v0,14(s8)
-        b3aux = b3aux | b3aux2;
-    1828:	93c3000d 	lbu	v1,13(s8)
     182c:	93c2000e 	lbu	v0,14(s8)
-    1830:	00621025 	or	v0,v1,v0
-    1834:	a3c2000d 	sb	v0,13(s8)
+    1830:	00021082 	srl	v0,v0,0x2
+    1834:	a3c2000e 	sb	v0,14(s8)
+        b3aux = b3aux | b3aux2;
+    1838:	93c3000d 	lbu	v1,13(s8)
+    183c:	93c2000e 	lbu	v0,14(s8)
+    1840:	00621025 	or	v0,v1,v0
+    1844:	a3c2000d 	sb	v0,13(s8)
         //I take look into the encoding table.
         output[2] = encoding_table[(int) b3aux];
-    1838:	8fc20028 	lw	v0,40(s8)
-    183c:	24420002 	addiu	v0,v0,2
-    1840:	93c4000d 	lbu	a0,13(s8)
-    1844:	8f838028 	lw	v1,-32728(gp)
-    1848:	246327d0 	addiu	v1,v1,10192
-    184c:	00831821 	addu	v1,a0,v1
-    1850:	90630000 	lbu	v1,0(v1)
-    1854:	a0430000 	sb	v1,0(v0)
+    1848:	8fc20028 	lw	v0,40(s8)
+    184c:	24420002 	addiu	v0,v0,2
+    1850:	93c4000d 	lbu	a0,13(s8)
+    1854:	8f838028 	lw	v1,-32728(gp)
+    1858:	246327e0 	addiu	v1,v1,10208
+    185c:	00831821 	addu	v1,a0,v1
+    1860:	90630000 	lbu	v1,0(v1)
+    1864:	a0430000 	sb	v1,0(v0)
         unsigned char b4aux = b3 << 2;
-    1858:	93c2000a 	lbu	v0,10(s8)
-    185c:	00021080 	sll	v0,v0,0x2
-    1860:	a3c2000f 	sb	v0,15(s8)
+    1868:	93c2000a 	lbu	v0,10(s8)
+    186c:	00021080 	sll	v0,v0,0x2
+    1870:	a3c2000f 	sb	v0,15(s8)
         b4aux = b4aux >> 2;
-    1864:	93c2000f 	lbu	v0,15(s8)
-    1868:	00021082 	srl	v0,v0,0x2
-    186c:	a3c2000f 	sb	v0,15(s8)
+    1874:	93c2000f 	lbu	v0,15(s8)
+    1878:	00021082 	srl	v0,v0,0x2
+    187c:	a3c2000f 	sb	v0,15(s8)
         //I take look into the encoding table.
         output[3] = encoding_table[(int) b4aux];
-    1870:	8fc20028 	lw	v0,40(s8)
-    1874:	24420003 	addiu	v0,v0,3
-    1878:	93c4000f 	lbu	a0,15(s8)
-    187c:	8f838028 	lw	v1,-32728(gp)
-    1880:	246327d0 	addiu	v1,v1,10192
-    1884:	00831821 	addu	v1,a0,v1
-    1888:	90630000 	lbu	v1,0(v1)
-    188c:	a0430000 	sb	v1,0(v0)
+    1880:	8fc20028 	lw	v0,40(s8)
+    1884:	24420003 	addiu	v0,v0,3
+    1888:	93c4000f 	lbu	a0,15(s8)
+    188c:	8f838028 	lw	v1,-32728(gp)
+    1890:	246327e0 	addiu	v1,v1,10208
+    1894:	00831821 	addu	v1,a0,v1
+    1898:	90630000 	lbu	v1,0(v1)
+    189c:	a0430000 	sb	v1,0(v0)
             b3aux2 = b3aux2 >> 2;
             b3aux = b3aux | b3aux2;
             output[2] = encoding_table[(int) b3aux];
         }
     }
 }
-    1890:	1000001a 	b	18fc <Encode+0x1ec>
-    1894:	00000000 	nop
-        if (length == 2) {
-    1898:	8fc30024 	lw	v1,36(s8)
-    189c:	24020002 	li	v0,2
-    18a0:	14620016 	bne	v1,v0,18fc <Encode+0x1ec>
+    18a0:	1000001a 	b	190c <Encode+0x1ec>
     18a4:	00000000 	nop
+        if (length == 2) {
+    18a8:	8fc30024 	lw	v1,36(s8)
+    18ac:	24020002 	li	v0,2
+    18b0:	14620016 	bne	v1,v0,190c <Encode+0x1ec>
+    18b4:	00000000 	nop
             unsigned char b3aux = b3 >> 6;
-    18a8:	93c2000a 	lbu	v0,10(s8)
-    18ac:	00021182 	srl	v0,v0,0x6
-    18b0:	a3c20010 	sb	v0,16(s8)
+    18b8:	93c2000a 	lbu	v0,10(s8)
+    18bc:	00021182 	srl	v0,v0,0x6
+    18c0:	a3c20010 	sb	v0,16(s8)
             unsigned char b3aux2 = b2 << 4;
-    18b4:	93c20009 	lbu	v0,9(s8)
-    18b8:	00021100 	sll	v0,v0,0x4
-    18bc:	a3c20011 	sb	v0,17(s8)
+    18c4:	93c20009 	lbu	v0,9(s8)
+    18c8:	00021100 	sll	v0,v0,0x4
+    18cc:	a3c20011 	sb	v0,17(s8)
             b3aux2 = b3aux2 >> 2;
-    18c0:	93c20011 	lbu	v0,17(s8)
-    18c4:	00021082 	srl	v0,v0,0x2
-    18c8:	a3c20011 	sb	v0,17(s8)
-            b3aux = b3aux | b3aux2;
-    18cc:	93c30010 	lbu	v1,16(s8)
     18d0:	93c20011 	lbu	v0,17(s8)
-    18d4:	00621025 	or	v0,v1,v0
-    18d8:	a3c20010 	sb	v0,16(s8)
+    18d4:	00021082 	srl	v0,v0,0x2
+    18d8:	a3c20011 	sb	v0,17(s8)
+            b3aux = b3aux | b3aux2;
+    18dc:	93c30010 	lbu	v1,16(s8)
+    18e0:	93c20011 	lbu	v0,17(s8)
+    18e4:	00621025 	or	v0,v1,v0
+    18e8:	a3c20010 	sb	v0,16(s8)
             output[2] = encoding_table[(int) b3aux];
-    18dc:	8fc20028 	lw	v0,40(s8)
-    18e0:	24420002 	addiu	v0,v0,2
-    18e4:	93c40010 	lbu	a0,16(s8)
-    18e8:	8f838028 	lw	v1,-32728(gp)
-    18ec:	246327d0 	addiu	v1,v1,10192
-    18f0:	00831821 	addu	v1,a0,v1
-    18f4:	90630000 	lbu	v1,0(v1)
-    18f8:	a0430000 	sb	v1,0(v0)
+    18ec:	8fc20028 	lw	v0,40(s8)
+    18f0:	24420002 	addiu	v0,v0,2
+    18f4:	93c40010 	lbu	a0,16(s8)
+    18f8:	8f838028 	lw	v1,-32728(gp)
+    18fc:	246327e0 	addiu	v1,v1,10208
+    1900:	00831821 	addu	v1,a0,v1
+    1904:	90630000 	lbu	v1,0(v1)
+    1908:	a0430000 	sb	v1,0(v0)
 }
-    18fc:	00000000 	nop
-    1900:	03c0e825 	move	sp,s8
-    1904:	8fbe001c 	lw	s8,28(sp)
-    1908:	27bd0020 	addiu	sp,sp,32
-    190c:	03e00008 	jr	ra
-    1910:	00000000 	nop
+    190c:	00000000 	nop
+    1910:	03c0e825 	move	sp,s8
+    1914:	8fbe001c 	lw	s8,28(sp)
+    1918:	27bd0020 	addiu	sp,sp,32
+    191c:	03e00008 	jr	ra
+    1920:	00000000 	nop
 
-00001914 <DecodeChar>:
+00001924 <DecodeChar>:
  * is the character '='.
  * post: returns the representation (int) of the character
  * in the encoding table.
  *
  */
 unsigned char DecodeChar(char character) {
-    1914:	3c1c0002 	lui	gp,0x2
-    1918:	279c8f5c 	addiu	gp,gp,-28836
-    191c:	0399e021 	addu	gp,gp,t9
-    1920:	27bdffe8 	addiu	sp,sp,-24
-    1924:	afbe0014 	sw	s8,20(sp)
-    1928:	03a0f025 	move	s8,sp
-    192c:	afbc0000 	sw	gp,0(sp)
-    1930:	00801025 	move	v0,a0
-    1934:	a3c20018 	sb	v0,24(s8)
+    1924:	3c1c0002 	lui	gp,0x2
+    1928:	279c8f5c 	addiu	gp,gp,-28836
+    192c:	0399e021 	addu	gp,gp,t9
+    1930:	27bdffe8 	addiu	sp,sp,-24
+    1934:	afbe0014 	sw	s8,20(sp)
+    1938:	03a0f025 	move	s8,sp
+    193c:	afbc0000 	sw	gp,0(sp)
+    1940:	00801025 	move	v0,a0
+    1944:	a3c20018 	sb	v0,24(s8)
     unsigned char i;
     for (i = 0; i < encoding_table_size; i++) {
-    1938:	a3c00008 	sb	zero,8(s8)
-    193c:	10000010 	b	1980 <DecodeChar+0x6c>
-    1940:	00000000 	nop
+    1948:	a3c00008 	sb	zero,8(s8)
+    194c:	10000010 	b	1990 <DecodeChar+0x6c>
+    1950:	00000000 	nop
         if (encoding_table[i] == character) {
-    1944:	93c30008 	lbu	v1,8(s8)
-    1948:	8f828028 	lw	v0,-32728(gp)
-    194c:	244227d0 	addiu	v0,v0,10192
-    1950:	00621021 	addu	v0,v1,v0
-    1954:	90420000 	lbu	v0,0(v0)
-    1958:	00401825 	move	v1,v0
-    195c:	83c20018 	lb	v0,24(s8)
-    1960:	14620004 	bne	v1,v0,1974 <DecodeChar+0x60>
-    1964:	00000000 	nop
+    1954:	93c30008 	lbu	v1,8(s8)
+    1958:	8f828028 	lw	v0,-32728(gp)
+    195c:	244227e0 	addiu	v0,v0,10208
+    1960:	00621021 	addu	v0,v1,v0
+    1964:	90420000 	lbu	v0,0(v0)
+    1968:	00401825 	move	v1,v0
+    196c:	83c20018 	lb	v0,24(s8)
+    1970:	14620004 	bne	v1,v0,1984 <DecodeChar+0x60>
+    1974:	00000000 	nop
             return i;
-    1968:	93c20008 	lbu	v0,8(s8)
-    196c:	10000012 	b	19b8 <DecodeChar+0xa4>
-    1970:	00000000 	nop
+    1978:	93c20008 	lbu	v0,8(s8)
+    197c:	10000012 	b	19c8 <DecodeChar+0xa4>
+    1980:	00000000 	nop
     for (i = 0; i < encoding_table_size; i++) {
-    1974:	93c20008 	lbu	v0,8(s8)
-    1978:	24420001 	addiu	v0,v0,1
-    197c:	a3c20008 	sb	v0,8(s8)
-    1980:	93c30008 	lbu	v1,8(s8)
-    1984:	8f828028 	lw	v0,-32728(gp)
-    1988:	8c422810 	lw	v0,10256(v0)
-    198c:	0062102a 	slt	v0,v1,v0
-    1990:	1440ffec 	bnez	v0,1944 <DecodeChar+0x30>
-    1994:	00000000 	nop
+    1984:	93c20008 	lbu	v0,8(s8)
+    1988:	24420001 	addiu	v0,v0,1
+    198c:	a3c20008 	sb	v0,8(s8)
+    1990:	93c30008 	lbu	v1,8(s8)
+    1994:	8f828028 	lw	v0,-32728(gp)
+    1998:	8c422820 	lw	v0,10272(v0)
+    199c:	0062102a 	slt	v0,v1,v0
+    19a0:	1440ffec 	bnez	v0,1954 <DecodeChar+0x30>
+    19a4:	00000000 	nop
         }
     }
     if (character == '=') {
-    1998:	83c30018 	lb	v1,24(s8)
-    199c:	2402003d 	li	v0,61
-    19a0:	14620004 	bne	v1,v0,19b4 <DecodeChar+0xa0>
-    19a4:	00000000 	nop
+    19a8:	83c30018 	lb	v1,24(s8)
+    19ac:	2402003d 	li	v0,61
+    19b0:	14620004 	bne	v1,v0,19c4 <DecodeChar+0xa0>
+    19b4:	00000000 	nop
         return 0;
-    19a8:	00001025 	move	v0,zero
-    19ac:	10000002 	b	19b8 <DecodeChar+0xa4>
-    19b0:	00000000 	nop
+    19b8:	00001025 	move	v0,zero
+    19bc:	10000002 	b	19c8 <DecodeChar+0xa4>
+    19c0:	00000000 	nop
     }
     return DECODE_ERROR;
-    19b4:	24020064 	li	v0,100
+    19c4:	24020064 	li	v0,100
 }
-    19b8:	03c0e825 	move	sp,s8
-    19bc:	8fbe0014 	lw	s8,20(sp)
-    19c0:	27bd0018 	addiu	sp,sp,24
-    19c4:	03e00008 	jr	ra
-    19c8:	00000000 	nop
+    19c8:	03c0e825 	move	sp,s8
+    19cc:	8fbe0014 	lw	s8,20(sp)
+    19d0:	27bd0018 	addiu	sp,sp,24
+    19d4:	03e00008 	jr	ra
+    19d8:	00000000 	nop
 
-000019cc <Decode>:
+000019dc <Decode>:
 /**
  * Returns a buffer with size 3 with the 4 character base64 decode.
  * Pre: the input buffer contains 4 characters. The output buffer has at least 3 characters
  * Post: returns a buffer with size 3 ASCII characters. returns 0 if error 1 if ok
  */
 unsigned char Decode(unsigned char *buf_input, unsigned char *buf_output) {
-    19cc:	3c1c0002 	lui	gp,0x2
-    19d0:	279c8ea4 	addiu	gp,gp,-29020
-    19d4:	0399e021 	addu	gp,gp,t9
-    19d8:	27bdffd0 	addiu	sp,sp,-48
-    19dc:	afbf002c 	sw	ra,44(sp)
-    19e0:	afbe0028 	sw	s8,40(sp)
-    19e4:	03a0f025 	move	s8,sp
-    19e8:	afbc0010 	sw	gp,16(sp)
-    19ec:	afc40030 	sw	a0,48(s8)
-    19f0:	afc50034 	sw	a1,52(s8)
+    19dc:	3c1c0002 	lui	gp,0x2
+    19e0:	279c8ea4 	addiu	gp,gp,-29020
+    19e4:	0399e021 	addu	gp,gp,t9
+    19e8:	27bdffd0 	addiu	sp,sp,-48
+    19ec:	afbf002c 	sw	ra,44(sp)
+    19f0:	afbe0028 	sw	s8,40(sp)
+    19f4:	03a0f025 	move	s8,sp
+    19f8:	afbc0010 	sw	gp,16(sp)
+    19fc:	afc40030 	sw	a0,48(s8)
+    1a00:	afc50034 	sw	a1,52(s8)
     unsigned char chars[4];
     unsigned int i;
     for (i = 0; i < 4; ++i) {
-    19f4:	afc00018 	sw	zero,24(s8)
-    19f8:	1000001e 	b	1a74 <Decode+0xa8>
-    19fc:	00000000 	nop
+    1a04:	afc00018 	sw	zero,24(s8)
+    1a08:	1000001e 	b	1a84 <Decode+0xa8>
+    1a0c:	00000000 	nop
         chars[i] = DecodeChar(buf_input[i]);
-    1a00:	8fc30030 	lw	v1,48(s8)
-    1a04:	8fc20018 	lw	v0,24(s8)
-    1a08:	00621021 	addu	v0,v1,v0
-    1a0c:	90420000 	lbu	v0,0(v0)
-    1a10:	7c021420 	seb	v0,v0
-    1a14:	00402025 	move	a0,v0
-    1a18:	8f82806c 	lw	v0,-32660(gp)
-    1a1c:	0040c825 	move	t9,v0
-    1a20:	0411ffbc 	bal	1914 <DecodeChar>
-    1a24:	00000000 	nop
-    1a28:	8fdc0010 	lw	gp,16(s8)
-    1a2c:	00402025 	move	a0,v0
-    1a30:	8fc20018 	lw	v0,24(s8)
-    1a34:	27c30018 	addiu	v1,s8,24
-    1a38:	00621021 	addu	v0,v1,v0
-    1a3c:	a0440008 	sb	a0,8(v0)
-        if (chars[i] == DECODE_ERROR)
+    1a10:	8fc30030 	lw	v1,48(s8)
+    1a14:	8fc20018 	lw	v0,24(s8)
+    1a18:	00621021 	addu	v0,v1,v0
+    1a1c:	90420000 	lbu	v0,0(v0)
+    1a20:	7c021420 	seb	v0,v0
+    1a24:	00402025 	move	a0,v0
+    1a28:	8f82806c 	lw	v0,-32660(gp)
+    1a2c:	0040c825 	move	t9,v0
+    1a30:	0411ffbc 	bal	1924 <DecodeChar>
+    1a34:	00000000 	nop
+    1a38:	8fdc0010 	lw	gp,16(s8)
+    1a3c:	00402025 	move	a0,v0
     1a40:	8fc20018 	lw	v0,24(s8)
     1a44:	27c30018 	addiu	v1,s8,24
     1a48:	00621021 	addu	v0,v1,v0
-    1a4c:	90430008 	lbu	v1,8(v0)
-    1a50:	24020064 	li	v0,100
-    1a54:	14620004 	bne	v1,v0,1a68 <Decode+0x9c>
-    1a58:	00000000 	nop
+    1a4c:	a0440008 	sb	a0,8(v0)
+        if (chars[i] == DECODE_ERROR)
+    1a50:	8fc20018 	lw	v0,24(s8)
+    1a54:	27c30018 	addiu	v1,s8,24
+    1a58:	00621021 	addu	v0,v1,v0
+    1a5c:	90430008 	lbu	v1,8(v0)
+    1a60:	24020064 	li	v0,100
+    1a64:	14620004 	bne	v1,v0,1a78 <Decode+0x9c>
+    1a68:	00000000 	nop
             return 0;
-    1a5c:	00001025 	move	v0,zero
-    1a60:	1000002e 	b	1b1c <Decode+0x150>
-    1a64:	00000000 	nop
+    1a6c:	00001025 	move	v0,zero
+    1a70:	1000002e 	b	1b2c <Decode+0x150>
+    1a74:	00000000 	nop
     for (i = 0; i < 4; ++i) {
-    1a68:	8fc20018 	lw	v0,24(s8)
-    1a6c:	24420001 	addiu	v0,v0,1
-    1a70:	afc20018 	sw	v0,24(s8)
-    1a74:	8fc20018 	lw	v0,24(s8)
-    1a78:	2c420004 	sltiu	v0,v0,4
-    1a7c:	1440ffe0 	bnez	v0,1a00 <Decode+0x34>
-    1a80:	00000000 	nop
+    1a78:	8fc20018 	lw	v0,24(s8)
+    1a7c:	24420001 	addiu	v0,v0,1
+    1a80:	afc20018 	sw	v0,24(s8)
+    1a84:	8fc20018 	lw	v0,24(s8)
+    1a88:	2c420004 	sltiu	v0,v0,4
+    1a8c:	1440ffe0 	bnez	v0,1a10 <Decode+0x34>
+    1a90:	00000000 	nop
     }
 
     unsigned char char1_aux = chars[0] << 2;
-    1a84:	93c20020 	lbu	v0,32(s8)
-    1a88:	00021080 	sll	v0,v0,0x2
-    1a8c:	a3c2001c 	sb	v0,28(s8)
+    1a94:	93c20020 	lbu	v0,32(s8)
+    1a98:	00021080 	sll	v0,v0,0x2
+    1a9c:	a3c2001c 	sb	v0,28(s8)
     //Take the last 2 bits of char2
     unsigned char char2_aux = chars[1] >> 4;
-    1a90:	93c20021 	lbu	v0,33(s8)
-    1a94:	00021102 	srl	v0,v0,0x4
-    1a98:	a3c2001d 	sb	v0,29(s8)
+    1aa0:	93c20021 	lbu	v0,33(s8)
+    1aa4:	00021102 	srl	v0,v0,0x4
+    1aa8:	a3c2001d 	sb	v0,29(s8)
     char1_aux = char1_aux | char2_aux;
-    1a9c:	93c3001c 	lbu	v1,28(s8)
-    1aa0:	93c2001d 	lbu	v0,29(s8)
-    1aa4:	00621025 	or	v0,v1,v0
-    1aa8:	a3c2001c 	sb	v0,28(s8)
+    1aac:	93c3001c 	lbu	v1,28(s8)
+    1ab0:	93c2001d 	lbu	v0,29(s8)
+    1ab4:	00621025 	or	v0,v1,v0
+    1ab8:	a3c2001c 	sb	v0,28(s8)
     buf_output[0] = char1_aux;
-    1aac:	8fc20034 	lw	v0,52(s8)
-    1ab0:	93c3001c 	lbu	v1,28(s8)
-    1ab4:	a0430000 	sb	v1,0(v0)
+    1abc:	8fc20034 	lw	v0,52(s8)
+    1ac0:	93c3001c 	lbu	v1,28(s8)
+    1ac4:	a0430000 	sb	v1,0(v0)
 
     //Take the last 4b of char2 and the first 4b of char3
     char1_aux = chars[1] << 4;
-    1ab8:	93c20021 	lbu	v0,33(s8)
-    1abc:	00021100 	sll	v0,v0,0x4
-    1ac0:	a3c2001c 	sb	v0,28(s8)
+    1ac8:	93c20021 	lbu	v0,33(s8)
+    1acc:	00021100 	sll	v0,v0,0x4
+    1ad0:	a3c2001c 	sb	v0,28(s8)
     char2_aux = chars[2] >> 2;
-    1ac4:	93c20022 	lbu	v0,34(s8)
-    1ac8:	00021082 	srl	v0,v0,0x2
-    1acc:	a3c2001d 	sb	v0,29(s8)
-    char2_aux = char1_aux | char2_aux;
-    1ad0:	93c3001c 	lbu	v1,28(s8)
-    1ad4:	93c2001d 	lbu	v0,29(s8)
-    1ad8:	00621025 	or	v0,v1,v0
+    1ad4:	93c20022 	lbu	v0,34(s8)
+    1ad8:	00021082 	srl	v0,v0,0x2
     1adc:	a3c2001d 	sb	v0,29(s8)
+    char2_aux = char1_aux | char2_aux;
+    1ae0:	93c3001c 	lbu	v1,28(s8)
+    1ae4:	93c2001d 	lbu	v0,29(s8)
+    1ae8:	00621025 	or	v0,v1,v0
+    1aec:	a3c2001d 	sb	v0,29(s8)
     buf_output[1] = char2_aux;
-    1ae0:	8fc20034 	lw	v0,52(s8)
-    1ae4:	24420001 	addiu	v0,v0,1
-    1ae8:	93c3001d 	lbu	v1,29(s8)
-    1aec:	a0430000 	sb	v1,0(v0)
+    1af0:	8fc20034 	lw	v0,52(s8)
+    1af4:	24420001 	addiu	v0,v0,1
+    1af8:	93c3001d 	lbu	v1,29(s8)
+    1afc:	a0430000 	sb	v1,0(v0)
 
     //Take the last 2b of char3 + the bits of char4
     char1_aux = chars[2] << 6;
-    1af0:	93c20022 	lbu	v0,34(s8)
-    1af4:	00021180 	sll	v0,v0,0x6
-    1af8:	a3c2001c 	sb	v0,28(s8)
+    1b00:	93c20022 	lbu	v0,34(s8)
+    1b04:	00021180 	sll	v0,v0,0x6
+    1b08:	a3c2001c 	sb	v0,28(s8)
     buf_output[2] = char1_aux | chars[3];
-    1afc:	8fc20034 	lw	v0,52(s8)
-    1b00:	24420002 	addiu	v0,v0,2
-    1b04:	93c40023 	lbu	a0,35(s8)
-    1b08:	93c3001c 	lbu	v1,28(s8)
-    1b0c:	00831825 	or	v1,a0,v1
-    1b10:	306300ff 	andi	v1,v1,0xff
-    1b14:	a0430000 	sb	v1,0(v0)
+    1b0c:	8fc20034 	lw	v0,52(s8)
+    1b10:	24420002 	addiu	v0,v0,2
+    1b14:	93c40023 	lbu	a0,35(s8)
+    1b18:	93c3001c 	lbu	v1,28(s8)
+    1b1c:	00831825 	or	v1,a0,v1
+    1b20:	306300ff 	andi	v1,v1,0xff
+    1b24:	a0430000 	sb	v1,0(v0)
     return 1;
-    1b18:	24020001 	li	v0,1
+    1b28:	24020001 	li	v0,1
 }
-    1b1c:	03c0e825 	move	sp,s8
-    1b20:	8fbf002c 	lw	ra,44(sp)
-    1b24:	8fbe0028 	lw	s8,40(sp)
-    1b28:	27bd0030 	addiu	sp,sp,48
-    1b2c:	03e00008 	jr	ra
-    1b30:	00000000 	nop
+    1b2c:	03c0e825 	move	sp,s8
+    1b30:	8fbf002c 	lw	ra,44(sp)
+    1b34:	8fbe0028 	lw	s8,40(sp)
+    1b38:	27bd0030 	addiu	sp,sp,48
+    1b3c:	03e00008 	jr	ra
+    1b40:	00000000 	nop
 	...
 
-00001b40 <create_file>:
+00001b50 <create_file>:
 #include "file.h"
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
 
 void create_file(File *file) {
-    1b40:	27bdfff8 	addiu	sp,sp,-8
-    1b44:	afbe0004 	sw	s8,4(sp)
-    1b48:	03a0f025 	move	s8,sp
-    1b4c:	afc40008 	sw	a0,8(s8)
+    1b50:	27bdfff8 	addiu	sp,sp,-8
+    1b54:	afbe0004 	sw	s8,4(sp)
+    1b58:	03a0f025 	move	s8,sp
+    1b5c:	afc40008 	sw	a0,8(s8)
     file->file = 0;
-    1b50:	8fc20008 	lw	v0,8(s8)
-    1b54:	ac400000 	sw	zero,0(v0)
+    1b60:	8fc20008 	lw	v0,8(s8)
+    1b64:	ac400000 	sw	zero,0(v0)
     file->eof = 0;
-    1b58:	8fc20008 	lw	v0,8(s8)
-    1b5c:	a0400004 	sb	zero,4(v0)
+    1b68:	8fc20008 	lw	v0,8(s8)
+    1b6c:	a0400004 	sb	zero,4(v0)
 }
-    1b60:	00000000 	nop
-    1b64:	03c0e825 	move	sp,s8
-    1b68:	8fbe0004 	lw	s8,4(sp)
-    1b6c:	27bd0008 	addiu	sp,sp,8
-    1b70:	03e00008 	jr	ra
-    1b74:	00000000 	nop
+    1b70:	00000000 	nop
+    1b74:	03c0e825 	move	sp,s8
+    1b78:	8fbe0004 	lw	s8,4(sp)
+    1b7c:	27bd0008 	addiu	sp,sp,8
+    1b80:	03e00008 	jr	ra
+    1b84:	00000000 	nop
 
-00001b78 <open_file_read>:
+00001b88 <open_file_read>:
 
 char open_file_read(File *file, const char *route) {
-    1b78:	3c1c0002 	lui	gp,0x2
-    1b7c:	279c8cf8 	addiu	gp,gp,-29448
-    1b80:	0399e021 	addu	gp,gp,t9
-    1b84:	27bdffd0 	addiu	sp,sp,-48
-    1b88:	afbf002c 	sw	ra,44(sp)
-    1b8c:	afbe0028 	sw	s8,40(sp)
-    1b90:	afb00024 	sw	s0,36(sp)
-    1b94:	03a0f025 	move	s8,sp
-    1b98:	afbc0010 	sw	gp,16(sp)
-    1b9c:	afc40030 	sw	a0,48(s8)
-    1ba0:	afc50034 	sw	a1,52(s8)
+    1b88:	3c1c0002 	lui	gp,0x2
+    1b8c:	279c8cf8 	addiu	gp,gp,-29448
+    1b90:	0399e021 	addu	gp,gp,t9
+    1b94:	27bdffd0 	addiu	sp,sp,-48
+    1b98:	afbf002c 	sw	ra,44(sp)
+    1b9c:	afbe0028 	sw	s8,40(sp)
+    1ba0:	afb00024 	sw	s0,36(sp)
+    1ba4:	03a0f025 	move	s8,sp
+    1ba8:	afbc0010 	sw	gp,16(sp)
+    1bac:	afc40030 	sw	a0,48(s8)
+    1bb0:	afc50034 	sw	a1,52(s8)
     if (route == NULL) {
-    1ba4:	8fc20034 	lw	v0,52(s8)
-    1ba8:	14400007 	bnez	v0,1bc8 <open_file_read+0x50>
-    1bac:	00000000 	nop
+    1bb4:	8fc20034 	lw	v0,52(s8)
+    1bb8:	14400007 	bnez	v0,1bd8 <open_file_read+0x50>
+    1bbc:	00000000 	nop
         file->file = stdin;
-    1bb0:	8f8280c4 	lw	v0,-32572(gp)
-    1bb4:	8c430000 	lw	v1,0(v0)
-    1bb8:	8fc20030 	lw	v0,48(s8)
-    1bbc:	ac430000 	sw	v1,0(v0)
-    1bc0:	1000002b 	b	1c70 <open_file_read+0xf8>
-    1bc4:	00000000 	nop
+    1bc0:	8f8280c4 	lw	v0,-32572(gp)
+    1bc4:	8c430000 	lw	v1,0(v0)
+    1bc8:	8fc20030 	lw	v0,48(s8)
+    1bcc:	ac430000 	sw	v1,0(v0)
+    1bd0:	1000002b 	b	1c80 <open_file_read+0xf8>
+    1bd4:	00000000 	nop
     } else {
         file->file = fopen(route, "rb");
-    1bc8:	8f828030 	lw	v0,-32720(gp)
-    1bcc:	244526c0 	addiu	a1,v0,9920
-    1bd0:	8fc40034 	lw	a0,52(s8)
-    1bd4:	8f8280f4 	lw	v0,-32524(gp)
-    1bd8:	0040c825 	move	t9,v0
-    1bdc:	0320f809 	jalr	t9
-    1be0:	00000000 	nop
-    1be4:	8fdc0010 	lw	gp,16(s8)
-    1be8:	00401825 	move	v1,v0
-    1bec:	8fc20030 	lw	v0,48(s8)
-    1bf0:	ac430000 	sw	v1,0(v0)
+    1bd8:	8f828030 	lw	v0,-32720(gp)
+    1bdc:	244526d0 	addiu	a1,v0,9936
+    1be0:	8fc40034 	lw	a0,52(s8)
+    1be4:	8f8280f4 	lw	v0,-32524(gp)
+    1be8:	0040c825 	move	t9,v0
+    1bec:	0320f809 	jalr	t9
+    1bf0:	00000000 	nop
+    1bf4:	8fdc0010 	lw	gp,16(s8)
+    1bf8:	00401825 	move	v1,v0
+    1bfc:	8fc20030 	lw	v0,48(s8)
+    1c00:	ac430000 	sw	v1,0(v0)
         if (file->file == NULL) {
-    1bf4:	8fc20030 	lw	v0,48(s8)
-    1bf8:	8c420000 	lw	v0,0(v0)
-    1bfc:	1440001c 	bnez	v0,1c70 <open_file_read+0xf8>
-    1c00:	00000000 	nop
-            int err = errno;
-    1c04:	8f8280bc 	lw	v0,-32580(gp)
-    1c08:	0040c825 	move	t9,v0
-    1c0c:	0320f809 	jalr	t9
+    1c04:	8fc20030 	lw	v0,48(s8)
+    1c08:	8c420000 	lw	v0,0(v0)
+    1c0c:	1440001c 	bnez	v0,1c80 <open_file_read+0xf8>
     1c10:	00000000 	nop
-    1c14:	8fdc0010 	lw	gp,16(s8)
-    1c18:	8c420000 	lw	v0,0(v0)
-    1c1c:	afc20018 	sw	v0,24(s8)
+            int err = errno;
+    1c14:	8f8280bc 	lw	v0,-32580(gp)
+    1c18:	0040c825 	move	t9,v0
+    1c1c:	0320f809 	jalr	t9
+    1c20:	00000000 	nop
+    1c24:	8fdc0010 	lw	gp,16(s8)
+    1c28:	8c420000 	lw	v0,0(v0)
+    1c2c:	afc20018 	sw	v0,24(s8)
             fprintf(stderr, "Error al abrir archivo: %s\n", strerror(err));
-    1c20:	8f8280f0 	lw	v0,-32528(gp)
-    1c24:	8c500000 	lw	s0,0(v0)
-    1c28:	8fc40018 	lw	a0,24(s8)
-    1c2c:	8f8280dc 	lw	v0,-32548(gp)
-    1c30:	0040c825 	move	t9,v0
-    1c34:	0320f809 	jalr	t9
-    1c38:	00000000 	nop
-    1c3c:	8fdc0010 	lw	gp,16(s8)
-    1c40:	00403025 	move	a2,v0
-    1c44:	8f828030 	lw	v0,-32720(gp)
-    1c48:	244526c4 	addiu	a1,v0,9924
-    1c4c:	02002025 	move	a0,s0
-    1c50:	8f8280c8 	lw	v0,-32568(gp)
-    1c54:	0040c825 	move	t9,v0
-    1c58:	0320f809 	jalr	t9
-    1c5c:	00000000 	nop
-    1c60:	8fdc0010 	lw	gp,16(s8)
-            return ERROR;
-    1c64:	24020001 	li	v0,1
-    1c68:	10000002 	b	1c74 <open_file_read+0xfc>
+    1c30:	8f8280f0 	lw	v0,-32528(gp)
+    1c34:	8c500000 	lw	s0,0(v0)
+    1c38:	8fc40018 	lw	a0,24(s8)
+    1c3c:	8f8280dc 	lw	v0,-32548(gp)
+    1c40:	0040c825 	move	t9,v0
+    1c44:	0320f809 	jalr	t9
+    1c48:	00000000 	nop
+    1c4c:	8fdc0010 	lw	gp,16(s8)
+    1c50:	00403025 	move	a2,v0
+    1c54:	8f828030 	lw	v0,-32720(gp)
+    1c58:	244526d4 	addiu	a1,v0,9940
+    1c5c:	02002025 	move	a0,s0
+    1c60:	8f8280c8 	lw	v0,-32568(gp)
+    1c64:	0040c825 	move	t9,v0
+    1c68:	0320f809 	jalr	t9
     1c6c:	00000000 	nop
+    1c70:	8fdc0010 	lw	gp,16(s8)
+            return ERROR;
+    1c74:	24020001 	li	v0,1
+    1c78:	10000002 	b	1c84 <open_file_read+0xfc>
+    1c7c:	00000000 	nop
         }
     }
     return OK;
-    1c70:	00001025 	move	v0,zero
+    1c80:	00001025 	move	v0,zero
 }
-    1c74:	03c0e825 	move	sp,s8
-    1c78:	8fbf002c 	lw	ra,44(sp)
-    1c7c:	8fbe0028 	lw	s8,40(sp)
-    1c80:	8fb00024 	lw	s0,36(sp)
-    1c84:	27bd0030 	addiu	sp,sp,48
-    1c88:	03e00008 	jr	ra
-    1c8c:	00000000 	nop
+    1c84:	03c0e825 	move	sp,s8
+    1c88:	8fbf002c 	lw	ra,44(sp)
+    1c8c:	8fbe0028 	lw	s8,40(sp)
+    1c90:	8fb00024 	lw	s0,36(sp)
+    1c94:	27bd0030 	addiu	sp,sp,48
+    1c98:	03e00008 	jr	ra
+    1c9c:	00000000 	nop
 
-00001c90 <open_file_write>:
+00001ca0 <open_file_write>:
 
 
 char open_file_write(File *file, const char *route) {
-    1c90:	3c1c0002 	lui	gp,0x2
-    1c94:	279c8be0 	addiu	gp,gp,-29728
-    1c98:	0399e021 	addu	gp,gp,t9
-    1c9c:	27bdffd0 	addiu	sp,sp,-48
-    1ca0:	afbf002c 	sw	ra,44(sp)
-    1ca4:	afbe0028 	sw	s8,40(sp)
-    1ca8:	afb00024 	sw	s0,36(sp)
-    1cac:	03a0f025 	move	s8,sp
-    1cb0:	afbc0010 	sw	gp,16(sp)
-    1cb4:	afc40030 	sw	a0,48(s8)
-    1cb8:	afc50034 	sw	a1,52(s8)
+    1ca0:	3c1c0002 	lui	gp,0x2
+    1ca4:	279c8be0 	addiu	gp,gp,-29728
+    1ca8:	0399e021 	addu	gp,gp,t9
+    1cac:	27bdffd0 	addiu	sp,sp,-48
+    1cb0:	afbf002c 	sw	ra,44(sp)
+    1cb4:	afbe0028 	sw	s8,40(sp)
+    1cb8:	afb00024 	sw	s0,36(sp)
+    1cbc:	03a0f025 	move	s8,sp
+    1cc0:	afbc0010 	sw	gp,16(sp)
+    1cc4:	afc40030 	sw	a0,48(s8)
+    1cc8:	afc50034 	sw	a1,52(s8)
     if (route == NULL) {
-    1cbc:	8fc20034 	lw	v0,52(s8)
-    1cc0:	14400007 	bnez	v0,1ce0 <open_file_write+0x50>
-    1cc4:	00000000 	nop
+    1ccc:	8fc20034 	lw	v0,52(s8)
+    1cd0:	14400007 	bnez	v0,1cf0 <open_file_write+0x50>
+    1cd4:	00000000 	nop
         file->file = stdout;
-    1cc8:	8f8280b8 	lw	v0,-32584(gp)
-    1ccc:	8c430000 	lw	v1,0(v0)
-    1cd0:	8fc20030 	lw	v0,48(s8)
-    1cd4:	ac430000 	sw	v1,0(v0)
-    1cd8:	1000002b 	b	1d88 <open_file_write+0xf8>
-    1cdc:	00000000 	nop
+    1cd8:	8f8280b8 	lw	v0,-32584(gp)
+    1cdc:	8c430000 	lw	v1,0(v0)
+    1ce0:	8fc20030 	lw	v0,48(s8)
+    1ce4:	ac430000 	sw	v1,0(v0)
+    1ce8:	1000002b 	b	1d98 <open_file_write+0xf8>
+    1cec:	00000000 	nop
     } else {
         file->file = fopen(route, "wb");
-    1ce0:	8f828030 	lw	v0,-32720(gp)
-    1ce4:	244526e0 	addiu	a1,v0,9952
-    1ce8:	8fc40034 	lw	a0,52(s8)
-    1cec:	8f8280f4 	lw	v0,-32524(gp)
-    1cf0:	0040c825 	move	t9,v0
-    1cf4:	0320f809 	jalr	t9
-    1cf8:	00000000 	nop
-    1cfc:	8fdc0010 	lw	gp,16(s8)
-    1d00:	00401825 	move	v1,v0
-    1d04:	8fc20030 	lw	v0,48(s8)
-    1d08:	ac430000 	sw	v1,0(v0)
+    1cf0:	8f828030 	lw	v0,-32720(gp)
+    1cf4:	244526f0 	addiu	a1,v0,9968
+    1cf8:	8fc40034 	lw	a0,52(s8)
+    1cfc:	8f8280f4 	lw	v0,-32524(gp)
+    1d00:	0040c825 	move	t9,v0
+    1d04:	0320f809 	jalr	t9
+    1d08:	00000000 	nop
+    1d0c:	8fdc0010 	lw	gp,16(s8)
+    1d10:	00401825 	move	v1,v0
+    1d14:	8fc20030 	lw	v0,48(s8)
+    1d18:	ac430000 	sw	v1,0(v0)
         if (file->file == NULL) {
-    1d0c:	8fc20030 	lw	v0,48(s8)
-    1d10:	8c420000 	lw	v0,0(v0)
-    1d14:	1440001c 	bnez	v0,1d88 <open_file_write+0xf8>
-    1d18:	00000000 	nop
-            int err = errno;
-    1d1c:	8f8280bc 	lw	v0,-32580(gp)
-    1d20:	0040c825 	move	t9,v0
-    1d24:	0320f809 	jalr	t9
+    1d1c:	8fc20030 	lw	v0,48(s8)
+    1d20:	8c420000 	lw	v0,0(v0)
+    1d24:	1440001c 	bnez	v0,1d98 <open_file_write+0xf8>
     1d28:	00000000 	nop
-    1d2c:	8fdc0010 	lw	gp,16(s8)
-    1d30:	8c420000 	lw	v0,0(v0)
-    1d34:	afc20018 	sw	v0,24(s8)
+            int err = errno;
+    1d2c:	8f8280bc 	lw	v0,-32580(gp)
+    1d30:	0040c825 	move	t9,v0
+    1d34:	0320f809 	jalr	t9
+    1d38:	00000000 	nop
+    1d3c:	8fdc0010 	lw	gp,16(s8)
+    1d40:	8c420000 	lw	v0,0(v0)
+    1d44:	afc20018 	sw	v0,24(s8)
             fprintf(stderr, "Error al abrir archivo: %s\n", strerror(err));
-    1d38:	8f8280f0 	lw	v0,-32528(gp)
-    1d3c:	8c500000 	lw	s0,0(v0)
-    1d40:	8fc40018 	lw	a0,24(s8)
-    1d44:	8f8280dc 	lw	v0,-32548(gp)
-    1d48:	0040c825 	move	t9,v0
-    1d4c:	0320f809 	jalr	t9
-    1d50:	00000000 	nop
-    1d54:	8fdc0010 	lw	gp,16(s8)
-    1d58:	00403025 	move	a2,v0
-    1d5c:	8f828030 	lw	v0,-32720(gp)
-    1d60:	244526c4 	addiu	a1,v0,9924
-    1d64:	02002025 	move	a0,s0
-    1d68:	8f8280c8 	lw	v0,-32568(gp)
-    1d6c:	0040c825 	move	t9,v0
-    1d70:	0320f809 	jalr	t9
-    1d74:	00000000 	nop
-    1d78:	8fdc0010 	lw	gp,16(s8)
-            return ERROR;
-    1d7c:	24020001 	li	v0,1
-    1d80:	10000002 	b	1d8c <open_file_write+0xfc>
+    1d48:	8f8280f0 	lw	v0,-32528(gp)
+    1d4c:	8c500000 	lw	s0,0(v0)
+    1d50:	8fc40018 	lw	a0,24(s8)
+    1d54:	8f8280dc 	lw	v0,-32548(gp)
+    1d58:	0040c825 	move	t9,v0
+    1d5c:	0320f809 	jalr	t9
+    1d60:	00000000 	nop
+    1d64:	8fdc0010 	lw	gp,16(s8)
+    1d68:	00403025 	move	a2,v0
+    1d6c:	8f828030 	lw	v0,-32720(gp)
+    1d70:	244526d4 	addiu	a1,v0,9940
+    1d74:	02002025 	move	a0,s0
+    1d78:	8f8280c8 	lw	v0,-32568(gp)
+    1d7c:	0040c825 	move	t9,v0
+    1d80:	0320f809 	jalr	t9
     1d84:	00000000 	nop
+    1d88:	8fdc0010 	lw	gp,16(s8)
+            return ERROR;
+    1d8c:	24020001 	li	v0,1
+    1d90:	10000002 	b	1d9c <open_file_write+0xfc>
+    1d94:	00000000 	nop
         }
     }
     return OK;
-    1d88:	00001025 	move	v0,zero
+    1d98:	00001025 	move	v0,zero
 }
-    1d8c:	03c0e825 	move	sp,s8
-    1d90:	8fbf002c 	lw	ra,44(sp)
-    1d94:	8fbe0028 	lw	s8,40(sp)
-    1d98:	8fb00024 	lw	s0,36(sp)
-    1d9c:	27bd0030 	addiu	sp,sp,48
-    1da0:	03e00008 	jr	ra
-    1da4:	00000000 	nop
+    1d9c:	03c0e825 	move	sp,s8
+    1da0:	8fbf002c 	lw	ra,44(sp)
+    1da4:	8fbe0028 	lw	s8,40(sp)
+    1da8:	8fb00024 	lw	s0,36(sp)
+    1dac:	27bd0030 	addiu	sp,sp,48
+    1db0:	03e00008 	jr	ra
+    1db4:	00000000 	nop
 
-00001da8 <close_file>:
+00001db8 <close_file>:
 
 
 int close_file(File *file) {
-    1da8:	3c1c0002 	lui	gp,0x2
-    1dac:	279c8ac8 	addiu	gp,gp,-30008
-    1db0:	0399e021 	addu	gp,gp,t9
-    1db4:	27bdffd0 	addiu	sp,sp,-48
-    1db8:	afbf002c 	sw	ra,44(sp)
-    1dbc:	afbe0028 	sw	s8,40(sp)
-    1dc0:	afb00024 	sw	s0,36(sp)
-    1dc4:	03a0f025 	move	s8,sp
-    1dc8:	afbc0010 	sw	gp,16(sp)
-    1dcc:	afc40030 	sw	a0,48(s8)
+    1db8:	3c1c0002 	lui	gp,0x2
+    1dbc:	279c8ac8 	addiu	gp,gp,-30008
+    1dc0:	0399e021 	addu	gp,gp,t9
+    1dc4:	27bdffd0 	addiu	sp,sp,-48
+    1dc8:	afbf002c 	sw	ra,44(sp)
+    1dcc:	afbe0028 	sw	s8,40(sp)
+    1dd0:	afb00024 	sw	s0,36(sp)
+    1dd4:	03a0f025 	move	s8,sp
+    1dd8:	afbc0010 	sw	gp,16(sp)
+    1ddc:	afc40030 	sw	a0,48(s8)
     if (file->file == stdin || file->file == stdout) return OK;
-    1dd0:	8fc20030 	lw	v0,48(s8)
-    1dd4:	8c430000 	lw	v1,0(v0)
-    1dd8:	8f8280c4 	lw	v0,-32572(gp)
-    1ddc:	8c420000 	lw	v0,0(v0)
-    1de0:	10620007 	beq	v1,v0,1e00 <close_file+0x58>
-    1de4:	00000000 	nop
-    1de8:	8fc20030 	lw	v0,48(s8)
-    1dec:	8c430000 	lw	v1,0(v0)
-    1df0:	8f8280b8 	lw	v0,-32584(gp)
-    1df4:	8c420000 	lw	v0,0(v0)
-    1df8:	14620004 	bne	v1,v0,1e0c <close_file+0x64>
-    1dfc:	00000000 	nop
-    1e00:	00001025 	move	v0,zero
-    1e04:	1000002a 	b	1eb0 <close_file+0x108>
-    1e08:	00000000 	nop
+    1de0:	8fc20030 	lw	v0,48(s8)
+    1de4:	8c430000 	lw	v1,0(v0)
+    1de8:	8f8280c4 	lw	v0,-32572(gp)
+    1dec:	8c420000 	lw	v0,0(v0)
+    1df0:	10620007 	beq	v1,v0,1e10 <close_file+0x58>
+    1df4:	00000000 	nop
+    1df8:	8fc20030 	lw	v0,48(s8)
+    1dfc:	8c430000 	lw	v1,0(v0)
+    1e00:	8f8280b8 	lw	v0,-32584(gp)
+    1e04:	8c420000 	lw	v0,0(v0)
+    1e08:	14620004 	bne	v1,v0,1e1c <close_file+0x64>
+    1e0c:	00000000 	nop
+    1e10:	00001025 	move	v0,zero
+    1e14:	1000002a 	b	1ec0 <close_file+0x108>
+    1e18:	00000000 	nop
 
     int result = fclose(file->file);
-    1e0c:	8fc20030 	lw	v0,48(s8)
-    1e10:	8c420000 	lw	v0,0(v0)
-    1e14:	00402025 	move	a0,v0
-    1e18:	8f8280ac 	lw	v0,-32596(gp)
-    1e1c:	0040c825 	move	t9,v0
-    1e20:	0320f809 	jalr	t9
-    1e24:	00000000 	nop
-    1e28:	8fdc0010 	lw	gp,16(s8)
-    1e2c:	afc20018 	sw	v0,24(s8)
+    1e1c:	8fc20030 	lw	v0,48(s8)
+    1e20:	8c420000 	lw	v0,0(v0)
+    1e24:	00402025 	move	a0,v0
+    1e28:	8f8280ac 	lw	v0,-32596(gp)
+    1e2c:	0040c825 	move	t9,v0
+    1e30:	0320f809 	jalr	t9
+    1e34:	00000000 	nop
+    1e38:	8fdc0010 	lw	gp,16(s8)
+    1e3c:	afc20018 	sw	v0,24(s8)
     if (result == EOF) {
-    1e30:	8fc30018 	lw	v1,24(s8)
-    1e34:	2402ffff 	li	v0,-1
-    1e38:	1462001c 	bne	v1,v0,1eac <close_file+0x104>
-    1e3c:	00000000 	nop
-        int err = errno;
-    1e40:	8f8280bc 	lw	v0,-32580(gp)
-    1e44:	0040c825 	move	t9,v0
-    1e48:	0320f809 	jalr	t9
+    1e40:	8fc30018 	lw	v1,24(s8)
+    1e44:	2402ffff 	li	v0,-1
+    1e48:	1462001c 	bne	v1,v0,1ebc <close_file+0x104>
     1e4c:	00000000 	nop
-    1e50:	8fdc0010 	lw	gp,16(s8)
-    1e54:	8c420000 	lw	v0,0(v0)
-    1e58:	afc2001c 	sw	v0,28(s8)
+        int err = errno;
+    1e50:	8f8280bc 	lw	v0,-32580(gp)
+    1e54:	0040c825 	move	t9,v0
+    1e58:	0320f809 	jalr	t9
+    1e5c:	00000000 	nop
+    1e60:	8fdc0010 	lw	gp,16(s8)
+    1e64:	8c420000 	lw	v0,0(v0)
+    1e68:	afc2001c 	sw	v0,28(s8)
         fprintf(stderr, "Error al cerrar archivo: %s\n", strerror(err));
-    1e5c:	8f8280f0 	lw	v0,-32528(gp)
-    1e60:	8c500000 	lw	s0,0(v0)
-    1e64:	8fc4001c 	lw	a0,28(s8)
-    1e68:	8f8280dc 	lw	v0,-32548(gp)
-    1e6c:	0040c825 	move	t9,v0
-    1e70:	0320f809 	jalr	t9
-    1e74:	00000000 	nop
-    1e78:	8fdc0010 	lw	gp,16(s8)
-    1e7c:	00403025 	move	a2,v0
-    1e80:	8f828030 	lw	v0,-32720(gp)
-    1e84:	244526e4 	addiu	a1,v0,9956
-    1e88:	02002025 	move	a0,s0
-    1e8c:	8f8280c8 	lw	v0,-32568(gp)
-    1e90:	0040c825 	move	t9,v0
-    1e94:	0320f809 	jalr	t9
-    1e98:	00000000 	nop
-    1e9c:	8fdc0010 	lw	gp,16(s8)
-        return ERROR;
-    1ea0:	24020001 	li	v0,1
-    1ea4:	10000002 	b	1eb0 <close_file+0x108>
+    1e6c:	8f8280f0 	lw	v0,-32528(gp)
+    1e70:	8c500000 	lw	s0,0(v0)
+    1e74:	8fc4001c 	lw	a0,28(s8)
+    1e78:	8f8280dc 	lw	v0,-32548(gp)
+    1e7c:	0040c825 	move	t9,v0
+    1e80:	0320f809 	jalr	t9
+    1e84:	00000000 	nop
+    1e88:	8fdc0010 	lw	gp,16(s8)
+    1e8c:	00403025 	move	a2,v0
+    1e90:	8f828030 	lw	v0,-32720(gp)
+    1e94:	244526f4 	addiu	a1,v0,9972
+    1e98:	02002025 	move	a0,s0
+    1e9c:	8f8280c8 	lw	v0,-32568(gp)
+    1ea0:	0040c825 	move	t9,v0
+    1ea4:	0320f809 	jalr	t9
     1ea8:	00000000 	nop
+    1eac:	8fdc0010 	lw	gp,16(s8)
+        return ERROR;
+    1eb0:	24020001 	li	v0,1
+    1eb4:	10000002 	b	1ec0 <close_file+0x108>
+    1eb8:	00000000 	nop
     }
     return OK;
-    1eac:	00001025 	move	v0,zero
+    1ebc:	00001025 	move	v0,zero
 }
-    1eb0:	03c0e825 	move	sp,s8
-    1eb4:	8fbf002c 	lw	ra,44(sp)
-    1eb8:	8fbe0028 	lw	s8,40(sp)
-    1ebc:	8fb00024 	lw	s0,36(sp)
-    1ec0:	27bd0030 	addiu	sp,sp,48
-    1ec4:	03e00008 	jr	ra
-    1ec8:	00000000 	nop
+    1ec0:	03c0e825 	move	sp,s8
+    1ec4:	8fbf002c 	lw	ra,44(sp)
+    1ec8:	8fbe0028 	lw	s8,40(sp)
+    1ecc:	8fb00024 	lw	s0,36(sp)
+    1ed0:	27bd0030 	addiu	sp,sp,48
+    1ed4:	03e00008 	jr	ra
+    1ed8:	00000000 	nop
 
-00001ecc <file_read>:
+00001edc <file_read>:
 
 
 unsigned int file_read(File *file, unsigned char *buffer, unsigned int length) {
-    1ecc:	3c1c0002 	lui	gp,0x2
-    1ed0:	279c89a4 	addiu	gp,gp,-30300
-    1ed4:	0399e021 	addu	gp,gp,t9
-    1ed8:	27bdffd8 	addiu	sp,sp,-40
-    1edc:	afbf0024 	sw	ra,36(sp)
-    1ee0:	afbe0020 	sw	s8,32(sp)
-    1ee4:	03a0f025 	move	s8,sp
-    1ee8:	afbc0010 	sw	gp,16(sp)
-    1eec:	afc40028 	sw	a0,40(s8)
-    1ef0:	afc5002c 	sw	a1,44(s8)
-    1ef4:	afc60030 	sw	a2,48(s8)
+    1edc:	3c1c0002 	lui	gp,0x2
+    1ee0:	279c89a4 	addiu	gp,gp,-30300
+    1ee4:	0399e021 	addu	gp,gp,t9
+    1ee8:	27bdffd8 	addiu	sp,sp,-40
+    1eec:	afbf0024 	sw	ra,36(sp)
+    1ef0:	afbe0020 	sw	s8,32(sp)
+    1ef4:	03a0f025 	move	s8,sp
+    1ef8:	afbc0010 	sw	gp,16(sp)
+    1efc:	afc40028 	sw	a0,40(s8)
+    1f00:	afc5002c 	sw	a1,44(s8)
+    1f04:	afc60030 	sw	a2,48(s8)
     unsigned int result = 0;
-    1ef8:	afc00018 	sw	zero,24(s8)
+    1f08:	afc00018 	sw	zero,24(s8)
     if (!file_eof(file)) {
-    1efc:	8fc40028 	lw	a0,40(s8)
-    1f00:	8f828058 	lw	v0,-32680(gp)
-    1f04:	0040c825 	move	t9,v0
-    1f08:	04110041 	bal	2010 <file_eof>
-    1f0c:	00000000 	nop
-    1f10:	8fdc0010 	lw	gp,16(s8)
-    1f14:	1440001a 	bnez	v0,1f80 <file_read+0xb4>
-    1f18:	00000000 	nop
+    1f0c:	8fc40028 	lw	a0,40(s8)
+    1f10:	8f828058 	lw	v0,-32680(gp)
+    1f14:	0040c825 	move	t9,v0
+    1f18:	04110041 	bal	2020 <file_eof>
+    1f1c:	00000000 	nop
+    1f20:	8fdc0010 	lw	gp,16(s8)
+    1f24:	1440001a 	bnez	v0,1f90 <file_read+0xb4>
+    1f28:	00000000 	nop
         result = (unsigned int) fread(buffer, sizeof(char), length, file->file);
-    1f1c:	8fc20028 	lw	v0,40(s8)
-    1f20:	8c420000 	lw	v0,0(v0)
-    1f24:	00403825 	move	a3,v0
-    1f28:	8fc60030 	lw	a2,48(s8)
-    1f2c:	24050001 	li	a1,1
-    1f30:	8fc4002c 	lw	a0,44(s8)
-    1f34:	8f8280e4 	lw	v0,-32540(gp)
-    1f38:	0040c825 	move	t9,v0
-    1f3c:	0320f809 	jalr	t9
-    1f40:	00000000 	nop
-    1f44:	8fdc0010 	lw	gp,16(s8)
-    1f48:	afc20018 	sw	v0,24(s8)
+    1f2c:	8fc20028 	lw	v0,40(s8)
+    1f30:	8c420000 	lw	v0,0(v0)
+    1f34:	00403825 	move	a3,v0
+    1f38:	8fc60030 	lw	a2,48(s8)
+    1f3c:	24050001 	li	a1,1
+    1f40:	8fc4002c 	lw	a0,44(s8)
+    1f44:	8f8280e4 	lw	v0,-32540(gp)
+    1f48:	0040c825 	move	t9,v0
+    1f4c:	0320f809 	jalr	t9
+    1f50:	00000000 	nop
+    1f54:	8fdc0010 	lw	gp,16(s8)
+    1f58:	afc20018 	sw	v0,24(s8)
         if (feof(file->file)) {
-    1f4c:	8fc20028 	lw	v0,40(s8)
-    1f50:	8c420000 	lw	v0,0(v0)
-    1f54:	00402025 	move	a0,v0
-    1f58:	8f8280d4 	lw	v0,-32556(gp)
-    1f5c:	0040c825 	move	t9,v0
-    1f60:	0320f809 	jalr	t9
-    1f64:	00000000 	nop
-    1f68:	8fdc0010 	lw	gp,16(s8)
-    1f6c:	10400004 	beqz	v0,1f80 <file_read+0xb4>
-    1f70:	00000000 	nop
+    1f5c:	8fc20028 	lw	v0,40(s8)
+    1f60:	8c420000 	lw	v0,0(v0)
+    1f64:	00402025 	move	a0,v0
+    1f68:	8f8280d4 	lw	v0,-32556(gp)
+    1f6c:	0040c825 	move	t9,v0
+    1f70:	0320f809 	jalr	t9
+    1f74:	00000000 	nop
+    1f78:	8fdc0010 	lw	gp,16(s8)
+    1f7c:	10400004 	beqz	v0,1f90 <file_read+0xb4>
+    1f80:	00000000 	nop
             file->eof = 1;
-    1f74:	8fc20028 	lw	v0,40(s8)
-    1f78:	24030001 	li	v1,1
-    1f7c:	a0430004 	sb	v1,4(v0)
+    1f84:	8fc20028 	lw	v0,40(s8)
+    1f88:	24030001 	li	v1,1
+    1f8c:	a0430004 	sb	v1,4(v0)
         }
     }
 
     return result;
-    1f80:	8fc20018 	lw	v0,24(s8)
+    1f90:	8fc20018 	lw	v0,24(s8)
 }
-    1f84:	03c0e825 	move	sp,s8
-    1f88:	8fbf0024 	lw	ra,36(sp)
-    1f8c:	8fbe0020 	lw	s8,32(sp)
-    1f90:	27bd0028 	addiu	sp,sp,40
-    1f94:	03e00008 	jr	ra
-    1f98:	00000000 	nop
+    1f94:	03c0e825 	move	sp,s8
+    1f98:	8fbf0024 	lw	ra,36(sp)
+    1f9c:	8fbe0020 	lw	s8,32(sp)
+    1fa0:	27bd0028 	addiu	sp,sp,40
+    1fa4:	03e00008 	jr	ra
+    1fa8:	00000000 	nop
 
-00001f9c <file_write>:
+00001fac <file_write>:
 
 
 void file_write(File *file, unsigned char *buffer, unsigned int length) {
-    1f9c:	3c1c0002 	lui	gp,0x2
-    1fa0:	279c88d4 	addiu	gp,gp,-30508
-    1fa4:	0399e021 	addu	gp,gp,t9
-    1fa8:	27bdffe0 	addiu	sp,sp,-32
-    1fac:	afbf001c 	sw	ra,28(sp)
-    1fb0:	afbe0018 	sw	s8,24(sp)
-    1fb4:	03a0f025 	move	s8,sp
-    1fb8:	afbc0010 	sw	gp,16(sp)
-    1fbc:	afc40020 	sw	a0,32(s8)
-    1fc0:	afc50024 	sw	a1,36(s8)
-    1fc4:	afc60028 	sw	a2,40(s8)
+    1fac:	3c1c0002 	lui	gp,0x2
+    1fb0:	279c88d4 	addiu	gp,gp,-30508
+    1fb4:	0399e021 	addu	gp,gp,t9
+    1fb8:	27bdffe0 	addiu	sp,sp,-32
+    1fbc:	afbf001c 	sw	ra,28(sp)
+    1fc0:	afbe0018 	sw	s8,24(sp)
+    1fc4:	03a0f025 	move	s8,sp
+    1fc8:	afbc0010 	sw	gp,16(sp)
+    1fcc:	afc40020 	sw	a0,32(s8)
+    1fd0:	afc50024 	sw	a1,36(s8)
+    1fd4:	afc60028 	sw	a2,40(s8)
     fwrite(buffer, sizeof(char), length, file->file);
-    1fc8:	8fc20020 	lw	v0,32(s8)
-    1fcc:	8c420000 	lw	v0,0(v0)
-    1fd0:	00403825 	move	a3,v0
-    1fd4:	8fc60028 	lw	a2,40(s8)
-    1fd8:	24050001 	li	a1,1
-    1fdc:	8fc40024 	lw	a0,36(s8)
-    1fe0:	8f8280e8 	lw	v0,-32536(gp)
-    1fe4:	0040c825 	move	t9,v0
-    1fe8:	0320f809 	jalr	t9
-    1fec:	00000000 	nop
-    1ff0:	8fdc0010 	lw	gp,16(s8)
+    1fd8:	8fc20020 	lw	v0,32(s8)
+    1fdc:	8c420000 	lw	v0,0(v0)
+    1fe0:	00403825 	move	a3,v0
+    1fe4:	8fc60028 	lw	a2,40(s8)
+    1fe8:	24050001 	li	a1,1
+    1fec:	8fc40024 	lw	a0,36(s8)
+    1ff0:	8f8280e8 	lw	v0,-32536(gp)
+    1ff4:	0040c825 	move	t9,v0
+    1ff8:	0320f809 	jalr	t9
+    1ffc:	00000000 	nop
+    2000:	8fdc0010 	lw	gp,16(s8)
 }
-    1ff4:	00000000 	nop
-    1ff8:	03c0e825 	move	sp,s8
-    1ffc:	8fbf001c 	lw	ra,28(sp)
-    2000:	8fbe0018 	lw	s8,24(sp)
-    2004:	27bd0020 	addiu	sp,sp,32
-    2008:	03e00008 	jr	ra
-    200c:	00000000 	nop
+    2004:	00000000 	nop
+    2008:	03c0e825 	move	sp,s8
+    200c:	8fbf001c 	lw	ra,28(sp)
+    2010:	8fbe0018 	lw	s8,24(sp)
+    2014:	27bd0020 	addiu	sp,sp,32
+    2018:	03e00008 	jr	ra
+    201c:	00000000 	nop
 
-00002010 <file_eof>:
+00002020 <file_eof>:
 
 
 int file_eof(File *file) {
-    2010:	27bdfff8 	addiu	sp,sp,-8
-    2014:	afbe0004 	sw	s8,4(sp)
-    2018:	03a0f025 	move	s8,sp
-    201c:	afc40008 	sw	a0,8(s8)
+    2020:	27bdfff8 	addiu	sp,sp,-8
+    2024:	afbe0004 	sw	s8,4(sp)
+    2028:	03a0f025 	move	s8,sp
+    202c:	afc40008 	sw	a0,8(s8)
     return file->eof;
-    2020:	8fc20008 	lw	v0,8(s8)
-    2024:	80420004 	lb	v0,4(v0)
+    2030:	8fc20008 	lw	v0,8(s8)
+    2034:	80420004 	lb	v0,4(v0)
 }
-    2028:	03c0e825 	move	sp,s8
-    202c:	8fbe0004 	lw	s8,4(sp)
-    2030:	27bd0008 	addiu	sp,sp,8
-    2034:	03e00008 	jr	ra
-    2038:	00000000 	nop
-    203c:	00000000 	nop
+    2038:	03c0e825 	move	sp,s8
+    203c:	8fbe0004 	lw	s8,4(sp)
+    2040:	27bd0008 	addiu	sp,sp,8
+    2044:	03e00008 	jr	ra
+    2048:	00000000 	nop
+    204c:	00000000 	nop
 
-00002040 <main>:
+00002050 <main>:
 #include <stddef.h>
 #include <getopt.h>
 #include "constants.h"
 #include "command.h"
 
 int main(int argc, char **argv) {
-    2040:	3c1c0002 	lui	gp,0x2
-    2044:	279c8830 	addiu	gp,gp,-30672
-    2048:	0399e021 	addu	gp,gp,t9
-    204c:	27bdff58 	addiu	sp,sp,-168
-    2050:	afbf00a4 	sw	ra,164(sp)
-    2054:	afbe00a0 	sw	s8,160(sp)
-    2058:	03a0f025 	move	s8,sp
-    205c:	afbc0018 	sw	gp,24(sp)
-    2060:	afc400a8 	sw	a0,168(s8)
-    2064:	afc500ac 	sw	a1,172(s8)
+    2050:	3c1c0002 	lui	gp,0x2
+    2054:	279c8830 	addiu	gp,gp,-30672
+    2058:	0399e021 	addu	gp,gp,t9
+    205c:	27bdff58 	addiu	sp,sp,-168
+    2060:	afbf00a4 	sw	ra,164(sp)
+    2064:	afbe00a0 	sw	s8,160(sp)
+    2068:	03a0f025 	move	s8,sp
+    206c:	afbc0018 	sw	gp,24(sp)
+    2070:	afc400a8 	sw	a0,168(s8)
+    2074:	afc500ac 	sw	a1,172(s8)
     struct option arg_long[] = {
-    2068:	8f828028 	lw	v0,-32728(gp)
-    206c:	27c30028 	addiu	v1,s8,40
-    2070:	24422820 	addiu	v0,v0,10272
-    2074:	24040050 	li	a0,80
-    2078:	00803025 	move	a2,a0
-    207c:	00402825 	move	a1,v0
-    2080:	00602025 	move	a0,v1
-    2084:	8f8280ec 	lw	v0,-32532(gp)
-    2088:	0040c825 	move	t9,v0
-    208c:	0320f809 	jalr	t9
-    2090:	00000000 	nop
-    2094:	8fdc0018 	lw	gp,24(s8)
+    2078:	8f828028 	lw	v0,-32728(gp)
+    207c:	27c30028 	addiu	v1,s8,40
+    2080:	24422830 	addiu	v0,v0,10288
+    2084:	24040050 	li	a0,80
+    2088:	00803025 	move	a2,a0
+    208c:	00402825 	move	a1,v0
+    2090:	00602025 	move	a0,v1
+    2094:	8f8280ec 	lw	v0,-32532(gp)
+    2098:	0040c825 	move	t9,v0
+    209c:	0320f809 	jalr	t9
+    20a0:	00000000 	nop
+    20a4:	8fdc0018 	lw	gp,24(s8)
             {"decode",  no_argument, NULL, 'd'},
             {"help",    no_argument, NULL, 'h'},
             {"version", no_argument, NULL, 'V'},
     };
 
     char arg_opt_str[] = "i:o:dhV";
-    2098:	8f828030 	lw	v0,-32720(gp)
-    209c:	8c432738 	lw	v1,10040(v0)
-    20a0:	24422738 	addiu	v0,v0,10040
-    20a4:	8c420004 	lw	v0,4(v0)
-    20a8:	afc30078 	sw	v1,120(s8)
-    20ac:	afc2007c 	sw	v0,124(s8)
+    20a8:	8f828030 	lw	v0,-32720(gp)
+    20ac:	8c432748 	lw	v1,10056(v0)
+    20b0:	24422748 	addiu	v0,v0,10056
+    20b4:	8c420004 	lw	v0,4(v0)
+    20b8:	afc30078 	sw	v1,120(s8)
+    20bc:	afc2007c 	sw	v0,124(s8)
     int arg_opt;
     int arg_opt_idx = 0;
-    20b0:	afc00080 	sw	zero,128(s8)
+    20c0:	afc00080 	sw	zero,128(s8)
 
     command_options_st cmd_options;
     // Default Values: encode, stdin as input, stdout as output, stderr as error output
     command_create(&cmd_options);
-    20b4:	27c20084 	addiu	v0,s8,132
-    20b8:	00402025 	move	a0,v0
-    20bc:	8f828070 	lw	v0,-32656(gp)
-    20c0:	0040c825 	move	t9,v0
-    20c4:	0411fb1a 	bal	d30 <command_create>
-    20c8:	00000000 	nop
-    20cc:	8fdc0018 	lw	gp,24(s8)
+    20c4:	27c20084 	addiu	v0,s8,132
+    20c8:	00402025 	move	a0,v0
+    20cc:	8f828070 	lw	v0,-32656(gp)
+    20d0:	0040c825 	move	t9,v0
+    20d4:	0411fb16 	bal	d30 <command_create>
+    20d8:	00000000 	nop
+    20dc:	8fdc0018 	lw	gp,24(s8)
 
     char should_process = TRUE;
-    20d0:	24020001 	li	v0,1
-    20d4:	a3c20020 	sb	v0,32(s8)
+    20e0:	24020001 	li	v0,1
+    20e4:	a3c20020 	sb	v0,32(s8)
     while ((arg_opt = getopt_long(argc, argv, arg_opt_str, arg_long, &arg_opt_idx)) != -1
-    20d8:	10000048 	b	21fc <main+0x1bc>
-    20dc:	00000000 	nop
+    20e8:	10000048 	b	220c <main+0x1bc>
+    20ec:	00000000 	nop
            &&
            should_process) {
 
         switch (arg_opt) {
-    20e0:	8fc20024 	lw	v0,36(s8)
-    20e4:	2442ffaa 	addiu	v0,v0,-86
-    20e8:	2c43001a 	sltiu	v1,v0,26
-    20ec:	1060003a 	beqz	v1,21d8 <main+0x198>
-    20f0:	00000000 	nop
-    20f4:	00021880 	sll	v1,v0,0x2
-    20f8:	8f828030 	lw	v0,-32720(gp)
-    20fc:	24422740 	addiu	v0,v0,10048
-    2100:	00621021 	addu	v0,v1,v0
-    2104:	8c420000 	lw	v0,0(v0)
-    2108:	005c1021 	addu	v0,v0,gp
-    210c:	00400008 	jr	v0
-    2110:	00000000 	nop
+    20f0:	8fc20024 	lw	v0,36(s8)
+    20f4:	2442ffaa 	addiu	v0,v0,-86
+    20f8:	2c43001a 	sltiu	v1,v0,26
+    20fc:	1060003a 	beqz	v1,21e8 <main+0x198>
+    2100:	00000000 	nop
+    2104:	00021880 	sll	v1,v0,0x2
+    2108:	8f828030 	lw	v0,-32720(gp)
+    210c:	24422750 	addiu	v0,v0,10064
+    2110:	00621021 	addu	v0,v1,v0
+    2114:	8c420000 	lw	v0,0(v0)
+    2118:	005c1021 	addu	v0,v0,gp
+    211c:	00400008 	jr	v0
+    2120:	00000000 	nop
             case 'i': {
                 // Set Input File
                 set_input_file(&cmd_options, optarg);
-    2114:	8f8280a4 	lw	v0,-32604(gp)
-    2118:	8c430000 	lw	v1,0(v0)
-    211c:	27c20084 	addiu	v0,s8,132
-    2120:	00602825 	move	a1,v1
-    2124:	00402025 	move	a0,v0
-    2128:	8f828074 	lw	v0,-32652(gp)
-    212c:	0040c825 	move	t9,v0
-    2130:	0411fb27 	bal	dd0 <set_input_file>
-    2134:	00000000 	nop
-    2138:	8fdc0018 	lw	gp,24(s8)
+    2124:	8f8280a4 	lw	v0,-32604(gp)
+    2128:	8c430000 	lw	v1,0(v0)
+    212c:	27c20084 	addiu	v0,s8,132
+    2130:	00602825 	move	a1,v1
+    2134:	00402025 	move	a0,v0
+    2138:	8f828074 	lw	v0,-32652(gp)
+    213c:	0040c825 	move	t9,v0
+    2140:	0411fb23 	bal	dd0 <set_input_file>
+    2144:	00000000 	nop
+    2148:	8fdc0018 	lw	gp,24(s8)
             }
                 break;
-    213c:	1000002f 	b	21fc <main+0x1bc>
-    2140:	00000000 	nop
+    214c:	1000002f 	b	220c <main+0x1bc>
+    2150:	00000000 	nop
             case 'o': {
                 // Set Output File
                 set_output_file(&cmd_options, optarg);
-    2144:	8f8280a4 	lw	v0,-32604(gp)
-    2148:	8c430000 	lw	v1,0(v0)
-    214c:	27c20084 	addiu	v0,s8,132
-    2150:	00602825 	move	a1,v1
-    2154:	00402025 	move	a0,v0
-    2158:	8f828078 	lw	v0,-32648(gp)
-    215c:	0040c825 	move	t9,v0
-    2160:	0411fb29 	bal	e08 <set_output_file>
-    2164:	00000000 	nop
-    2168:	8fdc0018 	lw	gp,24(s8)
+    2154:	8f8280a4 	lw	v0,-32604(gp)
+    2158:	8c430000 	lw	v1,0(v0)
+    215c:	27c20084 	addiu	v0,s8,132
+    2160:	00602825 	move	a1,v1
+    2164:	00402025 	move	a0,v0
+    2168:	8f828078 	lw	v0,-32648(gp)
+    216c:	0040c825 	move	t9,v0
+    2170:	0411fb25 	bal	e08 <set_output_file>
+    2174:	00000000 	nop
+    2178:	8fdc0018 	lw	gp,24(s8)
             }
                 break;
-    216c:	10000023 	b	21fc <main+0x1bc>
-    2170:	00000000 	nop
+    217c:	10000023 	b	220c <main+0x1bc>
+    2180:	00000000 	nop
             case 'h': {
                 // Show Options
                 show_help();
-    2174:	8f828038 	lw	v0,-32712(gp)
-    2178:	0040c825 	move	t9,v0
-    217c:	0411fbb6 	bal	1058 <show_help>
-    2180:	00000000 	nop
-    2184:	8fdc0018 	lw	gp,24(s8)
+    2184:	8f828038 	lw	v0,-32712(gp)
+    2188:	0040c825 	move	t9,v0
+    218c:	0411fbb2 	bal	1058 <show_help>
+    2190:	00000000 	nop
+    2194:	8fdc0018 	lw	gp,24(s8)
                 should_process = FALSE;
-    2188:	a3c00020 	sb	zero,32(s8)
+    2198:	a3c00020 	sb	zero,32(s8)
             }
                 break;
-    218c:	1000001b 	b	21fc <main+0x1bc>
-    2190:	00000000 	nop
+    219c:	1000001b 	b	220c <main+0x1bc>
+    21a0:	00000000 	nop
             case 'V': {
                 // Show Version
                 show_version();
-    2194:	8f82807c 	lw	v0,-32644(gp)
-    2198:	0040c825 	move	t9,v0
-    219c:	0411fbfc 	bal	1190 <show_version>
-    21a0:	00000000 	nop
-    21a4:	8fdc0018 	lw	gp,24(s8)
+    21a4:	8f82807c 	lw	v0,-32644(gp)
+    21a8:	0040c825 	move	t9,v0
+    21ac:	0411fbf8 	bal	1190 <show_version>
+    21b0:	00000000 	nop
+    21b4:	8fdc0018 	lw	gp,24(s8)
                 should_process = FALSE;
-    21a8:	a3c00020 	sb	zero,32(s8)
+    21b8:	a3c00020 	sb	zero,32(s8)
             }
                 break;
-    21ac:	10000013 	b	21fc <main+0x1bc>
-    21b0:	00000000 	nop
+    21bc:	10000013 	b	220c <main+0x1bc>
+    21c0:	00000000 	nop
             case 'd': {
                 // Set Decode option
                 set_decode(&cmd_options);
-    21b4:	27c20084 	addiu	v0,s8,132
-    21b8:	00402025 	move	a0,v0
-    21bc:	8f828080 	lw	v0,-32640(gp)
-    21c0:	0040c825 	move	t9,v0
-    21c4:	0411fb2b 	bal	e74 <set_decode>
-    21c8:	00000000 	nop
-    21cc:	8fdc0018 	lw	gp,24(s8)
+    21c4:	27c20084 	addiu	v0,s8,132
+    21c8:	00402025 	move	a0,v0
+    21cc:	8f828080 	lw	v0,-32640(gp)
+    21d0:	0040c825 	move	t9,v0
+    21d4:	0411fb27 	bal	e74 <set_decode>
+    21d8:	00000000 	nop
+    21dc:	8fdc0018 	lw	gp,24(s8)
             }
                 break;
-    21d0:	1000000a 	b	21fc <main+0x1bc>
-    21d4:	00000000 	nop
+    21e0:	1000000a 	b	220c <main+0x1bc>
+    21e4:	00000000 	nop
             default: {
                 // Set Error Condition = INVALID_ARGUMENT
                 // [Gonzalo: We analize only valid arguments values here: i, o, h, V, d]
                 set_error(&cmd_options, INVALID_ARGUMENT);
-    21d8:	27c20084 	addiu	v0,s8,132
-    21dc:	2405ffff 	li	a1,-1
-    21e0:	00402025 	move	a0,v0
-    21e4:	8f82805c 	lw	v0,-32676(gp)
-    21e8:	0040c825 	move	t9,v0
-    21ec:	0411fb2d 	bal	ea4 <set_error>
-    21f0:	00000000 	nop
-    21f4:	8fdc0018 	lw	gp,24(s8)
+    21e8:	27c20084 	addiu	v0,s8,132
+    21ec:	2405ffff 	li	a1,-1
+    21f0:	00402025 	move	a0,v0
+    21f4:	8f82805c 	lw	v0,-32676(gp)
+    21f8:	0040c825 	move	t9,v0
+    21fc:	0411fb29 	bal	ea4 <set_error>
+    2200:	00000000 	nop
+    2204:	8fdc0018 	lw	gp,24(s8)
             }
                 break;
-    21f8:	00000000 	nop
+    2208:	00000000 	nop
     while ((arg_opt = getopt_long(argc, argv, arg_opt_str, arg_long, &arg_opt_idx)) != -1
-    21fc:	27c40028 	addiu	a0,s8,40
-    2200:	27c30078 	addiu	v1,s8,120
-    2204:	27c20080 	addiu	v0,s8,128
-    2208:	afa20010 	sw	v0,16(sp)
-    220c:	00803825 	move	a3,a0
-    2210:	00603025 	move	a2,v1
-    2214:	8fc500ac 	lw	a1,172(s8)
-    2218:	8fc400a8 	lw	a0,168(s8)
-    221c:	8f8280d0 	lw	v0,-32560(gp)
-    2220:	0040c825 	move	t9,v0
-    2224:	0320f809 	jalr	t9
-    2228:	00000000 	nop
-    222c:	8fdc0018 	lw	gp,24(s8)
-    2230:	afc20024 	sw	v0,36(s8)
-    2234:	8fc30024 	lw	v1,36(s8)
-    2238:	2402ffff 	li	v0,-1
-    223c:	10620004 	beq	v1,v0,2250 <main+0x210>
-    2240:	00000000 	nop
+    220c:	27c40028 	addiu	a0,s8,40
+    2210:	27c30078 	addiu	v1,s8,120
+    2214:	27c20080 	addiu	v0,s8,128
+    2218:	afa20010 	sw	v0,16(sp)
+    221c:	00803825 	move	a3,a0
+    2220:	00603025 	move	a2,v1
+    2224:	8fc500ac 	lw	a1,172(s8)
+    2228:	8fc400a8 	lw	a0,168(s8)
+    222c:	8f8280d0 	lw	v0,-32560(gp)
+    2230:	0040c825 	move	t9,v0
+    2234:	0320f809 	jalr	t9
+    2238:	00000000 	nop
+    223c:	8fdc0018 	lw	gp,24(s8)
+    2240:	afc20024 	sw	v0,36(s8)
+    2244:	8fc30024 	lw	v1,36(s8)
+    2248:	2402ffff 	li	v0,-1
+    224c:	10620004 	beq	v1,v0,2260 <main+0x210>
+    2250:	00000000 	nop
            &&
-    2244:	83c20020 	lb	v0,32(s8)
-    2248:	1440ffa5 	bnez	v0,20e0 <main+0xa0>
-    224c:	00000000 	nop
+    2254:	83c20020 	lb	v0,32(s8)
+    2258:	1440ffa5 	bnez	v0,20f0 <main+0xa0>
+    225c:	00000000 	nop
         }
     }
 
     // Help or Version arguments, no processing
     if (!should_process) {
-    2250:	83c20020 	lb	v0,32(s8)
-    2254:	14400004 	bnez	v0,2268 <main+0x228>
-    2258:	00000000 	nop
+    2260:	83c20020 	lb	v0,32(s8)
+    2264:	14400004 	bnez	v0,2278 <main+0x228>
+    2268:	00000000 	nop
         return 0;
-    225c:	00001025 	move	v0,zero
-    2260:	1000001b 	b	22d0 <main+0x290>
-    2264:	00000000 	nop
+    226c:	00001025 	move	v0,zero
+    2270:	1000001b 	b	22e0 <main+0x290>
+    2274:	00000000 	nop
     }
 
     // Processs Encode/Decode if no errors found, otherwise show error message
     if (has_errors(&cmd_options)) {
-    2268:	27c20084 	addiu	v0,s8,132
-    226c:	00402025 	move	a0,v0
-    2270:	8f828068 	lw	v0,-32664(gp)
-    2274:	0040c825 	move	t9,v0
-    2278:	0411fb19 	bal	ee0 <has_errors>
-    227c:	00000000 	nop
-    2280:	8fdc0018 	lw	gp,24(s8)
-    2284:	1040000b 	beqz	v0,22b4 <main+0x274>
-    2288:	00000000 	nop
+    2278:	27c20084 	addiu	v0,s8,132
+    227c:	00402025 	move	a0,v0
+    2280:	8f828068 	lw	v0,-32664(gp)
+    2284:	0040c825 	move	t9,v0
+    2288:	0411fb15 	bal	ee0 <has_errors>
+    228c:	00000000 	nop
+    2290:	8fdc0018 	lw	gp,24(s8)
+    2294:	1040000b 	beqz	v0,22c4 <main+0x274>
+    2298:	00000000 	nop
         show_error(&cmd_options);
-    228c:	27c20084 	addiu	v0,s8,132
-    2290:	00402025 	move	a0,v0
-    2294:	8f828060 	lw	v0,-32672(gp)
-    2298:	0040c825 	move	t9,v0
-    229c:	0411fb21 	bal	f24 <show_error>
-    22a0:	00000000 	nop
-    22a4:	8fdc0018 	lw	gp,24(s8)
-        return 1;
-    22a8:	24020001 	li	v0,1
-    22ac:	10000008 	b	22d0 <main+0x290>
+    229c:	27c20084 	addiu	v0,s8,132
+    22a0:	00402025 	move	a0,v0
+    22a4:	8f828060 	lw	v0,-32672(gp)
+    22a8:	0040c825 	move	t9,v0
+    22ac:	0411fb1d 	bal	f24 <show_error>
     22b0:	00000000 	nop
+    22b4:	8fdc0018 	lw	gp,24(s8)
+        return 1;
+    22b8:	24020001 	li	v0,1
+    22bc:	10000008 	b	22e0 <main+0x290>
+    22c0:	00000000 	nop
     }
 
     return process(&cmd_options);
-    22b4:	27c20084 	addiu	v0,s8,132
-    22b8:	00402025 	move	a0,v0
-    22bc:	8f828084 	lw	v0,-32636(gp)
-    22c0:	0040c825 	move	t9,v0
-    22c4:	0411fbc8 	bal	11e8 <process>
-    22c8:	00000000 	nop
-    22cc:	8fdc0018 	lw	gp,24(s8)
+    22c4:	27c20084 	addiu	v0,s8,132
+    22c8:	00402025 	move	a0,v0
+    22cc:	8f828084 	lw	v0,-32636(gp)
+    22d0:	0040c825 	move	t9,v0
+    22d4:	0411fbc4 	bal	11e8 <process>
+    22d8:	00000000 	nop
+    22dc:	8fdc0018 	lw	gp,24(s8)
 }
-    22d0:	03c0e825 	move	sp,s8
-    22d4:	8fbf00a4 	lw	ra,164(sp)
-    22d8:	8fbe00a0 	lw	s8,160(sp)
-    22dc:	27bd00a8 	addiu	sp,sp,168
-    22e0:	03e00008 	jr	ra
-    22e4:	00000000 	nop
+    22e0:	03c0e825 	move	sp,s8
+    22e4:	8fbf00a4 	lw	ra,164(sp)
+    22e8:	8fbe00a0 	lw	s8,160(sp)
+    22ec:	27bd00a8 	addiu	sp,sp,168
+    22f0:	03e00008 	jr	ra
+    22f4:	00000000 	nop
 	...
 
-000022f0 <__libc_csu_init>:
-    22f0:	3c1c0002 	lui	gp,0x2
-    22f4:	279c8580 	addiu	gp,gp,-31360
-    22f8:	0399e021 	addu	gp,gp,t9
-    22fc:	27bdffc8 	addiu	sp,sp,-56
-    2300:	8f998088 	lw	t9,-32632(gp)
-    2304:	afbc0010 	sw	gp,16(sp)
-    2308:	afb50030 	sw	s5,48(sp)
-    230c:	00c0a825 	move	s5,a2
-    2310:	afb4002c 	sw	s4,44(sp)
-    2314:	00a0a025 	move	s4,a1
-    2318:	afb30028 	sw	s3,40(sp)
-    231c:	00809825 	move	s3,a0
-    2320:	afb20024 	sw	s2,36(sp)
-    2324:	afb0001c 	sw	s0,28(sp)
-    2328:	afbf0034 	sw	ra,52(sp)
-    232c:	0411f9fe 	bal	b28 <_init>
-    2330:	afb10020 	sw	s1,32(sp)
-    2334:	8fbc0010 	lw	gp,16(sp)
-    2338:	8f90808c 	lw	s0,-32628(gp)
-    233c:	8f928090 	lw	s2,-32624(gp)
-    2340:	02509023 	subu	s2,s2,s0
-    2344:	00129083 	sra	s2,s2,0x2
-    2348:	12400009 	beqz	s2,2370 <__libc_csu_init+0x80>
-    234c:	00008825 	move	s1,zero
-    2350:	8e190000 	lw	t9,0(s0)
-    2354:	26310001 	addiu	s1,s1,1
-    2358:	02a03025 	move	a2,s5
-    235c:	02802825 	move	a1,s4
-    2360:	0320f809 	jalr	t9
-    2364:	02602025 	move	a0,s3
-    2368:	1651fff9 	bne	s2,s1,2350 <__libc_csu_init+0x60>
-    236c:	26100004 	addiu	s0,s0,4
-    2370:	8fbf0034 	lw	ra,52(sp)
-    2374:	8fb50030 	lw	s5,48(sp)
-    2378:	8fb4002c 	lw	s4,44(sp)
-    237c:	8fb30028 	lw	s3,40(sp)
-    2380:	8fb20024 	lw	s2,36(sp)
-    2384:	8fb10020 	lw	s1,32(sp)
-    2388:	8fb0001c 	lw	s0,28(sp)
-    238c:	03e00008 	jr	ra
-    2390:	27bd0038 	addiu	sp,sp,56
+00002300 <__libc_csu_init>:
+    2300:	3c1c0002 	lui	gp,0x2
+    2304:	279c8580 	addiu	gp,gp,-31360
+    2308:	0399e021 	addu	gp,gp,t9
+    230c:	27bdffc8 	addiu	sp,sp,-56
+    2310:	8f998088 	lw	t9,-32632(gp)
+    2314:	afbc0010 	sw	gp,16(sp)
+    2318:	afb50030 	sw	s5,48(sp)
+    231c:	00c0a825 	move	s5,a2
+    2320:	afb4002c 	sw	s4,44(sp)
+    2324:	00a0a025 	move	s4,a1
+    2328:	afb30028 	sw	s3,40(sp)
+    232c:	00809825 	move	s3,a0
+    2330:	afb20024 	sw	s2,36(sp)
+    2334:	afb0001c 	sw	s0,28(sp)
+    2338:	afbf0034 	sw	ra,52(sp)
+    233c:	0411f9fa 	bal	b28 <_init>
+    2340:	afb10020 	sw	s1,32(sp)
+    2344:	8fbc0010 	lw	gp,16(sp)
+    2348:	8f90808c 	lw	s0,-32628(gp)
+    234c:	8f928090 	lw	s2,-32624(gp)
+    2350:	02509023 	subu	s2,s2,s0
+    2354:	00129083 	sra	s2,s2,0x2
+    2358:	12400009 	beqz	s2,2380 <__libc_csu_init+0x80>
+    235c:	00008825 	move	s1,zero
+    2360:	8e190000 	lw	t9,0(s0)
+    2364:	26310001 	addiu	s1,s1,1
+    2368:	02a03025 	move	a2,s5
+    236c:	02802825 	move	a1,s4
+    2370:	0320f809 	jalr	t9
+    2374:	02602025 	move	a0,s3
+    2378:	1651fff9 	bne	s2,s1,2360 <__libc_csu_init+0x60>
+    237c:	26100004 	addiu	s0,s0,4
+    2380:	8fbf0034 	lw	ra,52(sp)
+    2384:	8fb50030 	lw	s5,48(sp)
+    2388:	8fb4002c 	lw	s4,44(sp)
+    238c:	8fb30028 	lw	s3,40(sp)
+    2390:	8fb20024 	lw	s2,36(sp)
+    2394:	8fb10020 	lw	s1,32(sp)
+    2398:	8fb0001c 	lw	s0,28(sp)
+    239c:	03e00008 	jr	ra
+    23a0:	27bd0038 	addiu	sp,sp,56
 
-00002394 <__libc_csu_fini>:
-    2394:	03e00008 	jr	ra
-    2398:	00000000 	nop
-    239c:	00000000 	nop
+000023a4 <__libc_csu_fini>:
+    23a4:	03e00008 	jr	ra
+    23a8:	00000000 	nop
+    23ac:	00000000 	nop
 
 Disassembly of section .MIPS.stubs:
 
-000023a0 <_MIPS_STUBS_>:
-    23a0:	8f998010 	lw	t9,-32752(gp)
-    23a4:	03e07825 	move	t7,ra
-    23a8:	0320f809 	jalr	t9
-    23ac:	24180033 	li	t8,51
+000023b0 <_MIPS_STUBS_>:
     23b0:	8f998010 	lw	t9,-32752(gp)
     23b4:	03e07825 	move	t7,ra
     23b8:	0320f809 	jalr	t9
-    23bc:	24180031 	li	t8,49
+    23bc:	24180033 	li	t8,51
     23c0:	8f998010 	lw	t9,-32752(gp)
     23c4:	03e07825 	move	t7,ra
     23c8:	0320f809 	jalr	t9
-    23cc:	24180030 	li	t8,48
+    23cc:	24180031 	li	t8,49
     23d0:	8f998010 	lw	t9,-32752(gp)
     23d4:	03e07825 	move	t7,ra
     23d8:	0320f809 	jalr	t9
-    23dc:	2418002f 	li	t8,47
+    23dc:	24180030 	li	t8,48
     23e0:	8f998010 	lw	t9,-32752(gp)
     23e4:	03e07825 	move	t7,ra
     23e8:	0320f809 	jalr	t9
-    23ec:	2418002e 	li	t8,46
+    23ec:	2418002f 	li	t8,47
     23f0:	8f998010 	lw	t9,-32752(gp)
     23f4:	03e07825 	move	t7,ra
     23f8:	0320f809 	jalr	t9
-    23fc:	2418002d 	li	t8,45
+    23fc:	2418002e 	li	t8,46
     2400:	8f998010 	lw	t9,-32752(gp)
     2404:	03e07825 	move	t7,ra
     2408:	0320f809 	jalr	t9
-    240c:	2418002b 	li	t8,43
+    240c:	2418002d 	li	t8,45
     2410:	8f998010 	lw	t9,-32752(gp)
     2414:	03e07825 	move	t7,ra
     2418:	0320f809 	jalr	t9
-    241c:	2418002a 	li	t8,42
+    241c:	2418002b 	li	t8,43
     2420:	8f998010 	lw	t9,-32752(gp)
     2424:	03e07825 	move	t7,ra
     2428:	0320f809 	jalr	t9
-    242c:	24180029 	li	t8,41
+    242c:	2418002a 	li	t8,42
     2430:	8f998010 	lw	t9,-32752(gp)
     2434:	03e07825 	move	t7,ra
     2438:	0320f809 	jalr	t9
-    243c:	24180028 	li	t8,40
+    243c:	24180029 	li	t8,41
     2440:	8f998010 	lw	t9,-32752(gp)
     2444:	03e07825 	move	t7,ra
     2448:	0320f809 	jalr	t9
-    244c:	24180026 	li	t8,38
+    244c:	24180028 	li	t8,40
     2450:	8f998010 	lw	t9,-32752(gp)
     2454:	03e07825 	move	t7,ra
     2458:	0320f809 	jalr	t9
-    245c:	24180025 	li	t8,37
+    245c:	24180026 	li	t8,38
     2460:	8f998010 	lw	t9,-32752(gp)
     2464:	03e07825 	move	t7,ra
     2468:	0320f809 	jalr	t9
-    246c:	24180023 	li	t8,35
+    246c:	24180025 	li	t8,37
     2470:	8f998010 	lw	t9,-32752(gp)
     2474:	03e07825 	move	t7,ra
     2478:	0320f809 	jalr	t9
-    247c:	24180021 	li	t8,33
+    247c:	24180023 	li	t8,35
     2480:	8f998010 	lw	t9,-32752(gp)
     2484:	03e07825 	move	t7,ra
     2488:	0320f809 	jalr	t9
-    248c:	2418001e 	li	t8,30
+    248c:	24180021 	li	t8,33
+    2490:	8f998010 	lw	t9,-32752(gp)
+    2494:	03e07825 	move	t7,ra
+    2498:	0320f809 	jalr	t9
+    249c:	2418001e 	li	t8,30
 	...
 
 Disassembly of section .fini:
 
-000024a0 <_fini>:
-    24a0:	3c1c0002 	lui	gp,0x2
-    24a4:	279c83d0 	addiu	gp,gp,-31792
-    24a8:	0399e021 	addu	gp,gp,t9
-    24ac:	27bdffe0 	addiu	sp,sp,-32
-    24b0:	afbc0010 	sw	gp,16(sp)
-    24b4:	afbf001c 	sw	ra,28(sp)
-    24b8:	8fbf001c 	lw	ra,28(sp)
-    24bc:	03e00008 	jr	ra
-    24c0:	27bd0020 	addiu	sp,sp,32
+000024b0 <_fini>:
+    24b0:	3c1c0002 	lui	gp,0x2
+    24b4:	279c83d0 	addiu	gp,gp,-31792
+    24b8:	0399e021 	addu	gp,gp,t9
+    24bc:	27bdffe0 	addiu	sp,sp,-32
+    24c0:	afbc0010 	sw	gp,16(sp)
+    24c4:	afbf001c 	sw	ra,28(sp)
+    24c8:	8fbf001c 	lw	ra,28(sp)
+    24cc:	03e00008 	jr	ra
+    24d0:	27bd0020 	addiu	sp,sp,32
