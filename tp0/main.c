@@ -7,12 +7,12 @@ int main(int argc, char **argv) {
     struct option arg_long[] = {
             {"input",   required_argument, NULL, 'i'},
             {"output",  required_argument, NULL, 'o'},
-            {"decode",  no_argument,       NULL, 'd'},
-            {"help",    required_argument, NULL, 'h'},
-            {"version", required_argument, NULL, 'V'},
+            {"decode",  no_argument, NULL, 'd'},
+            {"help",    no_argument, NULL, 'h'},
+            {"version", no_argument, NULL, 'V'},
     };
 
-    char arg_opt_str[] = "i:o:d:hV";
+    char arg_opt_str[] = "i:o:dhV";
     int arg_opt;
     int arg_opt_idx = 0;
 
