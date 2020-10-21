@@ -10,5 +10,4 @@
   Gonzalo Almendro
   
 ### Información:
-  Overleaf con informe: https://es.overleaf.com/project/5f7fa3a81c870e000147c446
-  
+[Informe TP0](tp0/Organizacion_de_computadoras_tp0.pdf)
