@@ -78,19 +78,17 @@ void show_version() {
 }
 
 char process(command_options_st *opt) {
-    char result = open_file_read(&opt->input_file, opt->input_path);
-    if (!result) {
-        result = open_file_write(&opt->output_file, opt->output_path);
+    if (open_file_read(&opt->input_file, opt->input_path) == ERROR) {
+        return ERROR;
+    }
+    if (open_file_write(&opt->output_file, opt->output_path) == ERROR) {
+        close_file(&opt->input_file);
+        return ERROR;
     }
 
-    if (!result) {
-        result = _do_encode_decode(opt);
-        close_file(&opt->input_file);
-        close_file(&opt->output_file);
-    } else {
-        close_file(&opt->input_file);
-    }
-
+    char result = _do_encode_decode(opt);
+    close_file(&opt->input_file);
+    close_file(&opt->output_file);
     return result;
 }
 
