@@ -9,10 +9,6 @@
 #define OK 0
 #define ERROR 1
 
-// OPERATIONS
-#define DIVISOR 0
-#define MULTIPLE 1
-
 // ERROR CODES
 #define INVALID_ARGUMENT -1
 #define NO_ARGUMENTS -2

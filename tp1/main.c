@@ -53,6 +53,8 @@ int main(int argc, char **argv) {
         }
     }
 
+    // TODO: agregar set de M y N cuando no se manda -d ni -m
+
     if (!should_process) {
         return 0;
     }

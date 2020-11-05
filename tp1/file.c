@@ -8,20 +8,6 @@ void create_file(File *file) {
     file->eof = 0;
 }
 
-char open_file_read(File *file, const char *route) {
-    if (route == NULL) {
-        file->file = stdin;
-    } else {
-        file->file = fopen(route, "rb");
-        if (file->file == NULL) {
-            int err = errno;
-            fprintf(stderr, "Error al abrir archivo: %s\n", strerror(err));
-            return ERROR;
-        }
-    }
-    return OK;
-}
-
 char open_file_write(File *file, const char *route) {
     if (route == NULL) {
         file->file = stdout;
@@ -49,19 +35,8 @@ int close_file(File *file) {
     return OK;
 }
 
-unsigned int file_read(File *file, unsigned char *buffer, unsigned int length) {
-    unsigned int result = 0;
-    if (!file_eof(file)) {
-        result = (unsigned int) fread(buffer, sizeof(char), length, file->file);
-        if (feof(file->file)) {
-            file->eof = 1;
-        }
-    }
-    return result;
-}
-
-void file_write(File *file, unsigned char *buffer, unsigned int length) {
-    fwrite(buffer, sizeof(char), length, file->file);
+void file_write(File *file, int number) {
+    fwrite(&number, sizeof(int), 1, file->file);
 }
 
 int file_eof(File *file) {

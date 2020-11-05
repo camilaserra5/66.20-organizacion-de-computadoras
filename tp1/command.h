@@ -8,7 +8,8 @@ typedef struct {
     File output_file;
     const char *output_path;
     char error_condition;
-    char operation;
+    char multiple;
+    char divisor;
     const char *m;
     const char *n;
 } command_options_st;
