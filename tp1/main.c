@@ -37,6 +37,15 @@ int main(int argc, char **argv) {
             case 'o': {
                 set_output_file(&cmd_options, optarg);
             }
+                break;
+            case 'd': {
+                set_divisor(&cmd_options, optarg, argv[optind]);
+            }
+                break;
+            case 'm': {
+                set_multiple(&cmd_options, optarg, argv[optind]);
+            }
+                break;
             default: {
                 set_error(&cmd_options, INVALID_ARGUMENT);
             }

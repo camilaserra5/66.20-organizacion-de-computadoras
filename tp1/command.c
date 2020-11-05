@@ -13,6 +13,18 @@ void set_output_file(command_options_st *opt, const char *output) {
     opt->output_path = output;
 }
 
+void set_divisor(command_options_st *opt, const char *m, const char *n) {
+    opt->operation = DIVISOR;
+    opt->m = m;
+    opt->n = n;
+}
+
+void set_multiple(command_options_st *opt, const char *m, const char *n) {
+    opt->operation = MULTIPLE;
+    opt->m = m;
+    opt->n = n;
+}
+
 void set_error(command_options_st *opt, char error_condition) {
     opt->error_condition = error_condition;
 }
@@ -46,7 +58,7 @@ void show_help() {
     printf("\t-d,\t--divisor\tJust the divisor.\n");
     printf("\t-m,\t--multiple\tJust the multiple.\n");
     printf("Examples:\n");
-    printf("\tcommon -0 - 256 192\n");
+    printf("\tcommon -o - 256 192\n");
 }
 
 void show_version() {
