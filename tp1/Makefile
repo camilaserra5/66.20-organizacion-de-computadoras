@@ -1,0 +1,24 @@
+CC = gcc
+CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99
+
+OBJECTS = command.o file.o
+EXEC = tp1
+
+all: $(EXEC)
+
+command.o: command.c command.h
+	$(CC) $(CFLAGS) -c command.c -o command.o
+	
+file.o: file.c file.h
+	$(CC) $(CFLAGS) -c file.c -o file.o		
+
+$(EXEC): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) main.c -o $(EXEC) -lm
+	
+	
+run: $(EXEC)
+	./$(EXEC)
+	
+	
+clean:
+	rm -f *.o $(EXEC)
