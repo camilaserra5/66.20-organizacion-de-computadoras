@@ -13,7 +13,7 @@ file.o: file.c file.h
 	$(CC) $(CFLAGS) -c file.c -o file.o		
 
 $(EXEC): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) main.c -o $(EXEC) -lm
+	$(CC) $(CFLAGS) $(OBJECTS) main.c mcm.c mcd.c -o $(EXEC) -lm
 	
 	
 run: $(EXEC)

@@ -35,8 +35,9 @@ int close_file(File *file) {
     return OK;
 }
 
-void file_write(File *file, int number) {
-    fwrite(&number, sizeof(int), 1, file->file);
+void file_write(File *file, unsigned int number) {
+    fprintf(file->file, "%d\n", number);
+    //fwrite(string, 1, sizeof(string), file->file);
 }
 
 int file_eof(File *file) {

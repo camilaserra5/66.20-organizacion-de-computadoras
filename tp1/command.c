@@ -3,6 +3,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "command.h"
+#include "limits.h"
+
+extern unsigned int mcm(unsigned int m, unsigned int n);
+extern unsigned int mcd(unsigned int m, unsigned int n);
 
 void command_create(command_options_st *opt) {
     create_file(&opt->output_file);
@@ -10,24 +14,57 @@ void command_create(command_options_st *opt) {
     opt->output_path = 0;
     opt->multiple = TRUE;
     opt->divisor = TRUE;
+    opt->m = MIN_NUMBER;
+    opt->n = MIN_NUMBER;
 }
 
 void set_output_file(command_options_st *opt, const char *output) {
-    opt->output_path = output;
+    if ( strcmp(output,"-") != 0 ) {    	
+    	opt->output_path = output;
+    }
 }
 
-void set_divisor(command_options_st *opt, const char *m, const char *n) {
+void set_divisor_only(command_options_st *opt) {
     opt->multiple = FALSE;
-    // TODO: validar que M y N sean numeros entre 2 y MAXINT
-    opt->m = m;
-    opt->n = n;
 }
 
-void set_multiple(command_options_st *opt, const char *m, const char *n) {
+void set_multiple_only(command_options_st *opt) {
     opt->divisor = FALSE;
-    // TODO: validar que M y N sean numeros entre 2 y MAXINT
-    opt->m = m;
-    opt->n = n;
+}
+
+void set_numbers(command_options_st *opt, int argc, char** argv) {
+
+    if( argc >= 3 ) {    
+    	char* arg_number_m = argv[argc-2];
+    	char* arg_number_n = argv[argc-1];
+    	
+    	if (strcmp(arg_number_m,"") == 0) arg_number_m = "0";
+    	if (strcmp(arg_number_n,"") == 0) arg_number_n = "0";
+    	unsigned int m = atoi(arg_number_m);
+    	unsigned int n = atoi(arg_number_n);
+    	    	
+    	if( m < MIN_NUMBER || m >= INT_MAX )
+	{
+	    	set_error(opt, INVALID_NUMBERS);
+	}
+	else
+	{
+		opt->m = m;
+	}
+	   
+	if( n < MIN_NUMBER || n >= INT_MAX )
+	{
+	    	set_error(opt, INVALID_NUMBERS);
+	}
+	else    
+	{
+		opt->n = n;    
+	}
+    }
+    else
+    {
+    	set_error(opt, INVALID_ARGUMENT);
+    }
 }
 
 void set_error(command_options_st *opt, char error_condition) {
@@ -46,6 +83,9 @@ void show_error(command_options_st *opt) {
         should_show_help = true;
     } else if (opt->error_condition == NO_ARGUMENTS) {
         error_message = "No se recibieron Argumentos!\n\n";
+        should_show_help = true;
+    } else if (opt->error_condition == INVALID_NUMBERS) {
+    	error_message = "Los numeros deben ser mayores a 2 y menores a INT_MAX!\n\n";
         should_show_help = true;
     }
 
@@ -69,7 +109,7 @@ void show_help() {
 void show_version() {
     printf("Version: 1.0\n");
 }
-
+/*
 int _mcm_rec(int m, int n) {
     if (m == 0)
         return n;
@@ -95,6 +135,7 @@ int _mcd(int m, int n) {
         return _mcd(m - n, n);
     return _mcd(m, n - m);
 }
+*/
 
 char process(command_options_st *opt) {
     if (open_file_write(&opt->output_file, opt->output_path) == ERROR) {
@@ -103,15 +144,15 @@ char process(command_options_st *opt) {
 
     int result;
     if (opt->multiple) {
-        result = _mcm(atoi(opt->m), atoi(opt->n));
-        printf("mcm %d", result);
+        result = mcm(opt->m, opt->n);
+        //printf("mcm %d", result);        
         // TODO: el write creo que no esta funcionando bien :(
         file_write(&opt->output_file, result);
     }
 
     if (opt->divisor) {
-        result = _mcd(atoi(opt->m), atoi(opt->n));
-        printf("mcd %d", result);
+        result = mcd(opt->m, opt->n);
+        //printf("mcd %d", result);
         // TODO: el write creo que no esta funcionando bien :(
         file_write(&opt->output_file, result);
     }

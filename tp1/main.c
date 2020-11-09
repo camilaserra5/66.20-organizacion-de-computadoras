@@ -6,19 +6,19 @@
 int main(int argc, char **argv) {
     struct option arg_long[] = {
             {"output",   required_argument, NULL, 'o'},
-            {"divisor",  required_argument, NULL, 'd'},
-            {"multiple", required_argument, NULL, 'm'},
-            {"help",     no_argument,       NULL, 'h'},
-            {"version",  no_argument,       NULL, 'V'},
+            {"divisor",  no_argument, NULL, 'd'},
+            {"multiple", no_argument, NULL, 'm'},
+            {"help",     no_argument, NULL, 'h'},
+            {"version",  no_argument, NULL, 'V'},
     };
 
-    char arg_opt_str[] = "d:m:o:hV";
+    char arg_opt_str[] = "dmo:hV";
     int arg_opt;
     int arg_opt_idx = 0;
 
     command_options_st cmd_options;
     command_create(&cmd_options);
-
+	    
     char should_process = TRUE;
     while ((arg_opt = getopt_long(argc, argv, arg_opt_str, arg_long, &arg_opt_idx)) != -1
            &&
@@ -27,33 +27,36 @@ int main(int argc, char **argv) {
             case 'h': {
                 show_help();
                 should_process = FALSE;
-            }
+            	}
                 break;
             case 'V': {
                 show_version();
                 should_process = FALSE;
-            }
+            	}
                 break;
             case 'o': {
                 set_output_file(&cmd_options, optarg);
-            }
+            	}
                 break;
             case 'd': {
-                set_divisor(&cmd_options, optarg, argv[optind]);
-            }
+            	// Setea solo calculo de MCD
+                set_divisor_only(&cmd_options);
+            	}
                 break;
             case 'm': {
-                set_multiple(&cmd_options, optarg, argv[optind]);
-            }
+            	// Setea solo calculo de MCM
+                set_multiple_only(&cmd_options);
+            	}
                 break;
-            default: {
-                set_error(&cmd_options, INVALID_ARGUMENT);
+            default: 
+            {
+            	set_error(&cmd_options, INVALID_ARGUMENT);               
             }
-                break;
+            break;
         }
     }
-
-    // TODO: agregar set de M y N cuando no se manda -d ni -m
+        
+    set_numbers(&cmd_options, argc, argv);
 
     if (!should_process) {
         return 0;
