@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99
 
 OBJECTS = command.o file.o
-EXEC = tp1
+EXEC = common
 
 all: $(EXEC)
 
@@ -21,4 +21,5 @@ run: $(EXEC)
 	
 	
 clean:
-	rm -f *.o $(EXEC)
+	rm -f *.o
+	rm -f $(EXEC)
