@@ -40,10 +40,10 @@ void set_numbers(command_options_st *opt, int argc, char** argv) {
     	
     	if (strcmp(arg_number_m,"") == 0) arg_number_m = "0";
     	if (strcmp(arg_number_n,"") == 0) arg_number_n = "0";
-    	unsigned int m = atoi(arg_number_m);
-    	unsigned int n = atoi(arg_number_n);
+    	unsigned int m = strtoul(arg_number_m, NULL, 10);
+    	unsigned int n = strtoul(arg_number_n, NULL, 10);
     	    	
-    	if( m < MIN_NUMBER || m >= INT_MAX )
+    	if( m < MIN_NUMBER || m > INT_MAX )
 	{
 	    	set_error(opt, INVALID_NUMBERS);
 	}
@@ -52,7 +52,7 @@ void set_numbers(command_options_st *opt, int argc, char** argv) {
 		opt->m = m;
 	}
 	   
-	if( n < MIN_NUMBER || n >= INT_MAX )
+	if( n < MIN_NUMBER || n > INT_MAX )
 	{
 	    	set_error(opt, INVALID_NUMBERS);
 	}
@@ -86,7 +86,7 @@ void show_error(command_options_st *opt) {
         should_show_help = true;
     } else if (opt->error_condition == INVALID_NUMBERS) {
     	error_message = "Los numeros deben ser mayores a 2 y menores a INT_MAX!\n\n";
-        should_show_help = true;
+       should_show_help = true;
     }
 
     fprintf(stderr, "%s", error_message);
@@ -109,52 +109,32 @@ void show_help() {
 void show_version() {
     printf("Version: 1.0\n");
 }
-/*
-int _mcm_rec(int m, int n) {
-    if (m == 0)
-        return n;
-    return _mcm_rec(n % m, m);
-}
 
-// mínimo común múltiplo
-int _mcm(int m, int n) {
-    return (m / _mcm_rec(m, n)) * n;
-}
-
-// máximo común divisor
-int _mcd(int m, int n) {
-    if (m == 0)
-        return m;
-    if (n == 0)
-        return n;
-
-    if (m == n)
-        return m;
-
-    if (m > n)
-        return _mcd(m - n, n);
-    return _mcd(m, n - m);
-}
-*/
 
 char process(command_options_st *opt) {
     if (open_file_write(&opt->output_file, opt->output_path) == ERROR) {
         return ERROR;
     }
 
-    int result;
+    unsigned int result;
     if (opt->multiple) {
-        result = mcm(opt->m, opt->n);
-        //printf("mcm %d", result);        
-        // TODO: el write creo que no esta funcionando bien :(
-        file_write(&opt->output_file, result);
+        result = mcm(opt->m, opt->n);      
+        if( result > INT_MAX ) {
+        	char* overflow_msg = "overflow";
+        	file_write_text(&opt->output_file,overflow_msg);
+	} else {
+	        file_write_number(&opt->output_file, result);
+	}
     }
 
     if (opt->divisor) {
         result = mcd(opt->m, opt->n);
-        //printf("mcd %d", result);
-        // TODO: el write creo que no esta funcionando bien :(
-        file_write(&opt->output_file, result);
+        if( result > INT_MAX ) {
+        	char* overflow_msg = "overflow";
+        	file_write_text(&opt->output_file,overflow_msg);
+        } else {        
+	        file_write_number(&opt->output_file, result);
+        }
     }
 
     close_file(&opt->output_file);

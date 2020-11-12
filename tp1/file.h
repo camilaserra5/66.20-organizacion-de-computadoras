@@ -15,7 +15,9 @@ char open_file_write(File *file, const char *route);
 
 int close_file(File *file);
 
-void file_write(File *file, unsigned int number);
+void file_write_number(File *file, unsigned int number);
+
+void file_write_text(File *file, const char *text);
 
 int file_eof(File *file);
 
