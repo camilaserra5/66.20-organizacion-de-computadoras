@@ -27,11 +27,11 @@
       ==========
   28  |   b    |
       ----------
-  24   |   a    |
+  24  |   a    |
       ---------- LTA(16)
-  20   | mcd_v  |
+  20  | mcd_v  |
       ----------
-  16   |  mcm_v |
+  16  |  mcm_v |
       ==========
   12  |   a3   |
       ----------
@@ -82,6 +82,7 @@ subu  sp,sp,SIZE_SF
 # Save the callee-saved registers used by the caller in the SRA.
 sw  fp,FP(sp)
 sw  gp,GP(sp)
+sw  ra,RA(sp)
 # We must set the $fp to the beginning of the stack.
 move fp,sp
 
@@ -90,8 +91,8 @@ move fp,sp
 sw  a0,M_A0(fp)
 sw  a1,N_A1(fp)
 
-// mcd(unsigned int m, unsigned int n) 
-mcd:
+// mcm(unsigned int m, unsigned int n) 
+mcm:
 
 	sw	zero,MCM_V(fp)
 	sw	zero,MCD_V(fp)
@@ -126,9 +127,7 @@ m_high_n:
 	move 	v0,t4         # Return mcm_v value
 
 stack_unwinding:
-	lw        a1, (SIZE_SF + 4)(sp)
-	lw        a0, (SIZE_SF)(sp)
-  
+
 	lw        ra, RA(sp)
 	lw        fp, FP(sp)
 	lw        gp, GP(sp)
