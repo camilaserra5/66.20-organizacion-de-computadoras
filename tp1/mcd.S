@@ -11,14 +11,14 @@
 .cpload     t9
 .set        reorder
 
-/* STACK DESIGN - SIZE: 32
+/* STACK DESIGN - SIZE: 24
       ===========
   28  |   a1    |
       ---------- ABA CALLER (8)
   24  |   a0    |
       ===========
   20  |   gp    |
-      ----------  SRA(16)
+      ----------  SRA(8)
   16  |   fp    |
       ===========
   12  |PADDING_0|
