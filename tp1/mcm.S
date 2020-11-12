@@ -93,16 +93,17 @@ sw  a1,N_A1(fp)
 
 // mcm(unsigned int m, unsigned int n) 
 mcm:
-
-	sw	zero,MCM_V(fp)
-	sw	zero,MCD_V(fp)
+	li       t0, 0
+	sw	t0,MCM_V(fp)
+	li       t1, 0
+	sw	t1,MCD_V(fp)
 	lw	t0,M_A0(fp)
 	sw	t0,A_LTA(fp)    # a = m
 	lw	t1,N_A1(fp)
 	sw	t1,B_LTA(fp)   # b = n
 	lw	t3,N_A1(fp)
 	lw	t4,M_A0(fp)
-	sltu	t4,t4,t3
+	sltu	t4,t4,t3       # m < n
 	beqz	t4,m_high_n
 
 	lw	t2,N_A1(fp) 

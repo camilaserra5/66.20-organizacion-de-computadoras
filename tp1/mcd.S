@@ -13,16 +13,12 @@
 
 /* STACK DESIGN - SIZE: 32
       ===========
-  36  |   a1    |
+  28  |   a1    |
       ---------- ABA CALLER (8)
-  32  |   a0    |
+  24  |   a0    |
       ===========
-  28  |PADDING  |
-      ---------- 
-  24  |  ra     |
-      ---------- SRA(16)  
   20  |   gp    |
-      ---------- 
+      ----------  SRA(16)
   16  |   fp    |
       ===========
   12  |PADDING_0|
@@ -46,18 +42,13 @@
 # Saved-registers area (SRA).
 #define FP 16
 #define GP 20
-#define RA 24
-#define PADDING 28
 
 #  Argument-building area caller (ABA caller).
-#define M_A0 32
-#define N_A1 36
+#define M_A0 24
+#define N_A1 28
 
 
-#define SIZE_SF PADDING + 4
-
-# Debugger metadata.
-  .frame  fp,SIZE_SF,ra
+#define SIZE_SF 24
   
 # Allocate memory for the stack. 
 subu  sp,sp,SIZE_SF
@@ -137,10 +128,7 @@ cont_do:
 	lw	t0,TEMP_2(fp)
 	move     v0,t0
 stack_unwinding:
-	lw        a1, (SIZE_SF + 4)(sp)
-	lw        a0, (SIZE_SF)(sp)
-  
-	lw        ra, RA(sp)
+
 	lw        fp, FP(sp)
 	lw        gp, GP(sp)
 	addu      sp, sp, SIZE_SF
