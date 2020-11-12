@@ -95,7 +95,6 @@ case_equal:
 	# return m;
 	lw	v0,M_A0(fp)
 	b	stack_unwinding
-	nop
 
 next_line:
 	lw	t0,M_A0(fp)    # t0 = m
