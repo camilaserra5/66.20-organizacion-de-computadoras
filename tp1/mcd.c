@@ -1,6 +1,9 @@
 /*
   Máximo Comun Divisor
 */
+#ifdef MIPS
+extern unsigned int mcd(unsigned int m, unsigned int n);
+#else
 unsigned int mcd(unsigned int m, unsigned int n) 
 {
     if (m == 0) return m;        
@@ -25,3 +28,4 @@ unsigned int mcd(unsigned int m, unsigned int n)
        
     return mcd_v;
 }
+#endif

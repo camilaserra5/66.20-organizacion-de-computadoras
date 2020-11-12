@@ -3,6 +3,9 @@ extern unsigned int mcd(unsigned int m, unsigned int n);
 /*
   Mínimo Comun Multiplo
 */
+#ifdef MIPS
+extern unsigned int mcm(unsigned int m, unsigned int n);
+#else
 unsigned int mcm(unsigned int m, unsigned int n)
 {
     unsigned int mcm_v = 0;        
@@ -20,3 +23,4 @@ unsigned int mcm(unsigned int m, unsigned int n)
     
     return mcm_v;
 }
+#endif

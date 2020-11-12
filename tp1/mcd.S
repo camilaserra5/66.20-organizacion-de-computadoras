@@ -1,96 +1,149 @@
-	.file	1 "mcd.c"
-	.section .mdebug.abi32
-	.previous
-	.nan	legacy
-	.module	fp=xx
-	.module	nooddspreg
-	.abicalls
-	.text
-	.align	2
-	.globl	mcd
-	.set	nomips16
-	.set	nomicromips
-	.ent	mcd
-	.type	mcd, @function
+#include <sys/regdef.h>
+
+.text
+.abicalls
+.align  2
+.globl  mcd
+.ent  mcd
+
+# Pipeline magic.
+.set        noreorder
+.cpload     t9
+.set        reorder
+
+/* STACK DESIGN - SIZE: 32
+      ===========
+  36  |   a1    |
+      ---------- ABA CALLER (8)
+  32  |   a0    |
+      ===========
+  28  |PADDING  |
+      ---------- 
+  24  |  ra     |
+      ---------- SRA(16)  
+  20  |   gp    |
+      ---------- 
+  16  |   fp    |
+      ===========
+  12  |PADDING_0|
+      ----------
+  8   |  mcd_v  |
+      ---------- LTA(16)
+  4   |   b     |
+      ----------
+  0   |   a     |
+      ===========
+*/
+
+
+
+# Local and Temporary Area (LTA).
+#define TEMP_0 0
+#define TEMP_1 4
+#define TEMP_2 8
+#define PADDING_0 12
+
+# Saved-registers area (SRA).
+#define FP 16
+#define GP 20
+#define RA 24
+#define PADDING 28
+
+#  Argument-building area caller (ABA caller).
+#define M_A0 32
+#define N_A1 36
+
+
+#define SIZE_SF PADDING + 4
+
+# Debugger metadata.
+  .frame  fp,SIZE_SF,ra
+  
+# Allocate memory for the stack. 
+subu  sp,sp,SIZE_SF
+  
+# SRA beginning area.
+.cprestore GP
+
+# Save the callee-saved registers used by the caller in the SRA.
+sw  fp,FP(sp)
+sw  gp,GP(sp)
+# We must set the $fp to the beginning of the stack.
+move fp,sp
+
+# Now we save the arguments that were loaded by the caller
+# in the area reserved by the caller.
+sw  a0,M_A0(fp)
+sw  a1,N_A1(fp)
+
+// mcd(unsigned int m, unsigned int n) 
 mcd:
-	.frame	$fp,32,$31		# vars= 16, regs= 1/0, args= 0, gp= 8
-	.mask	0x40000000,-4
-	.fmask	0x00000000,0
-	.set	noreorder
-	.set	nomacro
-	addiu	$sp,$sp,-32
-	sw	$fp,28($sp)
-	move	$fp,$sp
-	sw	$4,32($fp)
-	sw	$5,36($fp)
-	lw	$2,32($fp)
-	bne	$2,$0,$L2
+	# case if (m == 0)
+	lw	t0,M_A0(fp)
+	bnez	t0,case_n_0
+
+	# return m;
+	lw	v0,M_A0(fp)
+	b	stack_unwinding
+
+case_n_0:
+	# case  if (n == 0)
+	lw	t0,N_A1(fp)
+	bnez	t0,case_equal
+
+	# return n;
+	lw	v0,N_A1(fp)
+	b	stack_unwinding
+
+case_equal:
+	# case  if (m == n)
+	lw	t0,M_A0(fp)
+	lw	t1,N_A1(fp)
+	bne	t1,t0,next_line
+
+	# return m;
+	lw	v0,M_A0(fp)
+	b	stack_unwinding
 	nop
 
-	lw	$2,32($fp)
-	b	$L3
-	nop
+next_line:
+	lw	t0,M_A0(fp)    # t0 = m
+	sw	t0,TEMP_0(fp)  # a  = m
+	lw	t1,N_A1(fp)    # t1 = n
+	sw	t1,TEMP_1(fp)  # b = n
+	lw	t0,M_A0(fp)
+	lw	t1,N_A1(fp)
+	sltu	t0,t0,t1   # m < n 
+	beqz	t0,cont_do
 
-$L2:
-	lw	$2,36($fp)
-	bne	$2,$0,$L4
-	nop
 
-	lw	$2,36($fp)
-	b	$L3
-	nop
+	lw	t2,N_A1(fp) 
+	sw	t2,TEMP_0(fp)   # a = n
+	lw	t3,M_A0(fp)
+	sw	t3,TEMP_1(fp)   # b = m
+cont_do:
+	lw	t0,TEMP_1(fp)
+	sw	t0,TEMP_2(fp)   # mcd_v = b
+	lw	t1,TEMP_0(fp)   # t1 = a
+	lw	t2,TEMP_1(fp)   # t2 = b
+	divu	t0,t1,t2
+	mfhi	t3
+	sw	t3,TEMP_1(fp)  # b = a % b
+	lw	t0,TEMP_2(fp)    
+	sw	t0,TEMP_0(fp)  # a = mcd_v
+	lw	t4,TEMP_1(fp)
+	bnez	t4,cont_do     # continue loop with b != 0
 
-$L4:
-	lw	$3,32($fp)
-	lw	$2,36($fp)
-	bne	$3,$2,$L5
-	nop
+	lw	t0,TEMP_2(fp)
+	move     v0,t0
+stack_unwinding:
+	lw        a1, (SIZE_SF + 4)(sp)
+	lw        a0, (SIZE_SF)(sp)
+  
+	lw        ra, RA(sp)
+	lw        fp, FP(sp)
+	lw        gp, GP(sp)
+	addu      sp, sp, SIZE_SF
+	jr        ra
 
-	lw	$2,32($fp)
-	b	$L3
-	nop
-
-$L5:
-	lw	$2,32($fp)
-	sw	$2,8($fp)
-	lw	$2,36($fp)
-	sw	$2,12($fp)
-	sw	$0,16($fp)
-	lw	$3,36($fp)
-	lw	$2,32($fp)
-	sltu	$2,$2,$3
-	beq	$2,$0,$L6
-	nop
-
-	lw	$2,36($fp)
-	sw	$2,8($fp)
-	lw	$2,32($fp)
-	sw	$2,12($fp)
-$L6:
-	lw	$2,12($fp)
-	sw	$2,16($fp)
-	lw	$3,8($fp)
-	lw	$2,12($fp)
-	teq	$2,$0,7
-	divu	$0,$3,$2
-	mfhi	$2
-	sw	$2,12($fp)
-	lw	$2,16($fp)
-	sw	$2,8($fp)
-	lw	$2,12($fp)
-	bne	$2,$0,$L6
-	nop
-
-	lw	$2,16($fp)
-$L3:
-	move	$sp,$fp
-	lw	$fp,28($sp)
-	addiu	$sp,$sp,32
-	jr	$31
-	nop
-
-	.set	macro
-	.set	reorder
-	.end	mcd
-	.size	mcd, .-mcd
-	.ident	"GCC: (Debian 6.3.0-18+deb9u1) 6.3.0 20170516"
+.end        mcd
