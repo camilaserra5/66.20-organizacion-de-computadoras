@@ -1,0 +1,8 @@
+Options:
+	-h,	--help		Print usage information.
+	-V,	--version	Print version information.
+	-o,	--output	Path to output file.
+	-d,	--divisor	Just the divisor.
+	-m,	--multiple	Just the multiple.
+Examples:
+	common -o - 256 192
