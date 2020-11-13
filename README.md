@@ -11,4 +11,5 @@
   
 ### Información:
 [Informe TP0](tp0/Organizacion_de_computadoras_tp0.pdf)
+
 [Informe TP1](tp10/informe.pdf)
