@@ -72,27 +72,28 @@
 
 # Debugger metadata.
   .frame  fp,SIZE_SF,ra
-  
-# Allocate memory for the stack. 
-subu  sp,sp,SIZE_SF
-  
-# SRA beginning area.
-.cprestore GP
-
-# Save the callee-saved registers used by the caller in the SRA.
-sw  fp,FP(sp)
-sw  gp,GP(sp)
-sw  ra,RA(sp)
-# We must set the $fp to the beginning of the stack.
-move fp,sp
-
-# Now we save the arguments that were loaded by the caller
-# in the area reserved by the caller.
-sw  a0,M_A0(fp)
-sw  a1,N_A1(fp)
 
 // mcm(unsigned int m, unsigned int n) 
-mcm:
+mcm:  
+	# Allocate memory for the stack. 
+	subu  sp,sp,SIZE_SF
+  
+	# SRA beginning area.
+	.cprestore GP
+
+	# Save the callee-saved registers used by the caller in the SRA.
+	sw  fp,FP(sp)
+	sw  gp,GP(sp)
+	sw  ra,RA(sp)
+	# We must set the $fp to the beginning of the stack.
+	move fp,sp
+
+	# Now we save the arguments that were loaded by the caller
+	# in the area reserved by the caller.
+	sw  a0,M_A0(fp)
+	sw  a1,N_A1(fp)
+
+
 	li       t0, 0
 	sw	t0,MCM_V(fp)
 	li       t1, 0

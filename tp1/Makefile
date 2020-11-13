@@ -4,17 +4,18 @@ CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99
 EXEC = common
 
 # TP sin mips
-tp: SOURCES = main.c command.c file.c euclid.c
+tp: SOURCES = *.c
 tp: $(EXEC)
 
 # Código mips
 tp.mips: CFLAGS += -DMIPS
-tp.mips: SOURCES = main.c command.c file.c euclid.S
+tp.mips: SOURCES = mcd.S mcm.S *.c
 tp.mips: $(EXEC)
 
 # TP con mips
 all: CFLAGS += -DMIPS
-all: SOURCES = main.c command.c file.c euclid.S
+all: SOURCES = *.c
+all: SOURCES += mcd.S mcm.S
 all: $(EXEC)
 
 command.o: command.c command.h

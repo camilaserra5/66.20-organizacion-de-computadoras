@@ -1,15 +1,11 @@
 #include <sys/regdef.h>
 
 .text
-.abicalls
 .align  2
+
 .globl  mcd
 .ent  mcd
 
-# Pipeline magic.
-.set        noreorder
-.cpload     t9
-.set        reorder
 
 /* STACK DESIGN - SIZE: 24
       ===========
@@ -32,7 +28,6 @@
 */
 
 
-
 # Local and Temporary Area (LTA).
 #define TEMP_0 0
 #define TEMP_1 4
@@ -50,25 +45,24 @@
 
 #define SIZE_SF 24
   
-# Allocate memory for the stack. 
-subu  sp,sp,SIZE_SF
-  
-# SRA beginning area.
-.cprestore GP
-
-# Save the callee-saved registers used by the caller in the SRA.
-sw  fp,FP(sp)
-sw  gp,GP(sp)
-# We must set the $fp to the beginning of the stack.
-move fp,sp
-
-# Now we save the arguments that were loaded by the caller
-# in the area reserved by the caller.
-sw  a0,M_A0(fp)
-sw  a1,N_A1(fp)
-
 // mcd(unsigned int m, unsigned int n) 
-mcd:
+mcd:  
+	# Allocate memory for the stack. 
+	subu  sp,sp,SIZE_SF
+  
+
+	# Save the callee-saved registers used by the caller in the SRA.
+	sw  fp,FP(sp)
+	sw  gp,GP(sp)
+	# We must set the $fp to the beginning of the stack.
+	move fp,sp
+
+	# Now we save the arguments that were loaded by the caller
+	# in the area reserved by the caller.
+	sw  a0,M_A0(fp)
+	sw  a1,N_A1(fp)
+
+
 	# case if (m == 0)
 	lw	t0,M_A0(fp)
 	bnez	t0,case_n_0
