@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99
+CFLAGS = -o0 -g -Wall -Werror -pedantic -std=c99 -DMIPS
 
 OBJECTS = command.o file.o
 EXEC = common
